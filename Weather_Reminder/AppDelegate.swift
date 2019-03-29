@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+import CoreDat
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
