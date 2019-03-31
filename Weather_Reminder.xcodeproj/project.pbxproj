@@ -16,7 +16,7 @@
 		9F0A6F5E2250ED9200B6E388 /* eventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6F5D2250ED9200B6E388 /* eventDetailVC.swift */; };
 		9F0A6F602250EDCC00B6E388 /* eventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */; };
 		9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8A2250E8B1005578EC /* selectSenario.swift */; };
-		9F477C8D2250EAD3005578EC /* createEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8C2250EAD3005578EC /* createEventVC.swift */; };
+		9F477C8D2250EAD3005578EC /* crateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8C2250EAD3005578EC /* crateEventVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		9F0A6F5D2250ED9200B6E388 /* eventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventDetailVC.swift; sourceTree = "<group>"; };
 		9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventListVC.swift; sourceTree = "<group>"; };
 		9F477C8A2250E8B1005578EC /* selectSenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectSenario.swift; sourceTree = "<group>"; };
-		9F477C8C2250EAD3005578EC /* createEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createEventVC.swift; sourceTree = "<group>"; };
+		9F477C8C2250EAD3005578EC /* crateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crateEventVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 				347A1E89224A75F7002C6905 /* Main.storyboard */,
 				9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */,
 				9F0A6F5D2250ED9200B6E388 /* eventDetailVC.swift */,
-				9F477C8C2250EAD3005578EC /* createEventVC.swift */,
+				9F477C8C2250EAD3005578EC /* crateEventVC.swift */,
 				9F477C8A2250E8B1005578EC /* selectSenario.swift */,
 				347A1E8F224A75F8002C6905 /* Assets.xcassets */,
 				347A1E91224A75F8002C6905 /* LaunchScreen.storyboard */,
@@ -156,7 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				347A1E88224A75F7002C6905 /* ViewController.swift in Sources */,
-				9F477C8D2250EAD3005578EC /* createEventVC.swift in Sources */,
+				9F477C8D2250EAD3005578EC /* crateEventVC.swift in Sources */,
 				9F0A6F5E2250ED9200B6E388 /* eventDetailVC.swift in Sources */,
 				347A1E86224A75F7002C6905 /* AppDelegate.swift in Sources */,
 				9F0A6F602250EDCC00B6E388 /* eventListVC.swift in Sources */,
