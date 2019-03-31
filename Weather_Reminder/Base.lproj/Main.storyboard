@@ -90,10 +90,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Jtm-3w-OAj" kind="show" id="Txs-YH-Ezz"/>
+                                            <segue destination="Jtm-3w-OAj" kind="show" identifier="toDetail" id="Txs-YH-Ezz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lL0-jU-pba" id="0to-eC-yuq"/>
+                                    <outlet property="delegate" destination="lL0-jU-pba" id="f2F-nB-EXU"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,7 +147,7 @@
         <!--createEventVC-->
         <scene sceneID="j0F-ae-UlD">
             <objects>
-                <viewController title="createEventVC" id="HpP-UR-0Bo" customClass="ViewController" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="createEventVC" id="HpP-UR-0Bo" customClass="crateEventVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lv0-qq-ZVz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,9 +234,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g3R-r8-VFq"/>
         <segue reference="BTH-xw-SH2"/>
         <segue reference="xq9-yM-K3p"/>
-        <segue reference="Pe1-9D-9tl"/>
+        <segue reference="bIe-zT-nrM"/>
     </inferredMetricsTieBreakers>
 </document>
