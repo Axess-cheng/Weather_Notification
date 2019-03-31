@@ -147,7 +147,7 @@
         <!--createEventVC-->
         <scene sceneID="j0F-ae-UlD">
             <objects>
-                <viewController title="createEventVC" id="HpP-UR-0Bo" customClass="crateEventVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="createEventVC" id="HpP-UR-0Bo" customClass="ViewController" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lv0-qq-ZVz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,8 +234,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="g3R-r8-VFq"/>
         <segue reference="BTH-xw-SH2"/>
         <segue reference="xq9-yM-K3p"/>
-        <segue reference="bIe-zT-nrM"/>
+        <segue reference="Pe1-9D-9tl"/>
     </inferredMetricsTieBreakers>
 </document>
