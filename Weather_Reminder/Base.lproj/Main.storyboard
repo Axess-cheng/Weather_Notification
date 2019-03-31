@@ -72,13 +72,22 @@
             </objects>
             <point key="canvasLocation" x="740" y="-434.03298350824593"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Senario-->
         <scene sceneID="3uA-we-05d">
             <objects>
-                <viewController id="1tx-Q8-MeY" sceneMemberID="viewController">
+                <viewController id="1tx-Q8-MeY" customClass="selectSenario" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lDD-oB-gxD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CS-KK-TQt">
+                                <rect key="frame" x="0.0" y="27" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Select a senario" id="9tv-IO-s7N"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="J92-fM-dAk"/>
                     </view>
