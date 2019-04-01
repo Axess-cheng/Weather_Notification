@@ -1,5 +1,5 @@
 //
-//  crateEventVC.swift
+//  mapVC.swift
 //  Weather_Reminder
 //
 //  Created by allen on 2019/3/31.
@@ -8,28 +8,23 @@
 
 import UIKit
 
-class createEventVC: UIViewController {
-
-    var senario = String()//从上一个view传递
-    
-    var eventTitle:String?
-    var pStart = String()
-    var pEnd = String()
-    var alertDays = Int()
-    var remindTime = String()
-    var weatherType = String()
-    var intensity: String?
-    var uvIndex:Int?
-    var humidityStatus:String?
-    var humidityValue:String?
-    
+class mapVC: UIViewController, UITextFieldDelegate {
+ @IBOutlet weak var text: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        text.delegate = self
         // Do any additional setup after loading the view.
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchPlaceFromGoogelAPI(place: textField.text!)
+        return true
+    }
+   
+    func searchPlaceFromGoogelAPI(place: String){
+       var strGoogleAPI = ""
+    }
+    
     /*
     // MARK: - Navigation
 

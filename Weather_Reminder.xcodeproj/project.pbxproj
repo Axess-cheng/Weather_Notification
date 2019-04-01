@@ -17,6 +17,10 @@
 		9F0A6F602250EDCC00B6E388 /* eventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */; };
 		9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8A2250E8B1005578EC /* selectSenario.swift */; };
 		9F477C8D2250EAD3005578EC /* createEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8C2250EAD3005578EC /* createEventVC.swift */; };
+		9FBA1436225101170091F617 /* mapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA1435225101170091F617 /* mapVC.swift */; };
+		9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143722518DE90091F617 /* PeriodVC.swift */; };
+		9FBA143A22518E990091F617 /* remindTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143922518E990091F617 /* remindTimeVC.swift */; };
+		9FBA143C225195E80091F617 /* weatherConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143B225195E80091F617 /* weatherConditionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventListVC.swift; sourceTree = "<group>"; };
 		9F477C8A2250E8B1005578EC /* selectSenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectSenario.swift; sourceTree = "<group>"; };
 		9F477C8C2250EAD3005578EC /* createEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createEventVC.swift; sourceTree = "<group>"; };
+		9FBA1435225101170091F617 /* mapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapVC.swift; sourceTree = "<group>"; };
+		9FBA143722518DE90091F617 /* PeriodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodVC.swift; sourceTree = "<group>"; };
+		9FBA143922518E990091F617 /* remindTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remindTimeVC.swift; sourceTree = "<group>"; };
+		9FBA143B225195E80091F617 /* weatherConditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherConditionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,10 @@
 				347A1E85224A75F7002C6905 /* AppDelegate.swift */,
 				347A1E87224A75F7002C6905 /* ViewController.swift */,
 				347A1E89224A75F7002C6905 /* Main.storyboard */,
+				9FBA143B225195E80091F617 /* weatherConditionVC.swift */,
+				9FBA143922518E990091F617 /* remindTimeVC.swift */,
+				9FBA143722518DE90091F617 /* PeriodVC.swift */,
+				9FBA1435225101170091F617 /* mapVC.swift */,
 				9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */,
 				9F0A6F5D2250ED9200B6E388 /* eventDetailVC.swift */,
 				9F477C8C2250EAD3005578EC /* createEventVC.swift */,
@@ -155,13 +167,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBA143C225195E80091F617 /* weatherConditionVC.swift in Sources */,
 				347A1E88224A75F7002C6905 /* ViewController.swift in Sources */,
 				9F477C8D2250EAD3005578EC /* createEventVC.swift in Sources */,
 				9F0A6F5E2250ED9200B6E388 /* eventDetailVC.swift in Sources */,
 				347A1E86224A75F7002C6905 /* AppDelegate.swift in Sources */,
 				9F0A6F602250EDCC00B6E388 /* eventListVC.swift in Sources */,
+				9FBA1436225101170091F617 /* mapVC.swift in Sources */,
+				9FBA143A22518E990091F617 /* remindTimeVC.swift in Sources */,
 				347A1E8E224A75F7002C6905 /* Weather_Reminder.xcdatamodeld in Sources */,
 				9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */,
+				9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,28 +1,15 @@
 //
-//  crateEventVC.swift
+//  weatherConditionVC.swift
 //  Weather_Reminder
 //
-//  Created by allen on 2019/3/31.
+//  Created by allen on 2019/4/1.
 //  Copyright © 2019 comp208.team4. All rights reserved.
 //
 
 import UIKit
 
-class createEventVC: UIViewController {
+class weatherConditionVC: UIViewController {
 
-    var senario = String()//从上一个view传递
-    
-    var eventTitle:String?
-    var pStart = String()
-    var pEnd = String()
-    var alertDays = Int()
-    var remindTime = String()
-    var weatherType = String()
-    var intensity: String?
-    var uvIndex:Int?
-    var humidityStatus:String?
-    var humidityValue:String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
