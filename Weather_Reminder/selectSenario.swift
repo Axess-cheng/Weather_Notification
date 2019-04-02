@@ -21,7 +21,7 @@ class selectSenario: UIViewController, UIPickerViewDelegate,UIPickerViewDataSour
         self.pickSenario.delegate = self
         self.pickSenario.dataSource = self
         pickSenario.selectRow(0, inComponent: 0, animated: true)
-        senarioData = ["Other","Bring umbrella","Travel","Crop reminder","Disease alerting"]
+        senarioData = ["None","Bring umbrella","Travel","Crop reminder","Disease alerting"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,7 +53,7 @@ class selectSenario: UIViewController, UIPickerViewDelegate,UIPickerViewDataSour
         if segue.identifier == "senarioToCreateEvent"{
             let createEvent = segue.destination as! createEventVC
             if senario == nil{
-                senario = "Other"
+                senario = "None"
             }
             gsSenario = senario
         }

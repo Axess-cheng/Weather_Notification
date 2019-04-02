@@ -13,7 +13,8 @@ var gsPStart = String()
 var gsPEnd = String()
 var gsEveryday = Bool()
 var gsAlertDays = Int()
-var gsWeatherTypeDic = [String:String]()
+var gsWeatherTypeDic = [String:Any]()
+var weatherSelected = [String]()
 
 class createEventVC: UIViewController {
 
@@ -31,6 +32,11 @@ class createEventVC: UIViewController {
         print("start: " + gsPStart)
         print("end: " + gsPEnd)
         print(gsAlertDays)
+        print(weatherSelected.isEmpty)
+        for i in 0..<weatherSelected.count{
+            print(i)
+            print(weatherSelected[i])
+        }
         
     }
 
