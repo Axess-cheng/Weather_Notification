@@ -12,7 +12,7 @@ class selectSenario: UIViewController, UIPickerViewDelegate,UIPickerViewDataSour
 
     @IBOutlet weak var pickSenario: UIPickerView!
     
-    var senario = String()
+    var senario:String!
     var senarioData:[String] =  [String]()
     
     override func viewDidLoad() {
@@ -20,9 +20,8 @@ class selectSenario: UIViewController, UIPickerViewDelegate,UIPickerViewDataSour
 
         self.pickSenario.delegate = self
         self.pickSenario.dataSource = self
-        
-        senarioData = ["Bring umbrella","Travel","Crop reminder","Disease alerting"]
-        // Do any additional setup after loading the view.
+        pickSenario.selectRow(0, inComponent: 0, animated: true)
+        senarioData = ["Other","Bring umbrella","Travel","Crop reminder","Disease alerting"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,28 +41,22 @@ class selectSenario: UIViewController, UIPickerViewDelegate,UIPickerViewDataSour
         return senarioData[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         senario = senarioData[row]
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-        
     }
 
+    @IBAction func nextBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "senarioToCreateEvent", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "senarioToCreateEvent"{
             let createEvent = segue.destination as! createEventVC
-            createEvent.senario = senario
+            if senario == nil{
+                senario = "Other"
+            }
+            gsSenario = senario
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

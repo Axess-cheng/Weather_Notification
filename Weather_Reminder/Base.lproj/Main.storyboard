@@ -26,6 +26,30 @@
             </objects>
             <point key="canvasLocation" x="-212" y="745"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6Gh-BB-bil">
+            <objects>
+                <viewController id="Urh-g1-qDJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fsm-0u-hda">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jU-Ob-LFh">
+                                <rect key="frame" x="0.0" y="178" width="375" height="411"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="zsm-rD-K1K" kind="embed" id="ZLj-mt-3iF"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ka8-5c-1Zx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgh-LO-0a4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="588" y="700.29985007496259"/>
+        </scene>
         <!--eventDetailVC-->
         <scene sceneID="mni-nR-lSY">
             <objects>
@@ -71,61 +95,66 @@
                                     <navigationItem title="Period" id="u0Z-vb-VTx">
                                         <barButtonItem key="leftBarButtonItem" title="Done" id="gEO-1i-YSM">
                                             <connections>
-                                                <segue destination="HpP-UR-0Bo" kind="show" id="bcL-FP-kna"/>
+                                                <action selector="periodDone:" destination="C5e-O9-wnR" id="1Yq-1M-6GO"/>
+                                                <segue destination="HpP-UR-0Bo" kind="show" identifier="periodDone" id="bcL-FP-kna"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZg-UR-gwV">
-                                <rect key="frame" x="15" y="89" width="80" height="21"/>
+                                <rect key="frame" x="0.0" y="169" width="80" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Every Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG5-Yf-ku0">
-                                <rect key="frame" x="16" y="539" width="77" height="20.5"/>
+                                <rect key="frame" x="0.0" y="110" width="77" height="20.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-DC-HqO">
-                                <rect key="frame" x="0.0" y="118" width="375" height="165"/>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-DC-HqO">
+                                <rect key="frame" x="0.0" y="198" width="375" height="165"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="575774454.12998104">
                                     <!--2019-04-01 01:20:54 +0000-->
                                 </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="-62546039925">
-                                    <!--0019-01-01 12:01:15 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
-                                    <!--2037-12-31 11:00:00 +0000-->
-                                </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3K-We-m0B">
-                                <rect key="frame" x="15" y="291" width="70" height="21"/>
+                                <rect key="frame" x="0.0" y="371" width="70" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jdk-Bl-nBc">
-                                <rect key="frame" x="0.0" y="310" width="375" height="184"/>
+                                <rect key="frame" x="0.0" y="400" width="375" height="184"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="575774526.00267303">
                                     <!--2019-04-01 01:22:06 +0000-->
                                 </date>
                             </datePicker>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-l5-1ni">
-                                <rect key="frame" x="122" y="534" width="51" height="31"/>
+                                <rect key="frame" x="97" y="105" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchBtn:" destination="C5e-O9-wnR" eventType="valueChanged" id="qua-xk-hEj"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="K6y-Xl-hKs"/>
                     </view>
+                    <connections>
+                        <outlet property="ifEveryday" destination="rxp-l5-1ni" id="kWx-gM-eWs"/>
+                        <outlet property="label1" destination="TZg-UR-gwV" id="Rhp-Fu-dQQ"/>
+                        <outlet property="label2" destination="X3K-We-m0B" id="Up3-pn-Hkb"/>
+                        <outlet property="pickEnd" destination="Jdk-Bl-nBc" id="nJH-ev-KG3"/>
+                        <outlet property="pickStart" destination="Bxp-DC-HqO" id="HKW-3x-gis"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bfy-sA-nhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,17 +175,18 @@
                                     <navigationItem title="remind time" id="Lct-dL-QYE">
                                         <barButtonItem key="leftBarButtonItem" title="Done" id="UtJ-3n-EZS">
                                             <connections>
+                                                <action selector="doneBtn:" destination="T19-3h-KeL" id="jue-5v-RSF"/>
                                                 <segue destination="HpP-UR-0Bo" kind="show" identifier="remindTimeDone" id="vPx-dK-EoD"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="FcQ-bq-HAh">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcQ-bq-HAh">
                                 <rect key="frame" x="0.0" y="200" width="375" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="575774956.54449499">
-                                    <!--2019-04-01 01:29:16 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="575794800.54449499">
+                                    <!--2019-04-01 07:00:00 +0000-->
                                 </date>
                             </datePicker>
                         </subviews>
@@ -250,6 +280,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Next" id="MX6-9e-X1o">
                                             <connections>
+                                                <action selector="nextBtn:" destination="1tx-Q8-MeY" id="X0L-h9-UIT"/>
                                                 <segue destination="HpP-UR-0Bo" kind="show" identifier="senarioToCreateEvent" id="9eY-wr-6Ug"/>
                                             </connections>
                                         </barButtonItem>
@@ -286,6 +317,7 @@
         <!--createEventVC-->
         <scene sceneID="j0F-ae-UlD">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cld-f5-ZKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="createEventVC" id="HpP-UR-0Bo" customClass="createEventVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lv0-qq-ZVz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -314,6 +346,7 @@
                                                 <segue destination="1tx-Q8-MeY" kind="show" identifier="" id="2Hr-8X-Rh9"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="create" id="NWY-MU-XKr"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -350,11 +383,9 @@
                                 <rect key="frame" x="25" y="225" width="58" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set alert"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qX4-ay-U5q">
-                                <rect key="frame" x="164" y="502" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="setAlert:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="Jiu-TR-UBR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSP-oX-gfi">
                                 <rect key="frame" x="25" y="301" width="150" height="30"/>
@@ -383,9 +414,56 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cld-f5-ZKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="-102"/>
+            <point key="canvasLocation" x="1545" y="-90"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="5WD-gg-qe0">
+            <objects>
+                <tableViewController id="zsm-rD-K1K" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Awi-99-b2j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="411"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="veh-wW-XiL">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="AxL-LJ-7lf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AxL-LJ-7lf" id="SwL-F4-l0E">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CJ8-aQ-cNr">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CJ8-aQ-cNr" id="YqY-5Y-uNP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="z8h-7M-kxd">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z8h-7M-kxd" id="Ntr-KQ-eTT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="zsm-rD-K1K" id="bpM-p8-hVW"/>
+                            <outlet property="delegate" destination="zsm-rD-K1K" id="bal-rH-hwp"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AtR-b7-zml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250" y="1416"/>
         </scene>
         <!--Weather ConditionVC-->
         <scene sceneID="jdQ-Nw-jDu">
@@ -589,8 +667,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Rd2-Tv-Y5e"/>
         <segue reference="BTH-xw-SH2"/>
-        <segue reference="vPx-dK-EoD"/>
+        <segue reference="c7c-0B-Qg6"/>
         <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>

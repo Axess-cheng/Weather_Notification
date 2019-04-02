@@ -7,17 +7,17 @@
 //
 
 import UIKit
+var gsSenario = String()
+var gsRemindTime = String()
+var gsPStart = String()
+var gsPEnd = String()
+var gsEveryday = Bool()
+var gsAlertDays = Int()
+var gsWeatherTypeDic = [String:String]()
 
 class createEventVC: UIViewController {
 
-    var senario = String()//从上一个view传递
-    
-    var eventTitle:String?
-    var pStart = String()
-    var pEnd = String()
-    var alertDays = Int()
-    var remindTime = String()
-    var weatherType = String()
+    var weatherType:String?
     var intensity: String?
     var uvIndex:Int?
     var humidityStatus:String?
@@ -25,19 +25,39 @@ class createEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(gsSenario)
+        print("remindTime: " + gsRemindTime)
+        print(gsEveryday)
+        print("start: " + gsPStart)
+        print("end: " + gsPEnd)
+        print(gsAlertDays)
+        
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func setAlert(_ sender: Any) {
+        let actionSheet=UIAlertController(title:"Alert days",message:"select the alert days before the event",preferredStyle:.actionSheet)
+        let cancel=UIAlertAction(title:"cancel",style:.cancel)
+        let confirm1=UIAlertAction(title:"on that day",style:.default){ (act) -> Void in
+            gsAlertDays = 0
+            NotificationCenter.default.removeObserver(self)
+        }
+        let confirm2=UIAlertAction(title:"1 day",style:.default){ (act) -> Void in
+            gsAlertDays = 1
+            NotificationCenter.default.removeObserver(self)
+        }
+        let confirm3=UIAlertAction(title:"3 day",style:.default){ (act) -> Void in
+            gsAlertDays = 3
+            NotificationCenter.default.removeObserver(self)
+        }
+        let confirm4=UIAlertAction(title:"7 day",style:.default){ (act) -> Void in
+            gsAlertDays = 7
+            NotificationCenter.default.removeObserver(self)
+        }
+        actionSheet.addAction(cancel)
+        actionSheet.addAction(confirm1)
+        actionSheet.addAction(confirm2)
+        actionSheet.addAction(confirm3)
+        actionSheet.addAction(confirm4)
+        present(actionSheet, animated: true, completion: nil)
     }
-    */
-
 }
