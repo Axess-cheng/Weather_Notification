@@ -26,18 +26,18 @@ class createEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(gsSenario)
-        print("remindTime: " + gsRemindTime)
-        print(gsEveryday)
-        print("start: " + gsPStart)
-        print("end: " + gsPEnd)
-        print(gsAlertDays)
+        //print(gsSenario)
+        //print("remindTime: " + gsRemindTime)
+        //print(gsEveryday)
+        //print("start: " + gsPStart)
+        //print("end: " + gsPEnd)
+        //print(gsAlertDays)
         print(weatherSelected.isEmpty)
         for i in 0..<weatherSelected.count{
             print(i)
             print(weatherSelected[i])
         }
-        
+        //print(gsWeatherTypeDic.isEmpty)
     }
 
     @IBAction func setAlert(_ sender: Any) {
