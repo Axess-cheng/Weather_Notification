@@ -16,26 +16,31 @@ class PeriodVC: UIViewController {
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     
+    var now = NSDate()
     var startDate = String()
     var endDate = String()
     
     
     override func viewDidLoad() {
+        let nowTimeStamp = now.timeIntervalSince1970
+        startDate = String(Int(nowTimeStamp))
+        endDate = String(Int(nowTimeStamp))
         super.viewDidLoad()
         pickStart.addTarget(self, action: #selector(chooseStartDate( _:)), for: UIControl.Event.valueChanged)
         pickEnd.addTarget(self, action: #selector(chooseEndDate( _:)), for: UIControl.Event.valueChanged)
-        gsEveryday = false
     }
     
     @IBAction func switchBtn(_ sender: Any) {
         if ifEveryday.isOn {
-            gsEveryday = true
+            gsPeriod["startDate"] = ""
+            gsPeriod["endDate"] = ""
             label1.isHidden = true
             label2.isHidden = true
             pickStart.isHidden = true
             pickEnd.isHidden = true
         }else{
-            gsEveryday = false
+            gsPeriod["startDate"] = String(Int(now.timeIntervalSince1970))
+            gsPeriod["endDate"] = String(Int(now.timeIntervalSince1970))
             label1.isHidden = false
             label2.isHidden = false
             pickStart.isHidden = false
@@ -45,26 +50,15 @@ class PeriodVC: UIViewController {
     
     
     @objc func chooseStartDate(_ datePicker:UIDatePicker){
-        let formatter = DateFormatter.init()
-        formatter.dateFormat = "yyyyMMdd"
-        startDate = formatter.string(from: datePicker.date)
-        gsPStart = startDate
+        startDate = String(Int(datePicker.date.timeIntervalSince1970))
+        gsPeriod["startDate"] = startDate
+        print(startDate)
     }
     
     @objc func chooseEndDate(_ datePicker:UIDatePicker){
-        let formatter = DateFormatter.init()
-        formatter.dateFormat = "yyyyMMdd"
-        endDate = formatter.string(from: datePicker.date)
-        gsPEnd = endDate
+        endDate = String(Int(datePicker.date.timeIntervalSince1970))
+        gsPeriod["endDate"] = endDate
     }
-
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //    if segue.identifier == "periodDone"{
-    //        let createEvent = segue.destination as! createEventVC
-    //        createEvent.pStart = startDate ?? ""
-    //        createEvent.pEnd = endDate ?? ""
-    //    }
-    //}
     
     @IBAction func periodDone(_ sender: Any) {
         self.performSegue(withIdentifier: "periodDone", sender: nil)

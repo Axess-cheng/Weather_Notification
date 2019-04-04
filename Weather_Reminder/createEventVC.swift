@@ -7,17 +7,29 @@
 //
 
 import UIKit
-var gsSenario = String()
-var gsRemindTime = String()
-var gsPStart = String()
-var gsPEnd = String()
-var gsEveryday = Bool()
+var id = 0
+var title = ""
+var gsSenario = ""
+var gsRemindTime = ""
+var gsPeriod = [String:String]()
+//var gsPStart = String()
+//var gsPEnd = String()
 var gsAlertDays = Int()
-var gsWeatherTypeDic = [String:Any]()
+var sunny = ","
+var cloudy = ",,"
+var windy = ","
+var rainy = ""
+var snow = ""
+var uvindex = ","
+var humidity = ","
+var loc = [String : Float32]()
 var weatherSelected = [String]()
+
+
 
 class createEventVC: UIViewController {
 
+    @IBOutlet weak var titleText: UITextField!
     var weatherType:String?
     var intensity: String?
     var uvIndex:Int?
@@ -26,12 +38,10 @@ class createEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(gsSenario)
-        //print("remindTime: " + gsRemindTime)
-        //print(gsEveryday)
-        //print("start: " + gsPStart)
-        //print("end: " + gsPEnd)
-        //print(gsAlertDays)
+        print(gsSenario)
+        print("remindTime: " + gsRemindTime)
+        print("start:  \(String(describing: gsPeriod["startDate"]))")
+        print("end:  \(String(describing: gsPeriod["endDate"]))")
         print(weatherSelected.isEmpty)
         for i in 0..<weatherSelected.count{
             print(i)
@@ -65,5 +75,31 @@ class createEventVC: UIViewController {
         actionSheet.addAction(confirm3)
         actionSheet.addAction(confirm4)
         present(actionSheet, animated: true, completion: nil)
+        print(gsAlertDays)
     }
+    
+    @IBAction func createBtn(_ sender: Any) {
+        id += 1
+        title = titleText.text
+        initialData()
+    }
+    
+    func initialData() {
+        var title = ""
+        var gsSenario = ""
+        var gsRemindTime = ""
+        var gsPeriod = [String:Int]()
+        var gsPStart = String()
+        var gsPEnd = String()
+        var gsAlertDays = Int()
+        var sunny = ","
+        var cloudy = ",,"
+        var windy = ","
+        var rainy = ""
+        var snow = ""
+        var uvindex = ","
+        var humidity = ","
+        var loc = [String : Float32]()
+    }
+    
 }

@@ -321,7 +321,11 @@
                                                 <segue destination="1tx-Q8-MeY" kind="show" identifier="" id="2Hr-8X-Rh9"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="create" id="NWY-MU-XKr"/>
+                                        <barButtonItem key="rightBarButtonItem" title="create" id="NWY-MU-XKr">
+                                            <connections>
+                                                <action selector="createBtn:" destination="HpP-UR-0Bo" id="9WT-Z6-LTl"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -388,6 +392,9 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleText" destination="zMJ-2f-b0A" id="H4v-iE-iZl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cld-f5-ZKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -685,8 +692,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="g3R-r8-VFq"/>
         <segue reference="BTH-xw-SH2"/>
-        <segue reference="u6F-iv-BIk"/>
+        <segue reference="xq9-yM-K3p"/>
         <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>

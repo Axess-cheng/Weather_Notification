@@ -22,46 +22,44 @@ class TTableViewController: UITableViewController {
     @IBOutlet weak var humidityBtn: UISwitch!
     @IBOutlet weak var uvBtn: UISwitch!
     
-    var sunnyLevel = ""
-    var cloudyLevel = ""
-    var windyLevel = String()
-    var rainnyLevel = String()
-    var snowLevel = String()
-    var humidityStatus = String()
-    var uvLevel = String()
-    var weatherCondition = [String:Any]()
-    var weatherType = [[String:String]]()
-    var humidity = [String:String]()
-    var uvIndex = [String:String]()
     
     @IBAction func sunnySWB(_ sender: Any) {
-        guard sunnyBtn.isOn else{return}
-        
+        guard sunnyBtn.isOn else{
+            sunny = ","
+            return
+        }
+        sunny = "CL,FW"
     }
     
     @IBAction func cloudySWB(_ sender: Any) {
-        guard cloudyBtn.isOn else{return}
-        
+        guard cloudyBtn.isOn else{
+            cloudy = ",,"
+            return
+        }
+        cloudy = "SC,BK,OV"
     }
     
     @IBAction func windySWB(_ sender: Any) {
-        guard windyBtn.isOn else{return}
+        guard windyBtn.isOn else{
+            windy = ","
+            return}
         let windyLevelSheet=UIAlertController(title:"Windy Level",message:"select the windy level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
-            self.cloudyBtn.setOn(false, animated: true)
+            self.windyBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
+            windy = ","
             return
         }
         let level1=UIAlertAction(title:"Light",style:.default){ (act) -> Void in
-            self.windyLevel = "Light"
+            windy = "0,20"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"High",style:.default){ (act) -> Void in
-            self.windyLevel = "High"
+            windy = "21,60"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
-            self.windyLevel = "Very High"
+            windy = "60,200"
             NotificationCenter.default.removeObserver(self)
         }
         windyLevelSheet.addAction(cancel)
@@ -72,50 +70,61 @@ class TTableViewController: UITableViewController {
     }
     
     @IBAction func rainySWB(_ sender: Any) {
-        guard rainyBtn.isOn else{return}
+        guard rainyBtn.isOn else{
+            rainy = ""
+            return}
         let rainyLevelSheet=UIAlertController(title:"Rainy Level",message:"select the rainy level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
+            rainy = ""
             self.rainyBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             return
         }
-        let level1=UIAlertAction(title:"Light",style:.default){ (act) -> Void in
-            self.rainnyLevel = "Light"
+        let level1=UIAlertAction(title:"Very Low",style:.default){ (act) -> Void in
+            rainy = "VL"
             NotificationCenter.default.removeObserver(self)
         }
-        let level2=UIAlertAction(title:"High",style:.default){ (act) -> Void in
-            self.rainnyLevel = "High"
+        let level2=UIAlertAction(title:"Low",style:.default){ (act) -> Void in
+            rainy = "L"
             NotificationCenter.default.removeObserver(self)
         }
-        let level3=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
-            self.rainnyLevel = "Very High"
+        let level3=UIAlertAction(title:"High",style:.default){ (act) -> Void in
+            rainy = "H"
+            NotificationCenter.default.removeObserver(self)
+        }
+        let level4=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
+            rainy = "VH"
             NotificationCenter.default.removeObserver(self)
         }
         rainyLevelSheet.addAction(cancel)
         rainyLevelSheet.addAction(level1)
         rainyLevelSheet.addAction(level2)
         rainyLevelSheet.addAction(level3)
+        rainyLevelSheet.addAction(level4)
         present(rainyLevelSheet, animated: true, completion: nil)
     }
 
     @IBAction func snowSWB(_ sender: Any) {
-        guard snowBtn.isOn else{return}
+        guard snowBtn.isOn else{
+            snow = ""
+            return}
         let snowLevelSheet=UIAlertController(title:"Snow Level",message:"select the snow level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
+            snow = ""
             self.snowBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             return
         }
         let level1=UIAlertAction(title:"Light",style:.default){ (act) -> Void in
-            self.snowLevel = "Light"
+            snow = "L"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"High",style:.default){ (act) -> Void in
-            self.snowLevel = "High"
+            snow = "H"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
-            self.snowLevel = "Very High"
+            snow = "VH"
             NotificationCenter.default.removeObserver(self)
         }
         snowLevelSheet.addAction(cancel)
@@ -126,23 +135,27 @@ class TTableViewController: UITableViewController {
     }
     
     @IBAction func humiditySWB(_ sender: Any) {
-        guard humidityBtn.isOn else{return}
+        guard humidityBtn.isOn else{
+            humidity = ","
+            return
+        }
         let humidityLevelSheet=UIAlertController(title:"Humididt Level",message:"select the humidity level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
+            humidity = ","
             self.humidityBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             return
         }
         let level1=UIAlertAction(title:"Dry",style:.default){ (act) -> Void in
-            self.humidityStatus = "Dry"
+            humidity = "0,30,"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"Moderate",style:.default){ (act) -> Void in
-            self.humidityStatus = "Moderate"
+            humidity = "31,60"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"Lamp",style:.default){ (act) -> Void in
-            self.humidityStatus = "Lamp"
+            humidity = "61,100"
             NotificationCenter.default.removeObserver(self)
         }
         humidityLevelSheet.addAction(cancel)
@@ -153,27 +166,31 @@ class TTableViewController: UITableViewController {
     }
     
     @IBAction func uvSWB(_ sender: Any) {
-        guard uvBtn.isOn else{return}
+        guard uvBtn.isOn else{
+            uvindex = ","
+            return
+        }
         let uvLevelSheet=UIAlertController(title:"UV Index Level",message:"select the UV Index level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
+            uvindex = ","
             self.uvBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             return
         }
         let level1=UIAlertAction(title:"Low",style:.default){ (act) -> Void in
-            self.humidityStatus = "Low"
+            uvindex = "0,2"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"Moderate",style:.default){ (act) -> Void in
-            self.humidityStatus = "Moderate"
+            uvindex = "4,6"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"High",style:.default){ (act) -> Void in
-            self.humidityStatus = "High"
+            uvindex = "7,9"
             NotificationCenter.default.removeObserver(self)
         }
         let level4=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
-            self.humidityStatus = "Very High"
+            uvindex = "10,12"
             NotificationCenter.default.removeObserver(self)
         }
         uvLevelSheet.addAction(cancel)
@@ -192,43 +209,31 @@ class TTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         weatherSelected = [String]()
-        gsWeatherTypeDic = [String:Any]()
         if segue.identifier == "weatherConditionDone"{
             let createEvent = segue.destination as! createEventVC
             
             if sunnyBtn.isOn{
-                weatherType.append(["type":"sunny","intensity":sunnyLevel])
                 weatherSelected.append("sunny")
             }
             if cloudyBtn.isOn{
-                weatherType.append(["type":"cloudy","intensity":cloudyLevel])
                 weatherSelected.append("cloudy")
             }
             if windyBtn.isOn{
-                weatherType.append(["type":"windy","intensity":windyLevel])
                 weatherSelected.append("windy")
             }
             if rainyBtn.isOn{
-                weatherType.append(["type":"rainy","intensity":rainnyLevel])
                 weatherSelected.append("rainy")
             }
             if snowBtn.isOn{
-                weatherType.append(["type":"snow","intensity":snowLevel])
                 weatherSelected.append("snow")
             }
             if humidityBtn.isOn{
-                humidity["status"] = humidityStatus
-                weatherCondition["humidity"] = humidity
                 weatherSelected.append("humidity")
             }
             if uvBtn.isOn{
-                weatherCondition["uvIndex"] = uvIndex
                 weatherSelected.append("uvIndex")
             }
-            if weatherType.isEmpty != true{
-                weatherCondition["weatherType"] = weatherType
-            }
-            gsWeatherTypeDic = weatherCondition
+
         }
     }
 
