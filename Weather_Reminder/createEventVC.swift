@@ -20,9 +20,9 @@ var cloudy = ",,"
 var windy = ","
 var rainy = ""
 var snow = ""
-var uvindex = ","
+var uvIndex = ","
 var humidity = ","
-var loc = [String : Float32]()
+var loc = [String : String]()
 var weatherSelected = [String]()
 
 
@@ -97,9 +97,9 @@ class createEventVC: UIViewController {
         var windy = ","
         var rainy = ""
         var snow = ""
-        var uvindex = ","
+        var uvIndex = ","
         var humidity = ","
-        var loc = [String : Float32]()
+        var loc = [String : String]()
     }
     
 }

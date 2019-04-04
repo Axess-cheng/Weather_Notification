@@ -167,30 +167,30 @@ class TTableViewController: UITableViewController {
     
     @IBAction func uvSWB(_ sender: Any) {
         guard uvBtn.isOn else{
-            uvindex = ","
+            uvIndex = ","
             return
         }
         let uvLevelSheet=UIAlertController(title:"UV Index Level",message:"select the UV Index level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
-            uvindex = ","
+            uvIndex = ","
             self.uvBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             return
         }
         let level1=UIAlertAction(title:"Low",style:.default){ (act) -> Void in
-            uvindex = "0,2"
+            uvIndex = "0,2"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"Moderate",style:.default){ (act) -> Void in
-            uvindex = "4,6"
+            uvIndex = "4,6"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"High",style:.default){ (act) -> Void in
-            uvindex = "7,9"
+            uvIndex = "7,9"
             NotificationCenter.default.removeObserver(self)
         }
         let level4=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
-            uvindex = "10,12"
+            uvIndex = "10,12"
             NotificationCenter.default.removeObserver(self)
         }
         uvLevelSheet.addAction(cancel)
