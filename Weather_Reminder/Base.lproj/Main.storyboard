@@ -634,11 +634,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUX-7f-pkL">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUX-7f-pkL">
                                 <rect key="frame" x="0.0" y="97" width="375" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Jqv-Zg-x7R"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
@@ -658,10 +656,6 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="JUX-7f-pkL" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" id="Lp2-OL-tgf"/>
-                            <constraint firstItem="5RC-Pg-e9Y" firstAttribute="trailing" secondItem="JUX-7f-pkL" secondAttribute="trailing" id="ada-wm-C9W"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5RC-Pg-e9Y"/>
                     </view>
                     <connections>
@@ -692,7 +686,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g3R-r8-VFq"/>
         <segue reference="BTH-xw-SH2"/>
         <segue reference="xq9-yM-K3p"/>
         <segue reference="2Hr-8X-Rh9"/>
