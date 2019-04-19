@@ -102,4 +102,5 @@ class createEventVC: UIViewController {
         var loc = [String : String]()
     }
     
+    // func get()
 }
