@@ -12,8 +12,8 @@ var title = ""
 var gsSenario = ""
 var gsRemindTime = ""
 var gsPeriod = [String:String]()
-//var gsPStart = String()
-//var gsPEnd = String()
+var gsPStart = String()
+var gsPEnd = String()
 var gsAlertDays = Int()
 var sunny = ","
 var cloudy = ",,"
@@ -32,7 +32,7 @@ class createEventVC: UIViewController {
     @IBOutlet weak var titleText: UITextField!
     var weatherType:String?
     var intensity: String?
-    var uvIndex:Int?
+    var uvIndex:String?
     var humidityStatus:String?
     var humidityValue:String?
     
@@ -79,28 +79,53 @@ class createEventVC: UIViewController {
     }
     
     @IBAction func createBtn(_ sender: Any) {
-        id += 1
-        title = titleText.text
-        initialData()
+//        id += 1
+//        title = titleText.text
+//        initialData()
+        postUpload()
+        
     }
     
     func initialData() {
-        var title = ""
-        var gsSenario = ""
-        var gsRemindTime = ""
-        var gsPeriod = [String:Int]()
-        var gsPStart = String()
-        var gsPEnd = String()
-        var gsAlertDays = Int()
-        var sunny = ","
-        var cloudy = ",,"
-        var windy = ","
-        var rainy = ""
-        var snow = ""
-        var uvIndex = ","
-        var humidity = ","
-        var loc = [String : String]()
+        title = ""
+        gsSenario = ""
+        gsRemindTime = ""
+        gsPeriod = [String:String]()
+        gsPStart = String()
+        gsPEnd = String()
+        gsAlertDays = Int()
+        sunny = ","
+        cloudy = ",,"
+        windy = ","
+        rainy = ""
+        snow = ""
+        uvIndex = ","
+        humidity = ","
+        loc = [String : String]()
     }
     
-    // func get()
+    // using post method to upload event details
+    func postUpload(){
+        let session = URLSession.shared
+        let url = URL(string: "https://student.csc.liv.ac.uk/~sgsche20/testForAPP.php")!
+        //let url = URL(string: "https://www.url.com/path/to/file.php")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = "name=\(snow)".data(using:.utf8)
+        // Todo: add more details here.
+        
+        
+        
+        // send the request
+        let dataTask = session.dataTask(with: request) {
+            (data, response, error) in
+            if error == nil {
+                print(response ?? "should be response")
+            }else {print(error ?? "error!!!")}
+        }
+        dataTask.resume()
+        
+    }
+    
 }
