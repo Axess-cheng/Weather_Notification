@@ -12,13 +12,13 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return events.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "eventLIst")
-        cell.textLabel?.text = "event"
+        cell.textLabel?.text = events[indexPath.row].title!
         
         return cell
     }
@@ -28,11 +28,13 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // the sender should be the event object, need to fix this - Congwei Ni
         performSegue(withIdentifier: "toDetail", sender: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        readCoreData()
 
         // Do any additional setup after loading the view.
     }
