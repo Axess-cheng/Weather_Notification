@@ -10,16 +10,33 @@ import UIKit
 
 class mapVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
  @IBOutlet weak var text: UITextField!
+    @IBOutlet weak var currentLoctionLabel: UILabel!
     @IBOutlet weak var tblPlaces: UITableView!
+    @IBOutlet weak var currentLocationButton: UIButton!
     var resultsArray:[Dictionary<String, AnyObject>] = Array()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         text.addTarget(self, action: #selector(searchPlaceFromGoogle(_:)), for: .editingChanged)
+        currentLocationButton.addTarget(self, action: #selector(getMessage(_:)), for: .touchUpInside)
         tblPlaces.estimatedRowHeight = 44.0
         tblPlaces.dataSource = self
         tblPlaces.delegate = self
+        
     }
+    
+    @IBAction func getMessage(_ sender: Any) {
+        
+        LocationUtil.share.getCurrentLocation(isOnce: false) { (loc, errorMsg) -> () in
+            if errorMsg == nil {
+                self.currentLoctionLabel.text = String(format: "%@", (loc?.name)!)
+            }
+        }
+        print("select the button")
+        
+        
+    }
+    
     
     //MARK:- UITableViewDataSource and UItableViewDelegates
     
