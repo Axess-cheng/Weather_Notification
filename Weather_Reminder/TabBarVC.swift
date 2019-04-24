@@ -9,7 +9,7 @@
 import UIKit
 
 class TabBarVC: UITabBarController, UITabBarControllerDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -24,6 +24,7 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
     
     // UITabBarControllerDelegate
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("Selected index: \(tabBarController.selectedIndex)")
         print("Selected view controller")
     }
 

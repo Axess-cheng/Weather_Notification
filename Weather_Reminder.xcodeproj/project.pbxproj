@@ -22,6 +22,7 @@
 		9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143722518DE90091F617 /* PeriodVC.swift */; };
 		9FBA143A22518E990091F617 /* remindTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143922518E990091F617 /* remindTimeVC.swift */; };
 		9FBA143C225195E80091F617 /* weatherConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143B225195E80091F617 /* weatherConditionVC.swift */; };
+		FF06AB0C2270FDA10064AE4B /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF06AB0B2270FDA10064AE4B /* UserInfoVC.swift */; };
 		FF605FBF2270D5C600C64ECE /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FBE2270D5C600C64ECE /* TabBarVC.swift */; };
 		FF605FC32270E9A100C64ECE /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FC22270E9A100C64ECE /* SettingVC.swift */; };
 		FF605FC52270EC1500C64ECE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FC42270EC1500C64ECE /* LoginVC.swift */; };
@@ -50,6 +51,7 @@
 		9FBA143922518E990091F617 /* remindTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remindTimeVC.swift; sourceTree = "<group>"; };
 		9FBA143B225195E80091F617 /* weatherConditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherConditionVC.swift; sourceTree = "<group>"; };
 		B485AE3822568BBF008AAF08 /* Weather_Reminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weather_Reminder.entitlements; sourceTree = "<group>"; };
+		FF06AB0B2270FDA10064AE4B /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		FF605FBE2270D5C600C64ECE /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		FF605FC22270E9A100C64ECE /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		FF605FC42270EC1500C64ECE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				FF605FC22270E9A100C64ECE /* SettingVC.swift */,
 				FF605FC42270EC1500C64ECE /* LoginVC.swift */,
 				FF605FC62270EFAF00C64ECE /* SignUpVC.swift */,
+				FF06AB0B2270FDA10064AE4B /* UserInfoVC.swift */,
 			);
 			path = Weather_Reminder;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */,
 				FF605FBF2270D5C600C64ECE /* TabBarVC.swift in Sources */,
 				9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */,
+				FF06AB0C2270FDA10064AE4B /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,13 +9,15 @@
 import UIKit
 
 class SettingVC: UIViewController {
-    var login = true;
+//    var login = true
     @IBOutlet weak var userInfoView: UIView!
     @IBOutlet weak var loginView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(login == true){
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        print("Login status: \(isUserLoggedIn)")
+        if(isUserLoggedIn == false){
             loginView.alpha = 1
             userInfoView.alpha = 0
         }else{

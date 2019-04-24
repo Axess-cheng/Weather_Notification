@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--setingVC-->
+        <!--settingVC-->
         <scene sceneID="Bqm-e4-3mq">
             <objects>
-                <viewController title="setingVC" id="4XK-9v-g7A" customClass="SettingVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingVC" title="settingVC" id="4XK-9v-g7A" customClass="SettingVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NRg-lP-vyc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,12 +34,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dLy-wr-VRP" firstAttribute="top" secondItem="JaQ-8m-4QU" secondAttribute="top" id="1bT-A3-wBs"/>
-                            <constraint firstItem="FVK-7H-6QR" firstAttribute="bottom" secondItem="JaQ-8m-4QU" secondAttribute="bottom" id="IMD-7q-UgE"/>
+                            <constraint firstAttribute="bottom" secondItem="FVK-7H-6QR" secondAttribute="bottom" constant="49" id="ABH-hW-12B"/>
+                            <constraint firstAttribute="bottom" secondItem="dLy-wr-VRP" secondAttribute="bottom" constant="49" id="Mqx-Ws-nz1"/>
                             <constraint firstItem="FVK-7H-6QR" firstAttribute="trailing" secondItem="JaQ-8m-4QU" secondAttribute="trailing" id="R5n-Vc-cHe"/>
                             <constraint firstItem="dLy-wr-VRP" firstAttribute="leading" secondItem="JaQ-8m-4QU" secondAttribute="leading" id="TDh-oZ-m45"/>
                             <constraint firstItem="FVK-7H-6QR" firstAttribute="top" secondItem="JaQ-8m-4QU" secondAttribute="top" id="Udc-Wa-ZPI"/>
                             <constraint firstItem="dLy-wr-VRP" firstAttribute="trailing" secondItem="JaQ-8m-4QU" secondAttribute="trailing" id="ecq-4e-BIG"/>
-                            <constraint firstItem="dLy-wr-VRP" firstAttribute="bottom" secondItem="JaQ-8m-4QU" secondAttribute="bottom" id="vam-xC-fB1"/>
                             <constraint firstItem="FVK-7H-6QR" firstAttribute="leading" secondItem="JaQ-8m-4QU" secondAttribute="leading" id="zlj-Yq-apu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JaQ-8m-4QU"/>
@@ -764,7 +764,7 @@
         <!--User Info-->
         <scene sceneID="DKk-lW-K7n">
             <objects>
-                <viewController id="v2a-Wq-9Rx" userLabel="User Info" sceneMemberID="viewController">
+                <viewController id="v2a-Wq-9Rx" userLabel="User Info" customClass="UserInfoVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EoU-dw-len">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -776,8 +776,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf2-uK-OFj">
+                                <rect key="frame" x="163" y="239" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutUser:" destination="v2a-Wq-9Rx" eventType="touchUpInside" id="pMY-di-yHv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UhK-Y2-GJo"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gtx-d6-fVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -810,6 +819,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWt-45-876">
                                         <rect key="frame" x="133" y="90" width="38" height="30"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="authenticateUser:" destination="9cB-WY-wxT" eventType="touchUpInside" id="Geo-Sc-aRr"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="obg-jn-YuZ">
                                         <rect key="frame" x="94" y="10" width="200" height="30"/>
@@ -827,7 +839,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8872382539" green="0.8872382539" blue="0.8872382539" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -878,12 +890,12 @@
                         <constraints>
                             <constraint firstItem="NGu-Pn-WMd" firstAttribute="centerX" secondItem="s3N-sJ-D7f" secondAttribute="centerX" id="AnS-1F-96V"/>
                             <constraint firstItem="Oft-rA-aau" firstAttribute="centerY" secondItem="s3N-sJ-D7f" secondAttribute="centerY" id="CNu-tV-0gj"/>
-                            <constraint firstItem="Oft-rA-aau" firstAttribute="top" secondItem="NGu-Pn-WMd" secondAttribute="bottom" constant="132.5" id="Wj4-Rf-nfG"/>
                             <constraint firstItem="Oft-rA-aau" firstAttribute="centerX" secondItem="s3N-sJ-D7f" secondAttribute="centerX" id="XdQ-yf-CnU"/>
                             <constraint firstItem="nmM-QL-8ch" firstAttribute="top" secondItem="Oft-rA-aau" secondAttribute="bottom" constant="115" id="YK3-gg-aEW"/>
                             <constraint firstItem="NGu-Pn-WMd" firstAttribute="top" secondItem="s3N-sJ-D7f" secondAttribute="topMargin" constant="80" id="b5F-GL-ayk"/>
                             <constraint firstItem="nmM-QL-8ch" firstAttribute="centerX" secondItem="s3N-sJ-D7f" secondAttribute="centerX" id="poG-f2-88M"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="PTV-S5-r1O"/>
                     </view>
                     <connections>
                         <outlet property="email" destination="obg-jn-YuZ" id="REd-qt-3nd"/>
@@ -936,7 +948,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5V-Nh-zis">
                                         <rect key="frame" x="67.5" y="233" width="169" height="30"/>
@@ -958,7 +970,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTN-hn-P06">
                                         <rect key="frame" x="126" y="174" width="52" height="30"/>
@@ -1015,7 +1027,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iuc-Ac-fCa"/>
         <segue reference="Zil-xH-xih"/>
         <segue reference="BTH-xw-SH2"/>
         <segue reference="u6F-iv-BIk"/>
