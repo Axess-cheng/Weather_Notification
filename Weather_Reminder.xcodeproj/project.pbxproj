@@ -22,6 +22,10 @@
 		9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143722518DE90091F617 /* PeriodVC.swift */; };
 		9FBA143A22518E990091F617 /* remindTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143922518E990091F617 /* remindTimeVC.swift */; };
 		9FBA143C225195E80091F617 /* weatherConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143B225195E80091F617 /* weatherConditionVC.swift */; };
+		FF605FBF2270D5C600C64ECE /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FBE2270D5C600C64ECE /* TabBarVC.swift */; };
+		FF605FC32270E9A100C64ECE /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FC22270E9A100C64ECE /* SettingVC.swift */; };
+		FF605FC52270EC1500C64ECE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FC42270EC1500C64ECE /* LoginVC.swift */; };
+		FF605FC72270EFAF00C64ECE /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FC62270EFAF00C64ECE /* SignUpVC.swift */; };
 		FF9DA19F226C71C700F1234A /* ReadWriteCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DA19E226C71C700F1234A /* ReadWriteCoreData.swift */; };
 		FF9DA1A2226C784E00F1234A /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DA1A0226C784E00F1234A /* Event+CoreDataClass.swift */; };
 		FF9DA1A3226C784E00F1234A /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */; };
@@ -46,6 +50,10 @@
 		9FBA143922518E990091F617 /* remindTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remindTimeVC.swift; sourceTree = "<group>"; };
 		9FBA143B225195E80091F617 /* weatherConditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherConditionVC.swift; sourceTree = "<group>"; };
 		B485AE3822568BBF008AAF08 /* Weather_Reminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weather_Reminder.entitlements; sourceTree = "<group>"; };
+		FF605FBE2270D5C600C64ECE /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		FF605FC22270E9A100C64ECE /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		FF605FC42270EC1500C64ECE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		FF605FC62270EFAF00C64ECE /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		FF9DA19E226C71C700F1234A /* ReadWriteCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteCoreData.swift; sourceTree = "<group>"; };
 		FF9DA1A0226C784E00F1234A /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -101,6 +109,10 @@
 				347A1E94224A75F8002C6905 /* Info.plist */,
 				347A1E8C224A75F7002C6905 /* Weather_Reminder.xcdatamodeld */,
 				FF9DA19E226C71C700F1234A /* ReadWriteCoreData.swift */,
+				FF605FBE2270D5C600C64ECE /* TabBarVC.swift */,
+				FF605FC22270E9A100C64ECE /* SettingVC.swift */,
+				FF605FC42270EC1500C64ECE /* LoginVC.swift */,
+				FF605FC62270EFAF00C64ECE /* SignUpVC.swift */,
 			);
 			path = Weather_Reminder;
 			sourceTree = "<group>";
@@ -191,13 +203,17 @@
 				347A1E88224A75F7002C6905 /* ViewController.swift in Sources */,
 				9F477C8D2250EAD3005578EC /* createEventVC.swift in Sources */,
 				9F0A6F5E2250ED9200B6E388 /* eventDetailVC.swift in Sources */,
+				FF605FC72270EFAF00C64ECE /* SignUpVC.swift in Sources */,
 				347A1E86224A75F7002C6905 /* AppDelegate.swift in Sources */,
 				9F0A6F602250EDCC00B6E388 /* eventListVC.swift in Sources */,
 				FF9DA1A2226C784E00F1234A /* Event+CoreDataClass.swift in Sources */,
+				FF605FC32270E9A100C64ECE /* SettingVC.swift in Sources */,
 				9FBA1436225101170091F617 /* mapVC.swift in Sources */,
 				9FBA143A22518E990091F617 /* remindTimeVC.swift in Sources */,
 				347A1E8E224A75F7002C6905 /* Weather_Reminder.xcdatamodeld in Sources */,
+				FF605FC52270EC1500C64ECE /* LoginVC.swift in Sources */,
 				9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */,
+				FF605FBF2270D5C600C64ECE /* TabBarVC.swift in Sources */,
 				9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
