@@ -10,36 +10,37 @@ import UIKit
 
 class mapVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
  @IBOutlet weak var text: UITextField!
-    @IBOutlet weak var currentLoctionLabel: UILabel!
+
     @IBOutlet weak var tblPlaces: UITableView!
     @IBOutlet weak var useCurrentLocationButton: UIButton!
-    @IBOutlet weak var currentLocationButton: UIButton!
+
     var lng = String()
     var lat = String()
+    var currentName = String()
     var resultsArray:[Dictionary<String, AnyObject>] = Array()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         text.addTarget(self, action: #selector(searchPlaceFromGoogle(_:)), for: .editingChanged)
-        currentLocationButton.addTarget(self, action: #selector(getMessage(_:)), for: .touchUpInside)
+    
+        useCurrentLocationButton.addTarget(self, action: #selector(useCurrentLocation(_:)), for: .touchUpInside)
         tblPlaces.estimatedRowHeight = 44.0
         tblPlaces.dataSource = self
         tblPlaces.delegate = self
         
     }
     
-    @IBAction func getMessage(_ sender: Any) {
-        
-        LocationUtil.share.getCurrentLocation(isOnce: false) { (loc, errorMsg) -> () in
-            if errorMsg == nil {
-                self.currentLoctionLabel.text = String(format: "%@", (loc?.name)!)
-            }
-        }
-        
-        
-        print("select the button")
-        
-        
+    
+    
+    @IBAction func useCurrentLocation(_ sender: Any){
+        LocationUtil.share.getCurrentPointLocation(isOnce: false) { (loc, errorMsg) in
+                        if errorMsg == nil {
+                            self.lat = String(format: "%f,%f", (loc?.coordinate.latitude)!)
+                            self.lng = String(format: "%f,%f", (loc?.coordinate.longitude)!)
+                            
+                        }
+                    }
+       performSegue(withIdentifier: "fromMapToCreatEvent", sender: nil)
     }
     
     
@@ -72,9 +73,11 @@ class mapVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
             if let location = locationGeometry["location"] as? Dictionary<String, AnyObject> {
                 if let latitude = location["lat"] as? Double {
                     if let longitude = location["lng"] as? Double {
-                        UIApplication.shared.open(URL(string: "https://www.google.com/maps/@\(latitude),\(longitude),16z")!, options: [:])
+                       
                         loc["long"] = String(longitude)
                         loc["lat"] = String(latitude)
+                        performSegue(withIdentifier: "fromMapToCreatEvent", sender: nil)
+                        
                     }
                 }
             }

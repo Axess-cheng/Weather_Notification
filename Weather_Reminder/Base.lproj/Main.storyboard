@@ -637,16 +637,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUX-7f-pkL">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUX-7f-pkL">
                                 <rect key="frame" x="0.0" y="97" width="375" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lef-aI-aSt"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9S-MX-mzM">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9S-MX-mzM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ypy-Lj-n0P"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Map" id="3Em-vJ-5WY">
                                         <barButtonItem key="leftBarButtonItem" title="back" id="FbX-sF-NHZ">
@@ -657,9 +661,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-fz-wH5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-fz-wH5">
                                 <rect key="frame" x="0.0" y="172" width="375" height="351"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placecell" id="6IH-LR-XRM">
@@ -685,30 +688,33 @@
                                     <outlet property="delegate" destination="7aN-xM-Ty1" id="8Hh-9W-uQR"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIU-Qd-WtV">
-                                <rect key="frame" x="16" y="562" width="196" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTZ-yE-1mz">
-                                <rect key="frame" x="269" y="557" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="get"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-ir-WrB">
-                                <rect key="frame" x="269" y="593" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="use"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-ir-WrB">
+                                <rect key="frame" x="119" y="564" width="137" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8ZR-te-D2V"/>
+                                </constraints>
+                                <state key="normal" title="use current location"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5RC-Pg-e9Y" firstAttribute="bottom" secondItem="Vee-fz-wH5" secondAttribute="bottom" constant="100" id="2oq-9Z-P7H"/>
+                            <constraint firstItem="JUX-7f-pkL" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" id="66G-Pt-7WV"/>
+                            <constraint firstItem="I9S-MX-mzM" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" id="B96-A2-Obp"/>
+                            <constraint firstItem="JUX-7f-pkL" firstAttribute="top" secondItem="I9S-MX-mzM" secondAttribute="bottom" constant="33" id="Edi-e0-OJb"/>
+                            <constraint firstItem="Vee-fz-wH5" firstAttribute="top" secondItem="JUX-7f-pkL" secondAttribute="bottom" constant="25" id="GQr-3k-Ry0"/>
+                            <constraint firstItem="Vee-fz-wH5" firstAttribute="trailing" secondItem="5RC-Pg-e9Y" secondAttribute="trailing" id="JQy-Py-c9J"/>
+                            <constraint firstItem="Vee-fz-wH5" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" id="Tuw-dj-L86"/>
+                            <constraint firstItem="I9S-MX-mzM" firstAttribute="trailing" secondItem="5RC-Pg-e9Y" secondAttribute="trailing" id="hMQ-vp-SXJ"/>
+                            <constraint firstItem="5RC-Pg-e9Y" firstAttribute="trailing" secondItem="TWC-ir-WrB" secondAttribute="trailing" constant="119" id="x4s-l7-v1e"/>
+                            <constraint firstItem="5RC-Pg-e9Y" firstAttribute="bottom" secondItem="TWC-ir-WrB" secondAttribute="bottom" constant="29" id="xVi-b1-bL1"/>
+                            <constraint firstItem="TWC-ir-WrB" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" constant="119" id="xjf-O3-6iP"/>
+                            <constraint firstItem="I9S-MX-mzM" firstAttribute="top" secondItem="5RC-Pg-e9Y" secondAttribute="top" id="yCu-7n-eRW"/>
+                            <constraint firstItem="JUX-7f-pkL" firstAttribute="trailing" secondItem="5RC-Pg-e9Y" secondAttribute="trailing" id="yZi-oN-OZW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5RC-Pg-e9Y"/>
                     </view>
                     <connections>
-                        <outlet property="currentLocationButton" destination="BTZ-yE-1mz" id="Yq5-If-rgR"/>
-                        <outlet property="currentLoctionLabel" destination="GIU-Qd-WtV" id="Ovb-aH-KP7"/>
                         <outlet property="tblPlaces" destination="Vee-fz-wH5" id="qeP-op-aDJ"/>
                         <outlet property="text" destination="JUX-7f-pkL" id="Vkg-xv-ZcC"/>
                         <outlet property="useCurrentLocationButton" destination="TWC-ir-WrB" id="Jzx-vv-QmK"/>
