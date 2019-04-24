@@ -12,7 +12,10 @@ class mapVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
  @IBOutlet weak var text: UITextField!
     @IBOutlet weak var currentLoctionLabel: UILabel!
     @IBOutlet weak var tblPlaces: UITableView!
+    @IBOutlet weak var useCurrentLocationButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
+    var lng = String()
+    var lat = String()
     var resultsArray:[Dictionary<String, AnyObject>] = Array()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,8 @@ class mapVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
                 self.currentLoctionLabel.text = String(format: "%@", (loc?.name)!)
             }
         }
+        
+        
         print("select the button")
         
         
@@ -68,6 +73,8 @@ class mapVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
                 if let latitude = location["lat"] as? Double {
                     if let longitude = location["lng"] as? Double {
                         UIApplication.shared.open(URL(string: "https://www.google.com/maps/@\(latitude),\(longitude),16z")!, options: [:])
+                        loc["long"] = String(longitude)
+                        loc["lat"] = String(latitude)
                     }
                 }
             }

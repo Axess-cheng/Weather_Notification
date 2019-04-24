@@ -651,7 +651,7 @@
                                     <navigationItem title="Map" id="3Em-vJ-5WY">
                                         <barButtonItem key="leftBarButtonItem" title="back" id="FbX-sF-NHZ">
                                             <connections>
-                                                <segue destination="HpP-UR-0Bo" kind="show" id="xq9-yM-K3p"/>
+                                                <segue destination="HpP-UR-0Bo" kind="show" identifier="fromMapToCreatEvent" id="xq9-yM-K3p"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -693,9 +693,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTZ-yE-1mz">
-                                <rect key="frame" x="261" y="557" width="46" height="30"/>
+                                <rect key="frame" x="269" y="557" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="get"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-ir-WrB">
+                                <rect key="frame" x="269" y="593" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="use"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -706,6 +711,7 @@
                         <outlet property="currentLoctionLabel" destination="GIU-Qd-WtV" id="Ovb-aH-KP7"/>
                         <outlet property="tblPlaces" destination="Vee-fz-wH5" id="qeP-op-aDJ"/>
                         <outlet property="text" destination="JUX-7f-pkL" id="Vkg-xv-ZcC"/>
+                        <outlet property="useCurrentLocationButton" destination="TWC-ir-WrB" id="Jzx-vv-QmK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ub-EV-4Ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
