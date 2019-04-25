@@ -136,7 +136,7 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                         if let dict = jsonDict as? Dictionary<String, AnyObject>{
                             
                             if let results = dict["results"] as? [Dictionary<String, AnyObject>] {
-                                print("json == \(results)")
+                                
                                 self.resultsArray.removeAll()
                                 for dct in results {
                                     self.resultsArray.append(dct)
