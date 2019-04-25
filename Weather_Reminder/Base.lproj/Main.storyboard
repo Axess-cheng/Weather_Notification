@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -330,7 +330,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKD-Tj-IZm">
-                                <rect key="frame" x="25" y="350" width="82" height="30"/>
+                                <rect key="frame" x="25" y="350" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set location"/>
                                 <connections>
@@ -720,14 +720,14 @@
                                     <navigationItem title="Map" id="3Em-vJ-5WY">
                                         <barButtonItem key="leftBarButtonItem" title="back" id="FbX-sF-NHZ">
                                             <connections>
-                                                <segue destination="HpP-UR-0Bo" kind="show" id="xq9-yM-K3p"/>
+                                                <segue destination="HpP-UR-0Bo" kind="show" identifier="fromMapToCreatEvent" id="xq9-yM-K3p"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-fz-wH5">
-                                <rect key="frame" x="0.0" y="172" width="375" height="451"/>
+                                <rect key="frame" x="0.0" y="172" width="375" height="388"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placecell" id="6IH-LR-XRM">
@@ -758,18 +758,26 @@
                                     <outlet property="delegate" destination="7aN-xM-Ty1" id="8Hh-9W-uQR"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fof-w4-CLa">
+                                <rect key="frame" x="116" y="577" width="143" height="30"/>
+                                <state key="normal" title="Use current Location"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JUX-7f-pkL" firstAttribute="trailing" secondItem="5RC-Pg-e9Y" secondAttribute="trailing" id="3OM-Dn-beA"/>
+                            <constraint firstItem="Fof-w4-CLa" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" constant="116" id="Bkn-VL-gMz"/>
                             <constraint firstItem="Vee-fz-wH5" firstAttribute="top" secondItem="JUX-7f-pkL" secondAttribute="bottom" constant="25" id="Bnu-1C-MMi"/>
                             <constraint firstItem="I9S-MX-mzM" firstAttribute="top" secondItem="5RC-Pg-e9Y" secondAttribute="top" id="FhX-zK-yBl"/>
+                            <constraint firstItem="5RC-Pg-e9Y" firstAttribute="bottom" secondItem="Fof-w4-CLa" secondAttribute="bottom" constant="16" id="G16-gq-gi4"/>
                             <constraint firstItem="I9S-MX-mzM" firstAttribute="trailing" secondItem="5RC-Pg-e9Y" secondAttribute="trailing" id="JjK-Ch-qte"/>
                             <constraint firstItem="JUX-7f-pkL" firstAttribute="top" secondItem="I9S-MX-mzM" secondAttribute="bottom" constant="33" id="L5z-4W-fZh"/>
                             <constraint firstItem="Vee-fz-wH5" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" id="biL-fn-8ar"/>
-                            <constraint firstItem="5RC-Pg-e9Y" firstAttribute="bottom" secondItem="Vee-fz-wH5" secondAttribute="bottom" id="ej1-aG-znq"/>
                             <constraint firstItem="5RC-Pg-e9Y" firstAttribute="trailing" secondItem="Vee-fz-wH5" secondAttribute="trailing" id="hiJ-9g-hXe"/>
+                            <constraint firstItem="5RC-Pg-e9Y" firstAttribute="trailing" secondItem="Fof-w4-CLa" secondAttribute="trailing" constant="116" id="hrj-v0-USu"/>
+                            <constraint firstItem="Fof-w4-CLa" firstAttribute="top" secondItem="Vee-fz-wH5" secondAttribute="bottom" constant="17" id="jM1-7R-ZwG"/>
                             <constraint firstItem="JUX-7f-pkL" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" id="rZq-dd-T2g"/>
+                            <constraint firstItem="5RC-Pg-e9Y" firstAttribute="bottom" secondItem="Vee-fz-wH5" secondAttribute="bottom" constant="63" id="tGz-2C-pwH"/>
                             <constraint firstItem="I9S-MX-mzM" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" id="tdB-3M-zbX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5RC-Pg-e9Y"/>
@@ -777,11 +785,12 @@
                     <connections>
                         <outlet property="tblPlaces" destination="Vee-fz-wH5" id="qeP-op-aDJ"/>
                         <outlet property="text" destination="JUX-7f-pkL" id="Vkg-xv-ZcC"/>
+                        <outlet property="useCurrentLocation" destination="Fof-w4-CLa" id="zwM-Xa-Yl5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ub-EV-4Ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2436" y="-102"/>
+            <point key="canvasLocation" x="2436" y="-102.09895052473765"/>
         </scene>
         <!--Tab BarVC-->
         <scene sceneID="zoF-hc-RRw">
@@ -1067,14 +1076,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list" width="37.5" height="37.5"/>
-        <image name="setting" width="37.5" height="37.5"/>
+        <image name="list" width="25" height="25"/>
+        <image name="setting" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JUn-lN-TyW"/>
         <segue reference="XGB-RO-Rnc"/>
         <segue reference="BTH-xw-SH2"/>
-        <segue reference="u6F-iv-BIk"/>
+        <segue reference="xq9-yM-K3p"/>
         <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>

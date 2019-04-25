@@ -27,7 +27,7 @@ var rainy = ""
 var snow = ""
 var uvIndex = ","
 var humidity = ","
-var loc = [String : String]()
+var location2D = [String : String]()
 var locName = ""
 var weatherSelected = [String]()
 
@@ -72,7 +72,6 @@ class createEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if eventTitle != "" {
             titleText.text = eventTitle
         }
@@ -98,8 +97,8 @@ class createEventVC: UIViewController {
         if (gsAlertDays == 7) {
             alertText.text = "7 day"
         }
-
-        if(loc.isEmpty){
+        
+        if(location2D.isEmpty){
             locationText.text = ""
         }else{
             locationText.text = locName
@@ -115,9 +114,59 @@ class createEventVC: UIViewController {
             weatherText.text = weather
         }
         
-        print(gsSenario)
-        print(eventTitle)
+        print("gsSenario: \(gsSenario)")
+        print("locaName:\(locName)")
+        print("event title: \(eventTitle)")
+
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        if eventTitle != "" {
+//            titleText.text = eventTitle
+//        }
+//        if(gsPeriod.isEmpty){
+//            periodText.text = "Everyday"
+//        }else{
+//            periodText.text = "\(start) to \(end)"
+//        }
+//        if(gsRemindTime != ""){
+//            remindTimeText.text = gsRemindTime
+//        }else{
+//            remindTimeText.text = gsRemindTime
+//        }
+//        if (gsAlertDays == 0) {
+//            alertText.text = "on that day"
+//        }
+//        if (gsAlertDays == 1) {
+//            alertText.text = "1 day"
+//        }
+//        if (gsAlertDays == 3) {
+//            alertText.text = "3 day"
+//        }
+//        if (gsAlertDays == 7) {
+//            alertText.text = "7 day"
+//        }
+//
+//        if(location2D.isEmpty){
+//            locationText.text = ""
+//        }else{
+//            locationText.text = locName
+//        }
+//        if(weatherSelected.isEmpty){
+//            weatherText.text = ""
+//        }else{
+//            var weather = ""
+//            let space = " "
+//            for i in 0..<weatherSelected.count{
+//                weather = weather + space + weatherSelected[i]
+//            }
+//            weatherText.text = weather
+//        }
+//
+//        print("gsSenario: \(gsSenario)")
+//        print("locaName:\(locName)")
+//        print("event title: \(eventTitle)")
+//    }
     
     @IBAction func setAlert(_ sender: Any) {
         let actionSheet=UIAlertController(title:"Alert days",message:"select the alert days before the event",preferredStyle:.actionSheet)
@@ -190,7 +239,7 @@ class createEventVC: UIViewController {
         snow = ""
         uvIndex = ","
         humidity = ","
-        loc = [String : String]()
+        location2D = [String : String]()
         locName = ""
         start = ""
         end = ""
