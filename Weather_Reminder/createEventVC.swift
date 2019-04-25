@@ -33,6 +33,8 @@ var weatherSelected = [String]()
 var start = ""
 var end = ""
 
+var globalEvent : Event?
+
 
 class createEventVC: UIViewController {
     
@@ -80,7 +82,10 @@ class createEventVC: UIViewController {
         print("current \(location2D["long"]) in create event vc")
         print("location2D isEmpty \(location2D.isEmpty)")
         
+        print("event is not nil \(self.event != nil) in view did load")
+        
         if(event != nil){
+            globalEvent = self.event
             self.assignData()
         }
         
@@ -216,18 +221,24 @@ class createEventVC: UIViewController {
     
     @IBAction func createBtn(_ sender: Any) {
         // the button create should be change to done- Congwei Ni
-        id = id + 1
+//        print("event is not nil \(self.event != nil) when click done button")
         eventTitle = titleText.text!
         var startDate: String = ""
         var endDate: String = ""
-        if let start = gsPeriod["startDate"]{
-            startDate = start
+        if let validStart = gsPeriod["startDate"]{
+            startDate = validStart
         }
-        if let end = gsPeriod["endDate"]{
-            endDate = end
+        if let validEnd = gsPeriod["endDate"]{
+            endDate = validEnd
         }
-        
-        insertEvent(id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
+        if(globalEvent != nil){
+            print("edit event")
+            editEvent(event: globalEvent!, id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
+        }else{
+            print("insert event")
+            id = id + 1
+            insertEvent(id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
+        }
         
         //save to core data
         saveCoreData()
@@ -257,14 +268,22 @@ class createEventVC: UIViewController {
         locName = ""
         start = ""
         end = ""
-        event = nil
+        globalEvent = nil
     }
     
     func assignData(){
         eventTitle = (event?.title)!
 //        gsSenario = ""
-        gsRemindTime = (event?.gsRemindTime!)!
-//        gsPeriod = [String:String]()
+        gsRemindTime = (event?.gsRemindTime)!
+//        print("assign data gsStartDate: \(event?.gsStartDate)")
+//        print("assign data gsEndDate: \(event?.gsEndDate)")
+        if((event?.gsStartDate)! != "" && (event?.gsEndDate)! != ""){
+        gsPeriod["startDate"] = (event?.gsStartDate)!
+        gsPeriod["endDate"] = (event?.gsEndDate)!
+        }else{
+            print("empty period")
+            gsPeriod = [String:String]()
+        }
         gsAlertDays = Int(exactly: (event?.gsAlertDays)!)!
         sunny = (event?.sunny)!
         cloudy = (event?.cloudy)!
@@ -276,9 +295,18 @@ class createEventVC: UIViewController {
         location2D["lat"] = (event?.lat)!
         location2D["long"] = (event?.long)!
         locName = (event?.locName)!
-        start = (event?.gsStartDate)!
-        end = (event?.gsEndDate)!
-
+        // 存的是unix还是YYYYMMDD？
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let doubleStart = Double((event?.gsStartDate)!)
+        let doubleEnd = Double((event?.gsEndDate)!)
+        if(doubleStart != nil && doubleEnd != nil){
+        start = formatter.string(from: Date(timeIntervalSince1970: doubleStart!))
+        end = formatter.string(from: Date(timeIntervalSince1970: doubleEnd!))
+        }else{
+            start = ""
+            end = ""
+        }
     }
     
     // using post method to upload event details

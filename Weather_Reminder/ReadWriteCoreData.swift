@@ -51,6 +51,27 @@ func insertEvent(id: Int, title: String, gsSenario: String, gsRemindTime: String
     events.append(newEvent)
 }
 
+func editEvent(event: Event, id: Int, title: String, gsSenario: String, gsRemindTime: String, gsStartDate: String, gsEndDate: String, gsAlertDays: Int, sunny: String, cloudy: String, windy: String, rainy: String, snow: String, uvIndex: String, humidity: String, lat: String, long: String, locName: String){
+    event.setValue(id, forKey: "id")
+    event.setValue(title, forKey: "title")
+    event.setValue(gsSenario, forKey: "gsSenario")
+    event.setValue(gsRemindTime, forKey: "gsRemindTime")
+    event.setValue(gsStartDate, forKey: "gsStartDate")
+    event.setValue(gsEndDate, forKey: "gsEndDate")
+    event.setValue(gsAlertDays, forKey: "gsAlertDays")
+    event.setValue(sunny, forKey: "sunny")
+    event.setValue(cloudy, forKey: "cloudy")
+    event.setValue(windy, forKey: "windy")
+    event.setValue(rainy, forKey: "rainy")
+    event.setValue(snow, forKey: "snow")
+    event.setValue(uvIndex, forKey: "uvIndex")
+    event.setValue(humidity, forKey: "humidity")
+    event.setValue(lat, forKey: "lat")
+    event.setValue(long, forKey: "long")
+    event.setValue(locName, forKey: "locName")
+}
+
+
 func saveCoreData(){
     do {
         try context?.save()
