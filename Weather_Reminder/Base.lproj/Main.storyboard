@@ -44,7 +44,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JaQ-8m-4QU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" id="bav-PI-55J"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="setting" id="bav-PI-55J"/>
                     <connections>
                         <outlet property="loginView" destination="dLy-wr-VRP" id="bZG-wA-kg3"/>
                         <outlet property="userInfoView" destination="FVK-7H-6QR" id="j5N-Jz-n5S"/>
@@ -259,7 +259,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r4W-RD-pPq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Event List" id="DYd-s8-jTh" userLabel="Event List"/>
+                    <tabBarItem key="tabBarItem" title="Event List" image="list" id="DYd-s8-jTh" userLabel="Event List"/>
                     <connections>
                         <outlet property="myTable" destination="09R-YW-Oyc" id="Nv3-nC-hKS"/>
                     </connections>
@@ -389,20 +389,20 @@
                                     <segue destination="T19-3h-KeL" kind="show" id="2g3-h4-l8Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4t-rM-BsI">
-                                <rect key="frame" x="25" y="225" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set alert"/>
-                                <connections>
-                                    <action selector="setAlert:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="Jiu-TR-UBR"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSP-oX-gfi">
                                 <rect key="frame" x="25" y="301" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set weather condition"/>
                                 <connections>
                                     <segue destination="st0-88-fcp" kind="show" id="JUn-lN-TyW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4t-rM-BsI">
+                                <rect key="frame" x="25" y="225" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Set alert days"/>
+                                <connections>
+                                    <action selector="setAlert:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="Jiu-TR-UBR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -798,11 +798,11 @@
             <objects>
                 <viewController id="9cB-WY-wxT" userLabel="Login" customClass="LoginVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s3N-sJ-D7f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oft-rA-aau">
-                                <rect key="frame" x="35.5" y="268.5" width="304" height="130"/>
+                                <rect key="frame" x="35.5" y="234" width="304" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHl-C5-9Zr">
                                         <rect key="frame" x="10" y="13.5" width="74" height="20.5"/>
@@ -862,7 +862,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nmM-QL-8ch">
-                                <rect key="frame" x="68" y="513.5" width="239" height="30"/>
+                                <rect key="frame" x="68" y="479" width="239" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaM-hj-09l">
                                         <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
@@ -911,11 +911,11 @@
             <objects>
                 <viewController id="hcl-V0-fvc" userLabel="Sign up" customClass="SignUpVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aqd-fB-lq7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54x-Ka-F50">
-                                <rect key="frame" x="35.5" y="181.5" width="304" height="304"/>
+                                <rect key="frame" x="35.5" y="147" width="304" height="304"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdl-zp-Roo">
                                         <rect key="frame" x="10" y="13.5" width="74" height="20.5"/>
@@ -1026,8 +1026,12 @@
             <point key="canvasLocation" x="-1215" y="1413"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list" width="37.5" height="37.5"/>
+        <image name="setting" width="37.5" height="37.5"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zil-xH-xih"/>
+        <segue reference="XGB-RO-Rnc"/>
         <segue reference="BTH-xw-SH2"/>
         <segue reference="u6F-iv-BIk"/>
         <segue reference="bIe-zT-nrM"/>
