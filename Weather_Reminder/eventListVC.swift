@@ -10,8 +10,6 @@ import UIKit
 
 class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var myTable: UITableView!
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return events.count
@@ -21,6 +19,7 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "eventLIst")
         cell.textLabel?.text = events[indexPath.row].title!
+        
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,16 +32,6 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         // the sender should be the event object, need to fix this - Congwei Ni
         performSegue(withIdentifier: "toDetail", sender: nil)
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let itemToRemove = events[indexPath.row]
-        context?.delete(itemToRemove)
-        events.remove(at: indexPath.row)
-        myTable.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-        saveCoreData()
-        myTable.reloadData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         readCoreData()

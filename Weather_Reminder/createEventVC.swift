@@ -85,7 +85,7 @@ class createEventVC: UIViewController {
     
     @IBAction func createBtn(_ sender: Any) {
         // the button create should be change to done- Congwei Ni
-        id = id + 1
+        id = events.count+1
         eventTitle = titleText.text!
         var startDate: String = ""
         var endDate: String = ""
