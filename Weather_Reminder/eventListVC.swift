@@ -31,7 +31,7 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // the sender should be the event object, need to fix this - Congwei Ni
-        performSegue(withIdentifier: "toDetail", sender: nil)
+        performSegue(withIdentifier: "listToDetail", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

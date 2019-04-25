@@ -13,7 +13,6 @@
 		347A1E8E224A75F7002C6905 /* Weather_Reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 347A1E8C224A75F7002C6905 /* Weather_Reminder.xcdatamodeld */; };
 		347A1E90224A75F8002C6905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347A1E8F224A75F8002C6905 /* Assets.xcassets */; };
 		347A1E93224A75F8002C6905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347A1E91224A75F8002C6905 /* LaunchScreen.storyboard */; };
-		9F0A6F5E2250ED9200B6E388 /* eventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6F5D2250ED9200B6E388 /* eventDetailVC.swift */; };
 		9F0A6F602250EDCC00B6E388 /* eventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */; };
 		9F11B6622253F13900BA75D4 /* TTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11B6612253F13900BA75D4 /* TTableViewController.swift */; };
 		9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8A2250E8B1005578EC /* selectSenario.swift */; };
@@ -42,7 +41,6 @@
 		347A1E8F224A75F8002C6905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		347A1E92224A75F8002C6905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		347A1E94224A75F8002C6905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F0A6F5D2250ED9200B6E388 /* eventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventDetailVC.swift; sourceTree = "<group>"; };
 		9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventListVC.swift; sourceTree = "<group>"; };
 		9F11B6612253F13900BA75D4 /* TTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTableViewController.swift; sourceTree = "<group>"; };
 		9F477C8A2250E8B1005578EC /* selectSenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectSenario.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				9FBA1435225101170091F617 /* mapVC.swift */,
 				FAAAEFCC2271FA02003E359B /* LocationUtil.swift */,
 				9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */,
-				9F0A6F5D2250ED9200B6E388 /* eventDetailVC.swift */,
 				9F477C8C2250EAD3005578EC /* createEventVC.swift */,
 				9F477C8A2250E8B1005578EC /* selectSenario.swift */,
 				347A1E8F224A75F8002C6905 /* Assets.xcassets */,
@@ -208,7 +205,6 @@
 				9FBA143C225195E80091F617 /* weatherConditionVC.swift in Sources */,
 				347A1E88224A75F7002C6905 /* ViewController.swift in Sources */,
 				9F477C8D2250EAD3005578EC /* createEventVC.swift in Sources */,
-				9F0A6F5E2250ED9200B6E388 /* eventDetailVC.swift in Sources */,
 				FF605FC72270EFAF00C64ECE /* SignUpVC.swift in Sources */,
 				347A1E86224A75F7002C6905 /* AppDelegate.swift in Sources */,
 				9F0A6F602250EDCC00B6E388 /* eventListVC.swift in Sources */,
