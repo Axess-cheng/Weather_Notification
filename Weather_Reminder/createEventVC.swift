@@ -86,6 +86,19 @@ class createEventVC: UIViewController {
         }else{
             remindTimeText.text = gsRemindTime
         }
+        if (gsAlertDays == 0) {
+            alertText.text = "on that day"
+        }
+        if (gsAlertDays == 1) {
+            alertText.text = "1 day"
+        }
+        if (gsAlertDays == 3) {
+            alertText.text = "3 day"
+        }
+        if (gsAlertDays == 7) {
+            alertText.text = "7 day"
+        }
+
         if(loc.isEmpty){
             locationText.text = ""
         }else{

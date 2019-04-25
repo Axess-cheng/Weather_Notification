@@ -58,7 +58,7 @@
 		FF605FC62270EFAF00C64ECE /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		FF9DA19E226C71C700F1234A /* ReadWriteCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteCoreData.swift; sourceTree = "<group>"; };
 		FF9DA1A0226C784E00F1234A /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "../Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9DA1A0226C784E00F1234A /* Event+CoreDataClass.swift */,
+				FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */,
 				347A1E84224A75F7002C6905 /* Weather_Reminder */,
 				347A1E83224A75F7002C6905 /* Products */,
 			);
@@ -93,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				B485AE3822568BBF008AAF08 /* Weather_Reminder.entitlements */,
-				FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */,
 				347A1E85224A75F7002C6905 /* AppDelegate.swift */,
 				347A1E87224A75F7002C6905 /* ViewController.swift */,
 				347A1E89224A75F7002C6905 /* Main.storyboard */,
