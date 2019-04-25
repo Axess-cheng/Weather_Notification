@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -302,10 +302,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKD-Tj-IZm">
-                                <rect key="frame" x="25" y="263" width="82" height="30"/>
+                                <rect key="frame" x="25" y="297" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set location"/>
                                 <connections>
+                                    <action selector="locBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="EbG-dc-HJ6"/>
                                     <segue destination="7aN-xM-Ty1" kind="show" id="g3R-r8-VFq"/>
                                 </connections>
                             </button>
@@ -350,33 +351,72 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set period"/>
                                 <connections>
+                                    <action selector="periodBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="6zT-Se-fyG"/>
                                     <segue destination="C5e-O9-wnR" kind="show" id="ofH-Yc-tBR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGY-Xo-1SN">
-                                <rect key="frame" x="25" y="187" width="109" height="30"/>
+                                <rect key="frame" x="25" y="193" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set remind time"/>
                                 <connections>
+                                    <action selector="remindTimeBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="wvE-X7-ZJD"/>
                                     <segue destination="T19-3h-KeL" kind="show" id="2g3-h4-l8Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4t-rM-BsI">
-                                <rect key="frame" x="25" y="225" width="58" height="30"/>
+                                <rect key="frame" x="25" y="245" width="58" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set alert"/>
                                 <connections>
+                                    <action selector="alertBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="bH8-Rk-hIE"/>
                                     <action selector="setAlert:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="Jiu-TR-UBR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSP-oX-gfi">
-                                <rect key="frame" x="25" y="301" width="150" height="30"/>
+                                <rect key="frame" x="25" y="357" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set weather condition"/>
                                 <connections>
+                                    <action selector="weatherBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="QUh-nr-4PB"/>
                                     <segue destination="st0-88-fcp" kind="show" id="JUn-lN-TyW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZE3-Sf-qpo">
+                                <rect key="frame" x="25" y="176" width="335" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tui-PP-7fr">
+                                <rect key="frame" x="25" y="224" width="161" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kh0-LG-pBq">
+                                <rect key="frame" x="25" y="328" width="156" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-pi-fib">
+                                <rect key="frame" x="25" y="395" width="334" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCx-ZQ-akF">
+                                <rect key="frame" x="25" y="274" width="161" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -396,12 +436,17 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="alertText" destination="eCx-ZQ-akF" id="mBF-Ie-ySW"/>
+                        <outlet property="locationText" destination="Kh0-LG-pBq" id="bDf-Kb-8Pt"/>
+                        <outlet property="periodText" destination="ZE3-Sf-qpo" id="Adj-2I-gqQ"/>
+                        <outlet property="remindTimeText" destination="Tui-PP-7fr" id="Xk5-NT-e9S"/>
                         <outlet property="titleText" destination="zMJ-2f-b0A" id="H4v-iE-iZl"/>
+                        <outlet property="weatherText" destination="1Tq-pi-fib" id="sEX-Cc-PaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cld-f5-ZKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="-90"/>
+            <point key="canvasLocation" x="1544.8" y="-90.404797601199405"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Ltz-xR-csw">
@@ -695,9 +740,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g3R-r8-VFq"/>
+        <segue reference="JUn-lN-TyW"/>
         <segue reference="BTH-xw-SH2"/>
-        <segue reference="xq9-yM-K3p"/>
-        <segue reference="bIe-zT-nrM"/>
+        <segue reference="u6F-iv-BIk"/>
+        <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>

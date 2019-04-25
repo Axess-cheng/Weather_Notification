@@ -102,11 +102,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application:UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-//        print("register to apn")
-//        let token = deviceToken.base64EncodedString()
-//        print("Get push token : \(token)")
-//        let token2 = deviceToken.map {String(format: "%02.2hhx", $0)}.joined()
-//        print("token2 : \(token2)")
+        print("register to apn")
+        let token = deviceToken.base64EncodedString()
+        print("Get push token : \(token)")
+        let token2 = deviceToken.map {String(format: "%02.2hhx", $0)}.joined()
+        print("token2 : \(token2)")
         
     }
     
