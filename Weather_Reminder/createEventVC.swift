@@ -72,6 +72,12 @@ class createEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("locName \(locName) in create event vc")
+        print("lat \(location2D["lat"]) in create event vc")
+        print("current \(location2D["long"]) in create event vc")
+        print("location2D isEmpty \(location2D.isEmpty)")
+        
         if eventTitle != "" {
             titleText.text = eventTitle
         }
@@ -101,6 +107,7 @@ class createEventVC: UIViewController {
         if(location2D.isEmpty){
             locationText.text = ""
         }else{
+            print("location in else statement: \(locName)")
             locationText.text = locName
         }
         if(weatherSelected.isEmpty){

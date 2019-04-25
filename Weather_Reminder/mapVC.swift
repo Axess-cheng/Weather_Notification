@@ -27,6 +27,31 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tblPlaces.dataSource = self
         tblPlaces.delegate = self
         
+        
+        var latitude = Double()
+        var longitude = Double()
+        LocationUtil.share.getCurrentPointLocation(isOnce: false) { (loc, errorMsg) in
+            if errorMsg == nil {
+                location2D["lat"] = String(format: "%f,%f", (loc?.coordinate.latitude)!)
+                location2D["long"] = String(format: "%f,%f", (loc?.coordinate.longitude)!)
+                self.lat = String(format: "%f,%f", (loc?.coordinate.latitude)!)
+                self.lng = String(format: "%f,%f", (loc?.coordinate.longitude)!)
+                latitude = (loc?.coordinate.latitude)!
+                longitude = (loc?.coordinate.longitude)!
+                let location = CLLocation(latitude: latitude, longitude: longitude)
+                self.fetchCityAndCountry(from: location) { city, country, error in
+                    guard let validCity = city, let validCountry = country, error == nil else { return }
+                    
+                    
+                    locName = "\(validCity)"
+                    print("current locName is \(locName)")
+                    //                    print("current lat is \(location2D["lat"])")
+                    //                    print("current long is \(location2D["long"])")
+                }
+            }
+        }
+        
+        
     }
     
     func fetchCityAndCountry(from location: CLLocation, completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {
@@ -41,26 +66,10 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     @IBAction func useCurrentLocation(_ sender: Any){
-        var latitude = Double()
-        var longitude = Double()
-        LocationUtil.share.getCurrentPointLocation(isOnce: false) { (loc, errorMsg) in
-            if errorMsg == nil {
-                location2D["lat"] = String(format: "%f,%f", (loc?.coordinate.latitude)!)
-                location2D["lng"] = String(format: "%f,%f", (loc?.coordinate.longitude)!)
-                self.lat = String(format: "%f,%f", (loc?.coordinate.latitude)!)
-                self.lng = String(format: "%f,%f", (loc?.coordinate.longitude)!)
-                latitude = (loc?.coordinate.latitude)!
-                longitude = (loc?.coordinate.longitude)!
-                let location = CLLocation(latitude: latitude, longitude: longitude)
-                self.fetchCityAndCountry(from: location) { city, country, error in
-                    guard let city = city, let country = country, error == nil else { return }
-                    locName = city
-                }
-            }
-        }
+
         
-        
-        performSegue(withIdentifier: "fromMapToCreatEvent", sender: nil)
+            performSegue(withIdentifier: "fromMapToCreatEvent", sender: nil)
+ 
   
     }
     
