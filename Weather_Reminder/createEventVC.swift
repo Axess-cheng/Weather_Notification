@@ -10,7 +10,6 @@ import UIKit
 
 var events: [Event] = []
 
-
 var id = 0
 // change from title to eventTitle
 var eventTitle = ""
@@ -36,6 +35,9 @@ var end = ""
 
 
 class createEventVC: UIViewController {
+    
+    // sended from event list if click cell
+    var event: Event?
     
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var periodText: UILabel!
@@ -77,6 +79,11 @@ class createEventVC: UIViewController {
         print("lat \(location2D["lat"]) in create event vc")
         print("current \(location2D["long"]) in create event vc")
         print("location2D isEmpty \(location2D.isEmpty)")
+        
+        if(event != nil){
+            self.assignData()
+        }
+        
         
         if eventTitle != "" {
             titleText.text = eventTitle
@@ -220,7 +227,7 @@ class createEventVC: UIViewController {
             endDate = end
         }
         
-        insertEvent(id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: "53.406566", long: "-2.966531")
+        insertEvent(id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
         
         //save to core data
         saveCoreData()
@@ -250,6 +257,28 @@ class createEventVC: UIViewController {
         locName = ""
         start = ""
         end = ""
+        event = nil
+    }
+    
+    func assignData(){
+        eventTitle = (event?.title)!
+//        gsSenario = ""
+        gsRemindTime = (event?.gsRemindTime!)!
+//        gsPeriod = [String:String]()
+        gsAlertDays = Int(exactly: (event?.gsAlertDays)!)!
+        sunny = (event?.sunny)!
+        cloudy = (event?.cloudy)!
+        windy = (event?.windy)!
+        rainy = (event?.rainy)!
+        snow = (event?.snow)!
+        uvIndex = (event?.uvIndex)!
+        humidity = (event?.humidity)!
+        location2D["lat"] = (event?.lat)!
+        location2D["long"] = (event?.long)!
+        locName = (event?.locName)!
+        start = (event?.gsStartDate)!
+        end = (event?.gsEndDate)!
+
     }
     
     // using post method to upload event details

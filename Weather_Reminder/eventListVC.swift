@@ -31,7 +31,8 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // the sender should be the event object, need to fix this - Congwei Ni
-        performSegue(withIdentifier: "listToDetail", sender: nil)
+        let event = events[indexPath.row]
+        performSegue(withIdentifier: "listToDetail", sender: event)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -41,6 +42,14 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         myTable.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         saveCoreData()
         myTable.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Go to DetailViewController and send the report in the selected cell.
+        if segue.identifier == "listToDetail"{
+            let destVC = segue.destination as! createEventVC
+            destVC.event = sender as? Event
+        }
     }
     
     override func viewDidLoad() {

@@ -10,6 +10,7 @@
         <attribute name="humidity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="long" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rainy" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="snow" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,6 +20,6 @@
         <attribute name="windy" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-54" positionY="-9" width="128" height="285"/>
+        <element name="Event" positionX="-54" positionY="-9" width="128" height="300"/>
     </elements>
 </model>

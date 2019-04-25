@@ -229,6 +229,7 @@
                     <tabBarItem key="tabBarItem" title="Event List" image="list" id="DYd-s8-jTh" userLabel="Event List"/>
                     <connections>
                         <outlet property="myTable" destination="09R-YW-Oyc" id="Nv3-nC-hKS"/>
+                        <segue destination="HpP-UR-0Bo" kind="show" identifier="listToDetail" id="33g-tM-sto"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1E-ox-Vbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1048,7 +1049,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XGB-RO-Rnc"/>
-        <segue reference="xq9-yM-K3p"/>
-        <segue reference="2Hr-8X-Rh9"/>
+        <segue reference="33g-tM-sto"/>
+        <segue reference="bIe-zT-nrM"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,7 +29,7 @@ func readCoreData(){
     }
 }
 
-func insertEvent(id: Int, title: String, gsSenario: String, gsRemindTime: String, gsStartDate: String, gsEndDate: String, gsAlertDays: Int, sunny: String, cloudy: String, windy: String, rainy: String, snow: String, uvIndex: String, humidity: String, lat: String, long: String){
+func insertEvent(id: Int, title: String, gsSenario: String, gsRemindTime: String, gsStartDate: String, gsEndDate: String, gsAlertDays: Int, sunny: String, cloudy: String, windy: String, rainy: String, snow: String, uvIndex: String, humidity: String, lat: String, long: String, locName: String){
     let newEvent = NSEntityDescription.insertNewObject(forEntityName: "Event", into: context!) as! Event
     newEvent.setValue(id, forKey: "id")
     newEvent.setValue(title, forKey: "title")
@@ -47,6 +47,7 @@ func insertEvent(id: Int, title: String, gsSenario: String, gsRemindTime: String
     newEvent.setValue(humidity, forKey: "humidity")
     newEvent.setValue(lat, forKey: "lat")
     newEvent.setValue(long, forKey: "long")
+    newEvent.setValue(locName, forKey: "locName")
     events.append(newEvent)
 }
 
