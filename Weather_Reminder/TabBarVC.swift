@@ -20,7 +20,7 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
 
     // UITabBarDelegate
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("Selected item: \(item.title)")
+        print("Selected item: \(item.title!)")
     }
     
     // UITabBarControllerDelegate
