@@ -32,8 +32,7 @@ class PeriodVC: UIViewController {
     
     @IBAction func switchBtn(_ sender: Any) {
         if ifEveryday.isOn {
-            gsPeriod["startDate"] = ""
-            gsPeriod["endDate"] = ""
+            gsPeriod = [String:String]()
             label1.isHidden = true
             label2.isHidden = true
             pickStart.isHidden = true
@@ -52,12 +51,17 @@ class PeriodVC: UIViewController {
     @objc func chooseStartDate(_ datePicker:UIDatePicker){
         startDate = String(Int(datePicker.date.timeIntervalSince1970))
         gsPeriod["startDate"] = startDate
-        print(startDate)
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = "yyyy-MM-dd"
+        start = formatter.string(from: datePicker.date)
     }
     
     @objc func chooseEndDate(_ datePicker:UIDatePicker){
         endDate = String(Int(datePicker.date.timeIntervalSince1970))
         gsPeriod["endDate"] = endDate
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = "yyyy-MM-dd"
+        end = formatter.string(from: datePicker.date)
     }
     
     @IBAction func periodDone(_ sender: Any) {

@@ -51,15 +51,15 @@ class TTableViewController: UITableViewController {
             return
         }
         let level1=UIAlertAction(title:"Light",style:.default){ (act) -> Void in
-            windy = "0,20"
+            windy = "0,19"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"High",style:.default){ (act) -> Void in
-            windy = "21,60"
+            windy = "20,49"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
-            windy = "60,200"
+            windy = "50,_"
             NotificationCenter.default.removeObserver(self)
         }
         windyLevelSheet.addAction(cancel)

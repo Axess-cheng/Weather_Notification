@@ -19,13 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        print("request")
+        print("request permission")
         UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .sound, .alert], completionHandler: {
             granted, error in
             guard granted else{return}
-            
+
         })
-        
+
         UIApplication.shared.registerForRemoteNotifications()
         
         return true
@@ -101,7 +101,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application:UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("register")
+        
+        print("register to apn")
         let token = deviceToken.base64EncodedString()
         print("Get push token : \(token)")
         let token2 = deviceToken.map {String(format: "%02.2hhx", $0)}.joined()
