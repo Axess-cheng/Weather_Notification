@@ -17,8 +17,11 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var lat = String()
     var currentName = String()
     var resultsArray:[Dictionary<String, AnyObject>] = Array()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         text.addTarget(self, action: #selector(searchPlaceFromGoogle(_:)), for: .editingChanged)
         

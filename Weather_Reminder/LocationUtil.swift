@@ -26,11 +26,12 @@ class LocationUtil: NSObject {
     lazy var locationM: CLLocationManager = {
         
         let locationM = CLLocationManager()
+        locationM.delegate = self as CLLocationManagerDelegate
         locationM.requestAlwaysAuthorization()
         //improve the accuracy
         locationM.desiredAccuracy = kCLLocationAccuracyBest
         locationM.distanceFilter = kCLLocationAccuracyKilometer
-        locationM.delegate = self
+        
         
         // ask for authorization
         if #available(iOS 8.0, *) {
