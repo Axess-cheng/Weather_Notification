@@ -323,7 +323,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="NWY-MU-XKr">
                                             <connections>
-                                                <action selector="createBtn:" destination="HpP-UR-0Bo" id="9WT-Z6-LTl"/>
+                                                <segue destination="pNy-aU-pxQ" kind="show" identifier="createToList" id="sRS-fU-cvR"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -433,12 +433,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="alertText" destination="fWv-M4-rU2" id="6sB-4p-kqG"/>
+                        <outlet property="backBtn" destination="qGH-lK-4eh" id="MwV-S7-EKB"/>
                         <outlet property="locationText" destination="Nbz-6q-9nl" id="PcS-P3-daG"/>
                         <outlet property="periodText" destination="cZd-Nx-Dw3" id="zGr-vb-XpC"/>
                         <outlet property="remindTimeText" destination="cQO-nF-CO4" id="YGU-qD-Y2X"/>
                         <outlet property="titleText" destination="zMJ-2f-b0A" id="H4v-iE-iZl"/>
                         <outlet property="weatherText" destination="QVg-GD-kqP" id="fyJ-fr-LQZ"/>
-                        <segue destination="lL0-jU-pba" kind="show" identifier="createToList" id="ggy-FC-tdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cld-f5-ZKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -782,7 +782,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGX-hQ-cEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1393" y="-69"/>
+            <point key="canvasLocation" x="-1617" y="-414"/>
         </scene>
         <!--User Info-->
         <scene sceneID="DKk-lW-K7n">
@@ -1055,8 +1055,8 @@
         <image name="setting" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="sRS-fU-cvR"/>
         <segue reference="33g-tM-sto"/>
-        <segue reference="bIe-zT-nrM"/>
-        <segue reference="sqf-01-lmX"/>
+        <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>
