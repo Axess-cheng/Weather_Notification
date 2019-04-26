@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -302,6 +302,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set location"/>
                                 <connections>
+                                    <action selector="locBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="OGv-Zb-huc"/>
                                     <segue destination="7aN-xM-Ty1" kind="show" id="g3R-r8-VFq"/>
                                 </connections>
                             </button>
@@ -346,6 +347,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set remind time"/>
                                 <connections>
+                                    <action selector="remindTimeBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="sFE-x0-45Y"/>
                                     <segue destination="T19-3h-KeL" kind="show" id="2g3-h4-l8Q"/>
                                 </connections>
                             </button>
@@ -354,6 +356,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set weather condition"/>
                                 <connections>
+                                    <action selector="weatherBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="KIZ-wW-T7n"/>
                                     <segue destination="st0-88-fcp" kind="show" id="JUn-lN-TyW"/>
                                 </connections>
                             </button>
@@ -362,6 +365,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set alert days"/>
                                 <connections>
+                                    <action selector="alertBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="Jzy-ZO-UZa"/>
                                     <action selector="setAlert:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="Jiu-TR-UBR"/>
                                 </connections>
                             </button>
@@ -405,6 +409,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set period"/>
                                 <connections>
+                                    <action selector="periodBtn:" destination="HpP-UR-0Bo" eventType="touchUpInside" id="gBB-z1-2gX"/>
                                     <segue destination="C5e-O9-wnR" kind="show" id="ofH-Yc-tBR"/>
                                 </connections>
                             </button>
@@ -1044,12 +1049,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list" width="37.5" height="37.5"/>
-        <image name="setting" width="37.5" height="37.5"/>
+        <image name="list" width="25" height="25"/>
+        <image name="setting" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XGB-RO-Rnc"/>
-        <segue reference="33g-tM-sto"/>
-        <segue reference="bIe-zT-nrM"/>
+        <segue reference="vPx-dK-EoD"/>
+        <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>
