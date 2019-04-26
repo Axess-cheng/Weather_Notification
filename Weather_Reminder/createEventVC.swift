@@ -14,7 +14,7 @@ var id = 0
 // change from title to eventTitle
 var eventTitle = ""
 var gsSenario = ""
-var gsRemindTime = ""
+var gsRemindTime = "08:00"
 var gsPeriod = [String:String]()
 var gsPStart = String()
 var gsPEnd = String()
@@ -28,7 +28,7 @@ var uvIndex = ","
 var humidity = ","
 var location2D = [String : String]()
 var locName = ""
-var weatherSelected = [String]()
+var weatherSelected = [String:String]()
 
 var start = ""
 var end = ""
@@ -79,6 +79,9 @@ class createEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        weatherText.lineBreakMode = NSLineBreakMode.byWordWrapping
+        weatherText.numberOfLines = 0
         
         print("locName \(locName) in create event vc")
         print("lat \(location2D["lat"]) in create event vc")
@@ -133,9 +136,11 @@ class createEventVC: UIViewController {
             weatherText.text = ""
         }else{
             var weather = ""
-            let space = " "
-            for i in 0..<weatherSelected.count{
-                weather = weather + space + weatherSelected[i]
+            let newline = "\n"
+            for (key,value) in weatherSelected {
+                if value != nil {
+                weather = weather  + "\(key)    \(value)" + newline
+                }
             }
             weatherText.text = weather
         }
@@ -283,6 +288,7 @@ class createEventVC: UIViewController {
         locName = ""
         start = ""
         end = ""
+        weatherSelected = [String:String]()
         globalEvent = nil
     }
     
