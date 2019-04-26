@@ -1,11 +1,13 @@
 <?php
 
-include_once "functions/generic_functions.php";
-include_once "functions/mongo_functions.php";
-include_once "functions/sql_functions.php";
+require_once __DIR__ . "/vendor/autoload.php";
+
 include_once "include/config.php";
 include_once "include/mongo_connector.php";
 include_once "include/mysql_connector.php";
+include_once "functions/generic_functions.php";
+include_once "functions/mongo_functions.php";
+include_once "functions/sql_functions.php";
 
 if (!isset($_POST["event"]) || !isset($_POST["token"]) || !isset($_POST["user_id"])) {
     echo json_encode(
@@ -29,7 +31,7 @@ if (!validate_token($mysql, "tokens", $user_id, $token)) {
 }
 
 $event = json_decode($_POST["event"]);
-$event_id = add_event(get_collection($mongodb, "events"), get_collection($mongodb, "counters"), $event);
+$event_id = add_event(get_collection($mongo, $_CONFIG["mongo"]["database"], "events"), get_collection($mongo, $_CONFIG["mongo"]["database"], "counters"), $event);
 
 if ($event_id > 0) {
     $event["id"] = $event_id;

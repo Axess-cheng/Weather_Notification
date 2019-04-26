@@ -11,13 +11,13 @@ function add_event_link(mysqli $connection, $user_events_table, $user_id, $event
     }
 }
 
-function add_user(mysqli $connection, $user_table, $email, $password, $salt)
+function add_user(mysqli $connection, $user_table, $device_token, $email, $password, $salt)
 {
-    $query = "INSERT INTO `" . $user_table . "` (`email`, `password`, `salt`) VALUES (?, ?, ?);";
+    $query = "INSERT INTO `" . $user_table . "` (`device_token`, `email`, `password`, `salt`) VALUES (?, ?, ?, ?);";
     $stmt = $connection->stmt_init();
 
     if ($stmt->prepare($query)) {
-        $stmt->bind_param("sss", $email, $password, $salt);
+        $stmt->bind_param("ssss", $device_token, $email, $password, $salt);
         $stmt->execute();
 
         return true;
@@ -48,35 +48,43 @@ function get_user_result(mysqli $connection, $user_table, $id_field, $id_data, $
     return null;
 }
 
-function update_user_token(mysqli $connection, $token_table, $user_id, $token)
+function update_user_tokens(mysqli $connection, $token_table, $user_table, $user_id, $device_token, $token)
 {
-    $query = "SELECT `token` FROM `" . $token_table . "` WHERE `user_id`=?;";
+    $query = "UPDATE `" . $user_table . "` SET `device_token`=? WHERE `user_id`=?;";
     $stmt = $connection->stmt_init();
 
     if ($stmt->prepare($query)) {
-        $stmt->bind_param("i", $user_id);
+        $stmt->bind_param("si", $device_token, $user_id);
         $stmt->execute();
 
-        $result = $stmt->get_result();
+        $query = "SELECT `token` FROM `" . $token_table . "` WHERE `user_id`=?;";
         $stmt = $connection->stmt_init();
 
-        if ($result->num_rows > 0) {
-            if ($result->fetch_assoc()["token"] === $token) {
-                return;
-            }
+        if ($stmt->prepare($query)) {
+            $stmt->bind_param("i", $user_id);
+            $stmt->execute();
 
-            $query = "UPDATE `" . $token_table . "` SET `token`=? WHERE `user_id`=?;";
+            $result = $stmt->get_result();
+            $stmt = $connection->stmt_init();
 
-            if ($stmt->prepare($query)) {
-                $stmt->bind_param("si", $token, $user_id);
-                $stmt->execute();
-            }
-        } else {
-            $query = "INSERT INTO `" . $token_table . "` VALUES (?, ?);";
+            if ($result->num_rows > 0) {
+                if ($result->fetch_assoc()["token"] === $token) {
+                    return;
+                }
 
-            if ($stmt->prepare($query)) {
-                $stmt->bind_param("is", $user_id, $token);
-                $stmt->execute();
+                $query = "UPDATE `" . $token_table . "` SET `token`=? WHERE `user_id`=?;";
+
+                if ($stmt->prepare($query)) {
+                    $stmt->bind_param("si", $token, $user_id);
+                    $stmt->execute();
+                }
+            } else {
+                $query = "INSERT INTO `" . $token_table . "` VALUES (?, ?);";
+
+                if ($stmt->prepare($query)) {
+                    $stmt->bind_param("is", $user_id, $token);
+                    $stmt->execute();
+                }
             }
         }
     }
@@ -99,4 +107,6 @@ function validate_token(mysqli $connection, $token_table, $user_id, $token)
 
         return $result->fetch_assoc()["token"] === $token;
     }
+
+    return false;
 }
