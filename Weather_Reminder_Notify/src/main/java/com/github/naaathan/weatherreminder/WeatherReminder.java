@@ -58,8 +58,14 @@ public final class WeatherReminder {
             builder.withAppleDestination(true);
         }
 
+        getLogger().info("Sending push notification:");
+        getLogger().info("Payload: " + payload);
+        getLogger().info("Token: " + token);
+
         ApnsService service = builder.build();
+
         service.push(token, payload);
+        getLogger().info("Push notification sent!");
     }
 
     public String sendWebRequest(String method, String urlString, String parameters) throws IOException {

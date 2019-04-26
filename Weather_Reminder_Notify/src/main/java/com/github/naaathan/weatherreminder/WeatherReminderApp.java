@@ -6,6 +6,7 @@ import com.notnoop.apns.APNS;
 import lombok.AccessLevel;
 import lombok.Getter;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Logger;
@@ -37,11 +38,14 @@ public final class WeatherReminderApp {
 
                 if (next.equalsIgnoreCase("production")) {
                     executed = true;
-                    notifyHandle(scanner, false);
+                    handleNotify(scanner, false);
                 } else if (next.equalsIgnoreCase("sandbox")) {
                     executed = true;
-                    notifyHandle(scanner, true);
+                    handleNotify(scanner, true);
                 }
+            } else if (next.equalsIgnoreCase("request")) {
+                executed = true;
+                handleRequest(scanner);
             }
 
             if (next.toLowerCase().equals("q") || next.toLowerCase().equals("quit")) {
@@ -59,7 +63,7 @@ public final class WeatherReminderApp {
         System.exit(0);
     }
 
-    private static void notifyHandle(Scanner scanner, boolean sandbox) {
+    private static void handleNotify(Scanner scanner, boolean sandbox) {
         System.out.println("Please type 'q' to exit this process at any time!");
         System.out.print("Please enter an alert body: ");
 
@@ -79,7 +83,40 @@ public final class WeatherReminderApp {
         String payload = APNS.newPayload().alertBody(body).build();
 
         WeatherReminder.getInstance().sendPushNotification(sandbox, payload, token);
-        logger.info("Notification payload pushed!");
+    }
+
+    private static void handleRequest(Scanner scanner) {
+        System.out.println("Please type 'q' to exit this process at any time!");
+
+        String method;
+        String url;
+        String parameters;
+
+        do {
+            System.out.print("Please enter a request method: ");
+
+            if (toQuit(method = scanner.nextLine())) {
+                return;
+            }
+        } while (!method.equalsIgnoreCase("get") && !method.equalsIgnoreCase("post"));
+
+        System.out.print("Please enter a URL: ");
+
+        if (toQuit(url = scanner.nextLine())) {
+            return;
+        }
+
+        System.out.print("Please enter the parameters: ");
+
+        if (toQuit(parameters = scanner.nextLine())) {
+            return;
+        }
+
+        try {
+            WeatherReminder.getInstance().sendWebRequest(method, url, parameters);
+        } catch (IOException e) {
+            logger.warning("Web request failed: " + e.getMessage());
+        }
     }
 
     private static void setLogger(Logger logger) {
