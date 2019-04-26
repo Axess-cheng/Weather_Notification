@@ -95,8 +95,10 @@ class createEventVC: UIViewController {
         }
         if(gsPeriod.isEmpty){
             periodText.text = "Everyday"
-        }else{
+        }else if(start != end){
             periodText.text = "\(start) to \(end)"
+        }else if(start == end){
+            periodText.text = start
         }
         if(gsRemindTime != ""){
             remindTimeText.text = gsRemindTime
@@ -247,6 +249,11 @@ class createEventVC: UIViewController {
         initialData()
         
         // performSegue to event list view
+        
+//        let ListVC = self.storyboard?.instantiateViewController(withIdentifier: "eventListVC") as! eventListVC
+////        self.definesPresentationContext = true
+////        ListVC.modalPresentationStyle = .overCurrentContext
+//        self.present(ListVC, animated: false, completion: nil)
     }
     
     func initialData() {

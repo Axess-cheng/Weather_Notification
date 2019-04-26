@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -178,7 +178,7 @@
         <!--eventListVC-->
         <scene sceneID="cMk-2N-T8P">
             <objects>
-                <viewController title="eventListVC" id="lL0-jU-pba" customClass="eventListVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventListVC" title="eventListVC" id="lL0-jU-pba" customClass="eventListVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JNa-55-xRL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1E-ox-Vbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1012" y="-949"/>
+            <point key="canvasLocation" x="-433" y="-937"/>
         </scene>
         <!--selectSenarioVC-->
         <scene sceneID="3uA-we-05d">
@@ -438,6 +438,7 @@
                         <outlet property="remindTimeText" destination="cQO-nF-CO4" id="YGU-qD-Y2X"/>
                         <outlet property="titleText" destination="zMJ-2f-b0A" id="H4v-iE-iZl"/>
                         <outlet property="weatherText" destination="QVg-GD-kqP" id="fyJ-fr-LQZ"/>
+                        <segue destination="lL0-jU-pba" kind="show" identifier="createToList" id="ggy-FC-tdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cld-f5-ZKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -781,7 +782,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGX-hQ-cEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="-102"/>
+            <point key="canvasLocation" x="-1393" y="-69"/>
         </scene>
         <!--User Info-->
         <scene sceneID="DKk-lW-K7n">
@@ -896,7 +897,7 @@
                                         <rect key="frame" x="187" y="0.0" width="52" height="30"/>
                                         <state key="normal" title="Sign up"/>
                                         <connections>
-                                            <segue destination="hcl-V0-fvc" kind="show" id="iuc-Ac-fCa"/>
+                                            <action selector="signupBtn:" destination="9cB-WY-wxT" eventType="touchUpInside" id="Pc5-yM-dVM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -922,6 +923,7 @@
                     <connections>
                         <outlet property="email" destination="obg-jn-YuZ" id="REd-qt-3nd"/>
                         <outlet property="password" destination="FV9-Yf-BXC" id="nhM-6X-7fF"/>
+                        <segue destination="hcl-V0-fvc" kind="show" identifier="loginToSignup" id="vPs-0E-ceR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkP-rF-STr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -931,7 +933,7 @@
         <!--Sign up-->
         <scene sceneID="jLa-r6-Jfu">
             <objects>
-                <viewController id="hcl-V0-fvc" userLabel="Sign up" customClass="SignUpVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signupVC" id="hcl-V0-fvc" userLabel="Sign up" customClass="SignUpVC" customModule="Weather_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aqd-fB-lq7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -976,7 +978,7 @@
                                         <rect key="frame" x="67.5" y="233" width="169" height="30"/>
                                         <state key="normal" title="Already have an account"/>
                                         <connections>
-                                            <segue destination="9cB-WY-wxT" kind="show" id="Zil-xH-xih"/>
+                                            <action selector="haveAccountBtn:" destination="hcl-V0-fvc" eventType="touchUpInside" id="vPl-Sv-WYi"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yed-Hl-3X0">
@@ -1049,12 +1051,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list" width="25" height="25"/>
-        <image name="setting" width="25" height="25"/>
+        <image name="list" width="37.5" height="37.5"/>
+        <image name="setting" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XGB-RO-Rnc"/>
-        <segue reference="vPx-dK-EoD"/>
-        <segue reference="2Hr-8X-Rh9"/>
+        <segue reference="33g-tM-sto"/>
+        <segue reference="bIe-zT-nrM"/>
+        <segue reference="sqf-01-lmX"/>
     </inferredMetricsTieBreakers>
 </document>

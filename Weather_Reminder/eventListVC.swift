@@ -19,8 +19,25 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "eventLIst")
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "eventLIst")
         cell.textLabel?.text = events[indexPath.row].title!
+        var detailString = events[indexPath.row].gsRemindTime!
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = "yyyy-MM-dd"
+        if((events[indexPath.row].gsStartDate!) != "" && (events[indexPath.row].gsEndDate!) != ""){
+            let doubleStart = Double(events[indexPath.row].gsStartDate!)
+            let doubleEnd = Double(events[indexPath.row].gsEndDate!)
+            start = formatter.string(from: Date(timeIntervalSince1970: doubleStart!))
+            end = formatter.string(from: Date(timeIntervalSince1970: doubleEnd!))
+            if(start != end){
+                detailString = detailString + " \(start) to \(end)"
+            }else{
+                detailString = detailString + " \(start)"
+            }
+        }else{
+            detailString = detailString + " Everyday"
+        }
+        cell.detailTextLabel?.text = detailString
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,7 +75,7 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation

@@ -16,6 +16,14 @@ class SignUpVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func haveAccountBtn(_ sender: Any) {
+        let SettingVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
+        self.definesPresentationContext = true
+        SettingVC.modalPresentationStyle = .overCurrentContext
+        self.present(SettingVC, animated: false, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
