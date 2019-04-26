@@ -33,6 +33,12 @@ class LoginVC: UIViewController {
     }
     
 
+    @IBAction func signupBtn(_ sender: Any) {
+        let SignupVC = self.storyboard?.instantiateViewController(withIdentifier: "signupVC") as! SignUpVC
+        self.definesPresentationContext = true
+        SignupVC.modalPresentationStyle = .overCurrentContext
+        self.present(SignupVC, animated: false, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

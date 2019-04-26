@@ -48,7 +48,10 @@ class createEventVC: UIViewController {
     @IBOutlet weak var locationText: UILabel!
     @IBOutlet weak var weatherText: UILabel!
     
-//    var weatherType:String?
+    @IBOutlet weak var backBtn: UIBarButtonItem!
+    
+    
+    //    var weatherType:String?
 //    var intensity: String?
 //    var uvIndex:Int?
 //    var humidityStatus:String?
@@ -87,6 +90,8 @@ class createEventVC: UIViewController {
         if(event != nil){
             globalEvent = self.event
             self.assignData()
+            backBtn.isEnabled = false
+            backBtn.tintColor = UIColor.clear
         }
         
         
@@ -95,8 +100,10 @@ class createEventVC: UIViewController {
         }
         if(gsPeriod.isEmpty){
             periodText.text = "Everyday"
-        }else{
+        }else if(start != end){
             periodText.text = "\(start) to \(end)"
+        }else if(start == end){
+            periodText.text = start
         }
         if(gsRemindTime != ""){
             remindTimeText.text = gsRemindTime
@@ -219,9 +226,11 @@ class createEventVC: UIViewController {
         print(gsAlertDays)
     }
     
-    @IBAction func createBtn(_ sender: Any) {
+    
+    
+    func createBtnFunc(){
         // the button create should be change to done- Congwei Ni
-//        print("event is not nil \(self.event != nil) when click done button")
+        //        print("event is not nil \(self.event != nil) when click done button")
         eventTitle = titleText.text!
         var startDate: String = ""
         var endDate: String = ""
@@ -247,6 +256,12 @@ class createEventVC: UIViewController {
         initialData()
         
         // performSegue to event list view
+        
+    }
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "createToList"{
+          self.createBtnFunc()
+       }
     }
     
     func initialData() {
