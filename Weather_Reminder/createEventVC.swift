@@ -222,7 +222,7 @@ class createEventVC: UIViewController {
             initialData()
             
             // performSegue to event list view
-            performSegue(withIdentifier: "createToList", sender: nil)
+//            performSegue(withIdentifier: "createToList", sender: nil)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
