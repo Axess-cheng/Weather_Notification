@@ -114,16 +114,16 @@ class createEventVC: UIViewController {
             remindTimeText.text = gsRemindTime
         }
         if (gsAlertDays == 0) {
-            alertText.text = "on that day"
+            alertText.text = "On that day"
         }
         if (gsAlertDays == 1) {
-            alertText.text = "1 day"
+            alertText.text = "1 days"
         }
         if (gsAlertDays == 3) {
-            alertText.text = "3 day"
+            alertText.text = "3 days"
         }
         if (gsAlertDays == 7) {
-            alertText.text = "7 day"
+            alertText.text = "7 days"
         }
         
         if(location2D.isEmpty){
@@ -139,10 +139,10 @@ class createEventVC: UIViewController {
             let newline = "\n"
             for (key,value) in weatherSelected {
                 if value != nil {
-                weather = weather  + "\(key)    \(value)" + newline
+                weather = weather  + "\(value) \(key)" + newline
                 }
             }
-            weatherText.text = weather
+            weatherText.text = "We will inform you when \n" + weather
         }
         
         print("gsSenario: \(gsSenario)")

@@ -26,49 +26,49 @@ class TTableViewController: UITableViewController {
     @IBAction func sunnySWB(_ sender: Any) {
         guard sunnyBtn.isOn else{
             sunny = ","
-            weatherSelected["sunny"] = nil
+            weatherSelected["Sunny"] = nil
             return
         }
         sunny = "CL,FW"
-        weatherSelected["sunny"] = "  "
+        weatherSelected["Sunny"] = "It is"
     }
     
     @IBAction func cloudySWB(_ sender: Any) {
         guard cloudyBtn.isOn else{
             cloudy = ",,"
-            weatherSelected["cloudy"] = nil
+            weatherSelected["Cloudy"] = nil
             return
         }
         cloudy = "SC,BK,OV"
-        weatherSelected["cloudy"] = "  "
+        weatherSelected["Cloudy"] = "It is"
     }
     
     @IBAction func windySWB(_ sender: Any) {
         guard windyBtn.isOn else{
             windy = ","
-            weatherSelected["windy"] = nil
+            weatherSelected["Windy"] = nil
             return}
         let windyLevelSheet=UIAlertController(title:"Windy Level",message:"select the windy level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
             self.windyBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             windy = ","
-            weatherSelected["windy"] = nil
+            weatherSelected["Windy"] = nil
             return
         }
         let level1=UIAlertAction(title:"Light",style:.default){ (act) -> Void in
             windy = "0,19"
-            weatherSelected["windy"] = "light"
+            weatherSelected["Windy"] = "Light"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"High",style:.default){ (act) -> Void in
             windy = "20,49"
-            weatherSelected["windy"] = "high"
+            weatherSelected["Windy"] = "High"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
             windy = "50,_"
-            weatherSelected["windy"] = "very high"
+            weatherSelected["Windy"] = "Very high"
             NotificationCenter.default.removeObserver(self)
         }
         windyLevelSheet.addAction(cancel)
@@ -81,34 +81,34 @@ class TTableViewController: UITableViewController {
     @IBAction func rainySWB(_ sender: Any) {
         guard rainyBtn.isOn else{
             rainy = ""
-            weatherSelected["rainy"] = nil
+            weatherSelected["Rainy"] = nil
             return}
         let rainyLevelSheet=UIAlertController(title:"Rainy Level",message:"select the rainy level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
             rainy = ""
-            weatherSelected["rainy"] = nil
+            weatherSelected["Rainy"] = nil
             self.rainyBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             return
         }
         let level1=UIAlertAction(title:"Very Low",style:.default){ (act) -> Void in
             rainy = "VL"
-            weatherSelected["rainy"] = "very low"
+            weatherSelected["Rainy"] = "Very low"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"Low",style:.default){ (act) -> Void in
             rainy = "L"
-            weatherSelected["rainy"] = "low"
+            weatherSelected["Rainy"] = "Low"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"High",style:.default){ (act) -> Void in
             rainy = "H"
-            weatherSelected["rainy"] = "high"
+            weatherSelected["Rainy"] = "High"
             NotificationCenter.default.removeObserver(self)
         }
         let level4=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
             rainy = "VH"
-            weatherSelected["rainy"] = "very high"
+            weatherSelected["Rainy"] = "Very high"
             NotificationCenter.default.removeObserver(self)
         }
         rainyLevelSheet.addAction(cancel)
@@ -122,29 +122,29 @@ class TTableViewController: UITableViewController {
     @IBAction func snowSWB(_ sender: Any) {
         guard snowBtn.isOn else{
             snow = ""
-            weatherSelected["snow"] = nil
+            weatherSelected["Snow"] = nil
             return}
         let snowLevelSheet=UIAlertController(title:"Snow Level",message:"select the snow level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
             snow = ""
-            weatherSelected["snow"] = nil
+            weatherSelected["Snow"] = nil
             self.snowBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             return
         }
         let level1=UIAlertAction(title:"Light",style:.default){ (act) -> Void in
             snow = "L"
-            weatherSelected["snow"] = "light"
+            weatherSelected["Snow"] = "Light"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"High",style:.default){ (act) -> Void in
             snow = "H"
-            weatherSelected["snow"] = "high"
+            weatherSelected["Snow"] = "High"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
             snow = "VH"
-            weatherSelected["snow"] = "very high"
+            weatherSelected["Snow"] = "Very high"
             NotificationCenter.default.removeObserver(self)
         }
         snowLevelSheet.addAction(cancel)
@@ -157,30 +157,30 @@ class TTableViewController: UITableViewController {
     @IBAction func humiditySWB(_ sender: Any) {
         guard humidityBtn.isOn else{
             humidity = ","
-            weatherSelected["humidity"] = nil
+            weatherSelected["Humidity"] = nil
             return
         }
         let humidityLevelSheet=UIAlertController(title:"Humididt Level",message:"select the humidity level",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
             humidity = ","
-            weatherSelected["humidity"] = nil
+            weatherSelected["Humidity"] = nil
             self.humidityBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             return
         }
         let level1=UIAlertAction(title:"Dry",style:.default){ (act) -> Void in
             humidity = "0,30,"
-            weatherSelected["humidity"] = "dry"
+            weatherSelected["Humidity"] = "Dry"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"Moderate",style:.default){ (act) -> Void in
             humidity = "31,60"
-            weatherSelected["humidity"] = "moderate"
+            weatherSelected["Humidity"] = "Moderate"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"Lamp",style:.default){ (act) -> Void in
             humidity = "61,100"
-            weatherSelected["humidity"] = "lamp"
+            weatherSelected["Humidity"] = "Lamp"
             NotificationCenter.default.removeObserver(self)
         }
         humidityLevelSheet.addAction(cancel)
@@ -206,22 +206,22 @@ class TTableViewController: UITableViewController {
         }
         let level1=UIAlertAction(title:"Low",style:.default){ (act) -> Void in
             uvIndex = "0,2"
-            weatherSelected["UV index"] = "low"
+            weatherSelected["UV index"] = "Low"
             NotificationCenter.default.removeObserver(self)
         }
         let level2=UIAlertAction(title:"Moderate",style:.default){ (act) -> Void in
             uvIndex = "4,6"
-            weatherSelected["UV index"] = "moderate"
+            weatherSelected["UV index"] = "Moderate"
             NotificationCenter.default.removeObserver(self)
         }
         let level3=UIAlertAction(title:"High",style:.default){ (act) -> Void in
             uvIndex = "7,9"
-            weatherSelected["UV index"] = "high"
+            weatherSelected["UV index"] = "High"
             NotificationCenter.default.removeObserver(self)
         }
         let level4=UIAlertAction(title:"Very High",style:.default){ (act) -> Void in
             uvIndex = "10,12"
-            weatherSelected["UV index"] = "very high"
+            weatherSelected["UV index"] = "Very high"
             NotificationCenter.default.removeObserver(self)
         }
         uvLevelSheet.addAction(cancel)
@@ -243,22 +243,22 @@ class TTableViewController: UITableViewController {
             let createEvent = segue.destination as! createEventVC
             
             if sunnyBtn.isOn == false{
-                weatherSelected["sunny"] = nil
+                weatherSelected["Sunny"] = nil
             }
             if cloudyBtn.isOn == false{
-                weatherSelected["cloudy"] = nil
+                weatherSelected["Cloudy"] = nil
             }
             if windyBtn.isOn == false{
-                weatherSelected["windy"] = nil
+                weatherSelected["Windy"] = nil
             }
             if rainyBtn.isOn == false{
-                weatherSelected["rainy"] = nil
+                weatherSelected["Rainy"] = nil
             }
             if snowBtn.isOn == false{
-                weatherSelected["snow"] = nil
+                weatherSelected["Snow"] = nil
             }
             if humidityBtn.isOn == false{
-                weatherSelected["humidity"] = nil
+                weatherSelected["Humidity"] = nil
             }
             if uvBtn.isOn == false{
                 weatherSelected["UV index"] = nil
