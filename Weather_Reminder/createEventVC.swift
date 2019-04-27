@@ -52,10 +52,10 @@ class createEventVC: UIViewController {
     
     
     //    var weatherType:String?
-//    var intensity: String?
-//    var uvIndex:Int?
-//    var humidityStatus:String?
-//    var humidityValue:String?
+    //    var intensity: String?
+    //    var uvIndex:Int?
+    //    var humidityStatus:String?
+    //    var humidityValue:String?
     func setTitile(){
         eventTitle = titleText.text!
     }
@@ -148,56 +148,9 @@ class createEventVC: UIViewController {
         print("gsSenario: \(gsSenario)")
         print("locaName:\(locName)")
         print("event title: \(eventTitle)")
-
+        
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        if eventTitle != "" {
-//            titleText.text = eventTitle
-//        }
-//        if(gsPeriod.isEmpty){
-//            periodText.text = "Everyday"
-//        }else{
-//            periodText.text = "\(start) to \(end)"
-//        }
-//        if(gsRemindTime != ""){
-//            remindTimeText.text = gsRemindTime
-//        }else{
-//            remindTimeText.text = gsRemindTime
-//        }
-//        if (gsAlertDays == 0) {
-//            alertText.text = "on that day"
-//        }
-//        if (gsAlertDays == 1) {
-//            alertText.text = "1 day"
-//        }
-//        if (gsAlertDays == 3) {
-//            alertText.text = "3 day"
-//        }
-//        if (gsAlertDays == 7) {
-//            alertText.text = "7 day"
-//        }
-//
-//        if(location2D.isEmpty){
-//            locationText.text = ""
-//        }else{
-//            locationText.text = locName
-//        }
-//        if(weatherSelected.isEmpty){
-//            weatherText.text = ""
-//        }else{
-//            var weather = ""
-//            let space = " "
-//            for i in 0..<weatherSelected.count{
-//                weather = weather + space + weatherSelected[i]
-//            }
-//            weatherText.text = weather
-//        }
-//
-//        print("gsSenario: \(gsSenario)")
-//        print("locaName:\(locName)")
-//        print("event title: \(eventTitle)")
-//    }
     
     @IBAction func setAlert(_ sender: Any) {
         let actionSheet=UIAlertController(title:"Alert days",message:"select the alert days before the event",preferredStyle:.actionSheet)
@@ -236,37 +189,46 @@ class createEventVC: UIViewController {
     func createBtnFunc(){
         // the button create should be change to done- Congwei Ni
         //        print("event is not nil \(self.event != nil) when click done button")
-        eventTitle = titleText.text!
-        var startDate: String = ""
-        var endDate: String = ""
-        if let validStart = gsPeriod["startDate"]{
-            startDate = validStart
-        }
-        if let validEnd = gsPeriod["endDate"]{
-            endDate = validEnd
-        }
-        if(globalEvent != nil){
-            print("edit event")
-            editEvent(event: globalEvent!, id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
+        if(locName == ""){
+            // alter
+            print("no location")
+            let alert = UIAlertController(title: "Warning!", message: "Please select your location!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            return
         }else{
-            print("insert event")
-            id = id + 1
-            insertEvent(id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
+            eventTitle = titleText.text!
+            var startDate: String = ""
+            var endDate: String = ""
+            if let validStart = gsPeriod["startDate"]{
+                startDate = validStart
+            }
+            if let validEnd = gsPeriod["endDate"]{
+                endDate = validEnd
+            }
+            if(globalEvent != nil){
+                print("edit event")
+                editEvent(event: globalEvent!, id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
+            }else{
+                print("insert event")
+                id = id + 1
+                insertEvent(id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
+            }
+            
+            //save to core data
+            saveCoreData()
+            
+            // initialize all global data as default empty value
+            initialData()
+            
+            // performSegue to event list view
+            performSegue(withIdentifier: "createToList", sender: nil)
         }
-        
-        //save to core data
-        saveCoreData()
-        
-        // initialize all global data as default empty value
-        initialData()
-        
-        // performSegue to event list view
-        
     }
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == "createToList"{
-          self.createBtnFunc()
-       }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createToList"{
+            self.createBtnFunc()
+        }
     }
     
     func initialData() {
@@ -274,8 +236,8 @@ class createEventVC: UIViewController {
         gsSenario = ""
         gsRemindTime = ""
         gsPeriod = [String:String]()
-//        gsPStart = String()
-//        gsPEnd = String()
+        //        gsPStart = String()
+        //        gsPEnd = String()
         gsAlertDays = Int()
         sunny = ","
         cloudy = ",,"
@@ -294,13 +256,13 @@ class createEventVC: UIViewController {
     
     func assignData(){
         eventTitle = (event?.title)!
-//        gsSenario = ""
+        //        gsSenario = ""
         gsRemindTime = (event?.gsRemindTime)!
-//        print("assign data gsStartDate: \(event?.gsStartDate)")
-//        print("assign data gsEndDate: \(event?.gsEndDate)")
+        //        print("assign data gsStartDate: \(event?.gsStartDate)")
+        //        print("assign data gsEndDate: \(event?.gsEndDate)")
         if((event?.gsStartDate)! != "" && (event?.gsEndDate)! != ""){
-        gsPeriod["startDate"] = (event?.gsStartDate)!
-        gsPeriod["endDate"] = (event?.gsEndDate)!
+            gsPeriod["startDate"] = (event?.gsStartDate)!
+            gsPeriod["endDate"] = (event?.gsEndDate)!
         }else{
             print("empty period")
             gsPeriod = [String:String]()
@@ -322,8 +284,8 @@ class createEventVC: UIViewController {
         let doubleStart = Double((event?.gsStartDate)!)
         let doubleEnd = Double((event?.gsEndDate)!)
         if(doubleStart != nil && doubleEnd != nil){
-        start = formatter.string(from: Date(timeIntervalSince1970: doubleStart!))
-        end = formatter.string(from: Date(timeIntervalSince1970: doubleEnd!))
+            start = formatter.string(from: Date(timeIntervalSince1970: doubleStart!))
+            end = formatter.string(from: Date(timeIntervalSince1970: doubleEnd!))
         }else{
             start = ""
             end = ""
