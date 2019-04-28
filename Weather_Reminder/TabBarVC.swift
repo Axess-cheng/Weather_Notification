@@ -13,7 +13,6 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        self.tabBar.tintColor = UIColor.black
         // Do any additional setup after loading the view.
     }
     
