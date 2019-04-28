@@ -21,7 +21,13 @@ class LoginVC: UIViewController {
     
     
     @IBAction func authenticateUser(_ sender: Any) {
-        if email.text == "test" && password.text == "test"{
+        id_data = email.text ?? ""
+        Password = password.text ?? ""
+        print("password = "+Password)
+        checkUser()
+//        sleep(2)
+        semaphore.wait()
+        if loginIsSucc{
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             
             print("user logged in")
@@ -29,7 +35,9 @@ class LoginVC: UIViewController {
             self.definesPresentationContext = true
             SettingVC.modalPresentationStyle = .overCurrentContext
             self.present(SettingVC, animated: false, completion: nil)
-            
+        }else{
+            print("logged failed")
+            // Todo: alert
         }
     }
     

@@ -107,6 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Get push token : \(token)")
         let token2 = deviceToken.map {String(format: "%02.2hhx", $0)}.joined()
         print("token2 : \(token2)")
+        device_token = token2
         
     }
     

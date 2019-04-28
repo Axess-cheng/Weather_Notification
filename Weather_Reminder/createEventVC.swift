@@ -15,7 +15,7 @@ var id = 0
 var eventTitle = ""
 var gsSenario = ""
 var gsRemindTime = "08:00"
-var gsPeriod = [String:String]()
+var gsPeriod = [String:String]() // startDate , endDate
 var gsPStart = String()
 var gsPEnd = String()
 var gsAlertDays = Int()
@@ -26,7 +26,7 @@ var rainy = ""
 var snow = ""
 var uvIndex = ","
 var humidity = ","
-var location2D = [String : String]()
+var location2D = [String : String]() // lat long
 var locName = ""
 var weatherSelected = [String:String]()
 
