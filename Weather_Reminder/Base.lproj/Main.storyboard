@@ -524,7 +524,7 @@
                                                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUv-Vk-uFd">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <items>
-                                                        <navigationItem title="Weather condition" id="vxr-Ba-wb2">
+                                                        <navigationItem title="Weather conditions" id="vxr-Ba-wb2">
                                                             <barButtonItem key="leftBarButtonItem" title="Done" id="Ico-GX-Gdy">
                                                                 <connections>
                                                                     <action selector="weatherConditionDone:" destination="st0-88-fcp" id="V71-eN-nuF"/>
@@ -1118,7 +1118,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sRS-fU-cvR"/>
-        <segue reference="xq9-yM-K3p"/>
+        <segue reference="u6F-iv-BIk"/>
         <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>
