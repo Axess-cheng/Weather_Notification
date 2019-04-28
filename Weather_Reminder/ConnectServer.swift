@@ -103,19 +103,18 @@ func checkUser(){
 
 // add event
 func addEvent(){
-    let url = URL(string: "http://142.93.34.33/update_event.php")!
+    let url = URL(string: "http://142.93.34.33/add_event.php")!
     var request = URLRequest(url: url)
     
     request.httpMethod = "POST"
     request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
     
-    let startDate = gsPeriod["startDate"]
-    let endDate = gsPeriod["endDate"]
-    let lon = location2D["long"]
-    let lat = location2D["lat"]
+    let startDate = gsPeriod["startDate"] ?? "0000000000"
+    let endDate = gsPeriod["endDate"] ?? "0000000000"
+    let lon = location2D["long"]!
+    let lat = location2D["lat"]!
     
-    let event = "{\"id\":\(id),\"title\":\"\(eventTitle)\",\"period\":{\"startDate\":\(startDate),\"endDate\":\(endDate) },\"alertDays\":1,\"remindTime\":\"\(gsRemindTime)\",\"sunny\":\"\(sunny)\", \"cloudy\":\"\(cloudy)\",\"windy\":\"\(windy)\",\"rainy\":\"\(rainy)\",\"snow\":\"\(snow)\",\"uvIndex\":\"\(uvIndex)\",\"humidity\":\"\(humidity)\",\"loc\":{\"lon\":\(lon),\"lat\":\(lat) },\"locName\":\"\(locName)\" }"
-    
+    let event = "{\"id\":\(id),\"title\":\"\(eventTitle)\",\"period\":{\"startDate\":\"\(startDate)\",\"endDate\":\"\(endDate)\" },\"alertDays\":1,\"remindTime\":\"\(gsRemindTime)\",\"sunny\":\"\(sunny)\", \"cloudy\":\"\(cloudy)\",\"windy\":\"\(windy)\",\"rainy\":\"\(rainy)\",\"snow\":\"\(snow)\",\"uvIndex\":\"\(uvIndex)\",\"humidity\":\"\(humidity)\",\"loc\":{\"lon\":\"\(lon)\",\"lat\":\"\(lat)\" },\"locName\":\"\(locName)\" }"
     request.httpBody = "event=\(event)&token=\(user_token)&user_id=\(user_id)".data(using: .utf8)
     
     DispatchQueue.main.async {

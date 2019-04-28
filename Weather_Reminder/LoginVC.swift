@@ -29,7 +29,8 @@ class LoginVC: UIViewController {
         semaphore.wait()
         if loginIsSucc{
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-            
+            UserDefaults.standard.set(user_id, forKey: "userID")
+            UserDefaults.standard.set(user_token, forKey: "userToken")
             print("user logged in")
             let SettingVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
             self.definesPresentationContext = true
@@ -37,7 +38,9 @@ class LoginVC: UIViewController {
             self.present(SettingVC, animated: false, completion: nil)
         }else{
             print("logged failed")
-            // Todo: alert
+            let alert = UIAlertController(title: "Failed!", message: "Wrong email or password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
         }
     }
     
