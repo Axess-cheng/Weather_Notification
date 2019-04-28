@@ -19,7 +19,10 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "eventLIst")
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "myCell")
+        cell.backgroundColor = UIColor(red: 0.973, green: 0.907, blue: 0.721, alpha: 1.0)
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.textColor = UIColor(red: 0.129, green: 0.310, blue: 0.451, alpha: 1.0)
         cell.textLabel?.text = events[indexPath.row].title!
         var detailString = events[indexPath.row].gsRemindTime!
         let formatter = DateFormatter.init()

@@ -5,7 +5,7 @@
 //  Created by allen on 2019/4/1.
 //  Copyright © 2019 comp208.team4. All rights reserved.
 //
-
+//it is useless and maybe connectted to TTableView for further use
 import UIKit
 
 class weatherConditionVC: UIViewController {

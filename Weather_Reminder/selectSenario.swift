@@ -5,7 +5,8 @@
 //  Created by allen on 2019/3/31.
 //  Copyright © 2019 comp208.team4. All rights reserved.
 //
-
+//This class is to control the view of set the scenario
+//pass the parameters
 import UIKit
 
 class selectSenario: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource {
@@ -17,7 +18,9 @@ class selectSenario: UIViewController, UIPickerViewDelegate,UIPickerViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //set the content of the data picker
+        //four scenario and a none
         self.pickSenario.delegate = self
         self.pickSenario.dataSource = self
         pickSenario.selectRow(0, inComponent: 0, animated: true)
@@ -29,18 +32,22 @@ class selectSenario: UIViewController, UIPickerViewDelegate,UIPickerViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
+    //the coloums of picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    //the number of options
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return senarioData.count
     }
     
+    //show the options
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return senarioData[row]
     }
     
+    //pass parameters
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         senario = senarioData[row]
     }

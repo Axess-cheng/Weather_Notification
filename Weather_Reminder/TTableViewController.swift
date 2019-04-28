@@ -5,7 +5,8 @@
 //  Created by allen on 2019/4/2.
 //  Copyright © 2019 comp208.team4. All rights reserved.
 //
-
+//This class controll the view of select the weather condition
+//pass the parameters
 import UIKit
 
 class TTableViewController: UITableViewController {
@@ -14,6 +15,7 @@ class TTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    //switch buttons for the weather condition
     @IBOutlet weak var sunnyBtn: UISwitch!
     @IBOutlet weak var cloudyBtn: UISwitch!
     @IBOutlet weak var windyBtn: UISwitch!
@@ -22,7 +24,12 @@ class TTableViewController: UITableViewController {
     @IBOutlet weak var humidityBtn: UISwitch!
     @IBOutlet weak var uvBtn: UISwitch!
     
-    
+    //7 IBAction functions below
+    //1.check and control the switch button
+    //2.include the choose sheet
+    //3.Add the weather condition choose accoridng to the choose sheet
+    //4.choose sheet include weather level for title and a cancel choice
+    //5.pass the globel parameters in createEvent
     @IBAction func sunnySWB(_ sender: Any) {
         guard sunnyBtn.isOn else{
             sunny = ","
@@ -48,9 +55,9 @@ class TTableViewController: UITableViewController {
             windy = ","
             weatherSelected["Windy"] = nil
             return}
-        let windyLevelSheet=UIAlertController(title:"Windy Level",message:"select the windy level",preferredStyle:.actionSheet)
+        let windyLevelSheet=UIAlertController(title:"Windy Level",message:"select the windy  level",preferredStyle:.actionSheet)            //choose sheet
         let cancel=UIAlertAction(title:"Cancel",style:.cancel){ (act) -> Void in
-            self.windyBtn.setOn(false, animated: true)
+            self.windyBtn.setOn(false, animated: true)     // cancel option and do nothing if choosed
             NotificationCenter.default.removeObserver(self)
             windy = ","
             weatherSelected["Windy"] = nil
@@ -71,6 +78,7 @@ class TTableViewController: UITableViewController {
             weatherSelected["Windy"] = "Very high"
             NotificationCenter.default.removeObserver(self)
         }
+        
         windyLevelSheet.addAction(cancel)
         windyLevelSheet.addAction(level1)
         windyLevelSheet.addAction(level2)
@@ -231,13 +239,16 @@ class TTableViewController: UITableViewController {
         uvLevelSheet.addAction(level4)
         present(uvLevelSheet, animated: true, completion: nil)
     }
+    // end of IBAction functions
     
-    
-    
+    // perform segue
     @IBAction func weatherConditionDone(_ sender: Any) {
         self.performSegue(withIdentifier: "weatherConditionDone", sender: nil)
     }
     
+    //double check the switch button
+    //if the switch button is off it should make sure the weather is not selet
+    //not selet = the weathe condition String is nil
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "weatherConditionDone"{
             let createEvent = segue.destination as! createEventVC
