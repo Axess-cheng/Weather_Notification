@@ -5,13 +5,18 @@
 //  Created by allen on 2019/3/31.
 //  Copyright © 2019 comp208.team4. All rights reserved.
 //
-
+//This class is the main class to control the event
+//initialize the global paramters and recieve data from other VC
+//use core data and use the back server
 import UIKit
+//the global parameters th event use
+
 
 var events: [Event] = []
 
+//the data the coredata and back server use
+//the UI also use part
 var id = 0
-// change from title to eventTitle
 var eventTitle = ""
 var gsSenario = ""
 var gsRemindTime = "08:00"
@@ -28,8 +33,9 @@ var uvIndex = ","
 var humidity = ","
 var location2D = [String : String]()
 var locName = ""
-var weatherSelected = [String:String]()
 
+//the data that just UI use
+var weatherSelected = [String:String]()
 var start = ""
 var end = ""
 
@@ -41,13 +47,13 @@ class createEventVC: UIViewController {
     // sended from event list if click cell
     var event: Event?
     
+    //var from UI
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var periodText: UILabel!
     @IBOutlet weak var remindTimeText: UILabel!
     @IBOutlet weak var alertText: UILabel!
     @IBOutlet weak var locationText: UILabel!
     @IBOutlet weak var weatherText: UILabel!
-    
     @IBOutlet weak var backBtn: UIBarButtonItem!
     
     
@@ -56,10 +62,14 @@ class createEventVC: UIViewController {
     //    var uvIndex:Int?
     //    var humidityStatus:String?
     //    var humidityValue:String?
+    
+    //the function to make the title the user type pass to parameters
     func setTitile(){
         eventTitle = titleText.text!
     }
     
+    //5 TBAction to keep the title show event if jump the pages
+    //every button make a memory
     @IBAction func periodBtn(_ sender: Any) {
         setTitile()
     }
@@ -80,9 +90,12 @@ class createEventVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //define the way of a new line of a label
         weatherText.lineBreakMode = NSLineBreakMode.byWordWrapping
         weatherText.numberOfLines = 0
         
+        //print for test use
+        //the the parameteris is passed
         print("locName \(locName) in create event vc")
         print("lat \(location2D["lat"]) in create event vc")
         print("current \(location2D["long"]) in create event vc")
@@ -97,7 +110,7 @@ class createEventVC: UIViewController {
             backBtn.tintColor = UIColor.clear
         }
         
-        
+        //below is to check if the data is set and show the content
         if eventTitle != "" {
             titleText.text = eventTitle
         }
@@ -144,14 +157,21 @@ class createEventVC: UIViewController {
             }
             weatherText.text = "We will inform you when \n" + weather
         }
+        //end check and show
         
+        //for test use
         print("gsSenario: \(gsSenario)")
         print("locaName:\(locName)")
         print("event title: \(eventTitle)")
         
     }
     
-    
+    //IBAction to set alert days
+    //use a choice sheet
+    //1.click and jump from bottom
+    //2.4 choice and 1 cancel
+    //3.cancel will do nothing
+    //4. if choose choice pass the parameters and show the choice
     @IBAction func setAlert(_ sender: Any) {
         let actionSheet=UIAlertController(title:"Alert days",message:"select the alert days before the event",preferredStyle:.actionSheet)
         let cancel=UIAlertAction(title:"Cancel",style:.cancel)
@@ -183,7 +203,7 @@ class createEventVC: UIViewController {
         present(actionSheet, animated: true, completion: nil)
         print(gsAlertDays)
     }
-    
+    //end set alert days
     
     
     func createBtnFunc(){
@@ -231,6 +251,9 @@ class createEventVC: UIViewController {
         }
     }
     
+    //clear the data
+    //after one event is create clear the data that the next event will use
+    //set to empty structure and "" and nil accordingly
     func initialData() {
         eventTitle = ""
         gsSenario = ""
