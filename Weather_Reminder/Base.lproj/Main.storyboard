@@ -131,11 +131,6 @@
                                     <constraint firstItem="rxp-l5-1ni" firstAttribute="leading" secondItem="ZG5-Yf-ku0" secondAttribute="trailing" constant="49" id="EGm-Ky-lhE"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WOV-Rg-6il">
-                                <rect key="frame" x="0.0" y="597" width="375" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -165,7 +160,6 @@
                         <outlet property="label2" destination="X3K-We-m0B" id="Up3-pn-Hkb"/>
                         <outlet property="pickEnd" destination="Jdk-Bl-nBc" id="nJH-ev-KG3"/>
                         <outlet property="pickStart" destination="Bxp-DC-HqO" id="HKW-3x-gis"/>
-                        <outlet property="view3" destination="WOV-Rg-6il" id="FAd-PO-Rix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bfy-sA-nhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1171,7 +1165,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sRS-fU-cvR"/>
-        <segue reference="xq9-yM-K3p"/>
+        <segue reference="bcL-FP-kna"/>
         <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>
