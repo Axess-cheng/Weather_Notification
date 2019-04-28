@@ -754,7 +754,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Map" id="3Em-vJ-5WY">
-                                        <barButtonItem key="leftBarButtonItem" title="back" id="FbX-sF-NHZ">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="FbX-sF-NHZ">
                                             <connections>
                                                 <segue destination="HpP-UR-0Bo" kind="show" identifier="fromMapToCreatEvent" id="xq9-yM-K3p"/>
                                             </connections>
@@ -1118,7 +1118,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sRS-fU-cvR"/>
-        <segue reference="u6F-iv-BIk"/>
+        <segue reference="xq9-yM-K3p"/>
         <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>
