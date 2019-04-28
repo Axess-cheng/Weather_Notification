@@ -62,9 +62,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOf-cG-Hlj">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOf-cG-Hlj">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Period" id="u0Z-vb-VTx">
                                         <barButtonItem key="leftBarButtonItem" title="Done" id="gEO-1i-YSM">
@@ -76,65 +75,82 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-DC-HqO">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-DC-HqO">
                                 <rect key="frame" x="0.0" y="185" width="375" height="165"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="vf4-Qr-iIa"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="575774454.12998104">
                                     <!--2019-04-01 01:20:54 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3K-We-m0B">
-                                <rect key="frame" x="16" y="371" width="70" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3K-We-m0B">
+                                <rect key="frame" x="16" y="371" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jdk-Bl-nBc">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jdk-Bl-nBc">
                                 <rect key="frame" x="0.0" y="400" width="375" height="184"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="184" id="V5Q-VR-DH2"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="575774526.00267303">
                                     <!--2019-04-01 01:22:06 +0000-->
                                 </date>
                             </datePicker>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZ9-kj-boY">
-                                <rect key="frame" x="0.0" y="134" width="375" height="5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZg-UR-gwV">
-                                <rect key="frame" x="18" y="156" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZg-UR-gwV">
+                                <rect key="frame" x="16" y="156" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-l5-1ni">
-                                <rect key="frame" x="149" y="100" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="switchBtn:" destination="C5e-O9-wnR" eventType="valueChanged" id="qua-xk-hEj"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Every Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG5-Yf-ku0">
-                                <rect key="frame" x="18" y="105" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="4hs-La-9tL">
+                                <rect key="frame" x="16" y="105" width="174.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG5-Yf-ku0">
+                                        <rect key="frame" x="0.0" y="0.0" width="76.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-l5-1ni">
+                                        <rect key="frame" x="125.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchBtn:" destination="C5e-O9-wnR" eventType="valueChanged" id="qua-xk-hEj"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rxp-l5-1ni" firstAttribute="leading" secondItem="ZG5-Yf-ku0" secondAttribute="trailing" constant="49" id="EGm-Ky-lhE"/>
+                                </constraints>
+                            </stackView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WOV-Rg-6il">
-                                <rect key="frame" x="0.0" y="592" width="375" height="5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iGr-rs-CZF">
-                                <rect key="frame" x="0.0" y="358" width="375" height="5"/>
+                                <rect key="frame" x="0.0" y="597" width="375" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X3K-We-m0B" firstAttribute="leading" secondItem="K6y-Xl-hKs" secondAttribute="leading" constant="16" id="03y-Eb-Goq"/>
+                            <constraint firstItem="K6y-Xl-hKs" firstAttribute="trailing" secondItem="X3K-We-m0B" secondAttribute="trailing" constant="16" id="3p4-YM-iIh"/>
+                            <constraint firstItem="Bxp-DC-HqO" firstAttribute="top" secondItem="TZg-UR-gwV" secondAttribute="bottom" constant="8.5" id="9hX-Gg-pqx"/>
+                            <constraint firstItem="Bxp-DC-HqO" firstAttribute="trailing" secondItem="K6y-Xl-hKs" secondAttribute="trailing" id="AKT-IO-FqI"/>
+                            <constraint firstItem="Jdk-Bl-nBc" firstAttribute="trailing" secondItem="K6y-Xl-hKs" secondAttribute="trailing" id="Arx-bQ-bYp"/>
+                            <constraint firstItem="TZg-UR-gwV" firstAttribute="leading" secondItem="K6y-Xl-hKs" secondAttribute="leading" constant="16" id="BQU-Y8-1Wf"/>
+                            <constraint firstItem="oOf-cG-Hlj" firstAttribute="leading" secondItem="K6y-Xl-hKs" secondAttribute="leading" id="G7M-3x-7a5"/>
+                            <constraint firstItem="Bxp-DC-HqO" firstAttribute="leading" secondItem="K6y-Xl-hKs" secondAttribute="leading" id="Ial-vF-wW6"/>
+                            <constraint firstItem="oOf-cG-Hlj" firstAttribute="top" secondItem="K6y-Xl-hKs" secondAttribute="top" id="ROS-vk-zLY"/>
+                            <constraint firstItem="K6y-Xl-hKs" firstAttribute="trailing" secondItem="TZg-UR-gwV" secondAttribute="trailing" constant="16" id="V5U-ma-BRw"/>
+                            <constraint firstItem="4hs-La-9tL" firstAttribute="leading" secondItem="K6y-Xl-hKs" secondAttribute="leading" constant="16" id="Vzr-Tr-I0O"/>
+                            <constraint firstItem="TZg-UR-gwV" firstAttribute="top" secondItem="4hs-La-9tL" secondAttribute="bottom" constant="20" id="fFY-2B-cFl"/>
+                            <constraint firstItem="Jdk-Bl-nBc" firstAttribute="leading" secondItem="K6y-Xl-hKs" secondAttribute="leading" id="kFB-gv-8It"/>
+                            <constraint firstItem="4hs-La-9tL" firstAttribute="top" secondItem="oOf-cG-Hlj" secondAttribute="bottom" constant="41" id="kjD-dM-qXT"/>
+                            <constraint firstItem="oOf-cG-Hlj" firstAttribute="trailing" secondItem="K6y-Xl-hKs" secondAttribute="trailing" id="qcU-94-ue1"/>
+                            <constraint firstItem="Jdk-Bl-nBc" firstAttribute="top" secondItem="X3K-We-m0B" secondAttribute="bottom" constant="8.5" id="sHb-Az-urb"/>
+                            <constraint firstItem="X3K-We-m0B" firstAttribute="top" secondItem="Bxp-DC-HqO" secondAttribute="bottom" constant="21" id="sUL-fb-NVF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K6y-Xl-hKs"/>
                     </view>
                     <connections>
@@ -143,8 +159,6 @@
                         <outlet property="label2" destination="X3K-We-m0B" id="Up3-pn-Hkb"/>
                         <outlet property="pickEnd" destination="Jdk-Bl-nBc" id="nJH-ev-KG3"/>
                         <outlet property="pickStart" destination="Bxp-DC-HqO" id="HKW-3x-gis"/>
-                        <outlet property="view1" destination="rZ9-kj-boY" id="AKp-Q3-qx7"/>
-                        <outlet property="view2" destination="iGr-rs-CZF" id="6Yp-Wy-rvR"/>
                         <outlet property="view3" destination="WOV-Rg-6il" id="FAd-PO-Rix"/>
                     </connections>
                 </viewController>
@@ -160,11 +174,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ck9-Yk-N9I">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck9-Yk-N9I">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="remind time" id="Lct-dL-QYE">
+                                    <navigationItem title="Remind time" id="Lct-dL-QYE">
                                         <barButtonItem key="leftBarButtonItem" title="Done" id="UtJ-3n-EZS">
                                             <connections>
                                                 <action selector="doneBtn:" destination="T19-3h-KeL" id="jue-5v-RSF"/>
@@ -174,22 +187,31 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcQ-bq-HAh">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcQ-bq-HAh">
                                 <rect key="frame" x="0.0" y="200" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="575794800.54449499">
                                     <!--2019-04-01 07:00:00 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select the remind time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMm-cO-TmD">
-                                <rect key="frame" x="16" y="153" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select the remind time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMm-cO-TmD">
+                                <rect key="frame" x="16" y="140" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ck9-Yk-N9I" firstAttribute="trailing" secondItem="2GG-NG-nlF" secondAttribute="trailing" id="DWI-SP-oTR"/>
+                            <constraint firstItem="FcQ-bq-HAh" firstAttribute="top" secondItem="HMm-cO-TmD" secondAttribute="bottom" constant="39" id="HYZ-2R-9It"/>
+                            <constraint firstItem="FcQ-bq-HAh" firstAttribute="trailing" secondItem="2GG-NG-nlF" secondAttribute="trailing" id="S6r-xf-dIi"/>
+                            <constraint firstItem="ck9-Yk-N9I" firstAttribute="top" secondItem="2GG-NG-nlF" secondAttribute="top" id="T9d-5V-QUB"/>
+                            <constraint firstItem="HMm-cO-TmD" firstAttribute="top" secondItem="ck9-Yk-N9I" secondAttribute="bottom" constant="76" id="bZb-50-VbA"/>
+                            <constraint firstItem="2GG-NG-nlF" firstAttribute="trailing" secondItem="HMm-cO-TmD" secondAttribute="trailing" constant="16" id="hci-Q1-CJn"/>
+                            <constraint firstItem="ck9-Yk-N9I" firstAttribute="leading" secondItem="2GG-NG-nlF" secondAttribute="leading" id="mib-2M-WGa"/>
+                            <constraint firstItem="FcQ-bq-HAh" firstAttribute="leading" secondItem="2GG-NG-nlF" secondAttribute="leading" id="t6q-87-EzG"/>
+                            <constraint firstItem="HMm-cO-TmD" firstAttribute="leading" secondItem="2GG-NG-nlF" secondAttribute="leading" constant="16" id="vqH-2g-7XH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2GG-NG-nlF"/>
                     </view>
                     <connections>
@@ -291,16 +313,14 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select a scenario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPC-bk-c1L">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a scenario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPC-bk-c1L">
                                 <rect key="frame" x="16" y="134" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ni8-cq-Zwq">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ni8-cq-Zwq">
                                 <rect key="frame" x="0.0" y="190" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="1tx-Q8-MeY" id="AMu-LO-MRY"/>
                                     <outlet property="delegate" destination="1tx-Q8-MeY" id="qYi-SR-v1X"/>
@@ -309,9 +329,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="YPC-bk-c1L" firstAttribute="leading" secondItem="J92-fM-dAk" secondAttribute="leading" constant="16" id="7t6-8j-CgV"/>
+                            <constraint firstItem="Ri9-wa-Sxz" firstAttribute="top" secondItem="J92-fM-dAk" secondAttribute="top" id="ITk-Cv-lRp"/>
+                            <constraint firstItem="ni8-cq-Zwq" firstAttribute="top" secondItem="YPC-bk-c1L" secondAttribute="bottom" constant="35" id="Iny-pp-QZO"/>
+                            <constraint firstItem="J92-fM-dAk" firstAttribute="trailing" secondItem="YPC-bk-c1L" secondAttribute="trailing" constant="16" id="QGW-Ze-X31"/>
                             <constraint firstItem="Ri9-wa-Sxz" firstAttribute="leading" secondItem="J92-fM-dAk" secondAttribute="leading" id="TpL-fy-WtV"/>
+                            <constraint firstItem="ni8-cq-Zwq" firstAttribute="trailing" secondItem="J92-fM-dAk" secondAttribute="trailing" id="U9q-1f-cYr"/>
                             <constraint firstItem="Ri9-wa-Sxz" firstAttribute="top" secondItem="J92-fM-dAk" secondAttribute="top" id="WIf-f1-jwh"/>
                             <constraint firstItem="Ri9-wa-Sxz" firstAttribute="trailing" secondItem="J92-fM-dAk" secondAttribute="trailing" id="frM-HD-50I"/>
+                            <constraint firstItem="Ri9-wa-Sxz" firstAttribute="leading" secondItem="J92-fM-dAk" secondAttribute="leading" id="hYz-SO-J0s"/>
+                            <constraint firstItem="YPC-bk-c1L" firstAttribute="top" secondItem="Ri9-wa-Sxz" secondAttribute="bottom" constant="70" id="jqq-xh-C9m"/>
+                            <constraint firstItem="Ri9-wa-Sxz" firstAttribute="trailing" secondItem="J92-fM-dAk" secondAttribute="trailing" id="keR-rB-5qd"/>
+                            <constraint firstItem="ni8-cq-Zwq" firstAttribute="leading" secondItem="J92-fM-dAk" secondAttribute="leading" id="qnx-fS-x5k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J92-fM-dAk"/>
                     </view>
@@ -492,9 +521,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUv-Vk-uFd">
-                                                    <rect key="frame" x="0.0" y="-1" width="375" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUv-Vk-uFd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <items>
                                                         <navigationItem title="Weather condition" id="vxr-Ba-wb2">
                                                             <barButtonItem key="leftBarButtonItem" title="Done" id="Ico-GX-Gdy">
@@ -507,6 +535,11 @@
                                                     </items>
                                                 </navigationBar>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="mUv-Vk-uFd" secondAttribute="trailing" id="4jM-Lc-JY1"/>
+                                                <constraint firstItem="mUv-Vk-uFd" firstAttribute="leading" secondItem="gjo-TX-sUP" secondAttribute="leading" id="BAI-7g-mqG"/>
+                                                <constraint firstItem="mUv-Vk-uFd" firstAttribute="top" secondItem="gjo-TX-sUP" secondAttribute="top" id="Njt-eZ-88l"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1G5-cB-fhC">
@@ -1084,9 +1117,8 @@
         <image name="setting" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g3R-r8-VFq"/>
         <segue reference="sRS-fU-cvR"/>
-        <segue reference="xq9-yM-K3p"/>
+        <segue reference="u6F-iv-BIk"/>
         <segue reference="2Hr-8X-Rh9"/>
     </inferredMetricsTieBreakers>
 </document>
