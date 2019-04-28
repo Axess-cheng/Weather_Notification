@@ -117,7 +117,7 @@ class createEventVC: UIViewController {
             alertText.text = "On that day"
         }
         if (gsAlertDays == 1) {
-            alertText.text = "1 days"
+            alertText.text = "1 day"
         }
         if (gsAlertDays == 3) {
             alertText.text = "3 days"
@@ -154,9 +154,9 @@ class createEventVC: UIViewController {
     
     @IBAction func setAlert(_ sender: Any) {
         let actionSheet=UIAlertController(title:"Alert days",message:"select the alert days before the event",preferredStyle:.actionSheet)
-        let cancel=UIAlertAction(title:"cancel",style:.cancel)
-        let confirm1=UIAlertAction(title:"on that day",style:.default){ (act) -> Void in
-            self.alertText.text = "on that day"
+        let cancel=UIAlertAction(title:"Cancel",style:.cancel)
+        let confirm1=UIAlertAction(title:"On that day",style:.default){ (act) -> Void in
+            self.alertText.text = "On that day"
             gsAlertDays = 0
             NotificationCenter.default.removeObserver(self)
         }
@@ -165,13 +165,13 @@ class createEventVC: UIViewController {
             gsAlertDays = 1
             NotificationCenter.default.removeObserver(self)
         }
-        let confirm3=UIAlertAction(title:"3 day",style:.default){ (act) -> Void in
-            self.alertText.text = "3 day"
+        let confirm3=UIAlertAction(title:"3 days",style:.default){ (act) -> Void in
+            self.alertText.text = "3 days"
             gsAlertDays = 3
             NotificationCenter.default.removeObserver(self)
         }
-        let confirm4=UIAlertAction(title:"7 day",style:.default){ (act) -> Void in
-            self.alertText.text = "7 day"
+        let confirm4=UIAlertAction(title:"7 days",style:.default){ (act) -> Void in
+            self.alertText.text = "7 days"
             gsAlertDays = 7
             NotificationCenter.default.removeObserver(self)
         }

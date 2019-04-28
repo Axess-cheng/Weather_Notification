@@ -23,6 +23,7 @@ class LoginVC: UIViewController {
     @IBAction func authenticateUser(_ sender: Any) {
         if email.text == "test" && password.text == "test"{
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+            
             print("user logged in")
             let SettingVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
             self.definesPresentationContext = true

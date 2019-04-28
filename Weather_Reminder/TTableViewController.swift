@@ -49,7 +49,7 @@ class TTableViewController: UITableViewController {
             weatherSelected["Windy"] = nil
             return}
         let windyLevelSheet=UIAlertController(title:"Windy Level",message:"select the windy level",preferredStyle:.actionSheet)
-        let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
+        let cancel=UIAlertAction(title:"Cancel",style:.cancel){ (act) -> Void in
             self.windyBtn.setOn(false, animated: true)
             NotificationCenter.default.removeObserver(self)
             windy = ","
@@ -84,7 +84,7 @@ class TTableViewController: UITableViewController {
             weatherSelected["Rainy"] = nil
             return}
         let rainyLevelSheet=UIAlertController(title:"Rainy Level",message:"select the rainy level",preferredStyle:.actionSheet)
-        let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
+        let cancel=UIAlertAction(title:"Cancel",style:.cancel){ (act) -> Void in
             rainy = ""
             weatherSelected["Rainy"] = nil
             self.rainyBtn.setOn(false, animated: true)
@@ -125,7 +125,7 @@ class TTableViewController: UITableViewController {
             weatherSelected["Snow"] = nil
             return}
         let snowLevelSheet=UIAlertController(title:"Snow Level",message:"select the snow level",preferredStyle:.actionSheet)
-        let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
+        let cancel=UIAlertAction(title:"Cancel",style:.cancel){ (act) -> Void in
             snow = ""
             weatherSelected["Snow"] = nil
             self.snowBtn.setOn(false, animated: true)
@@ -161,7 +161,7 @@ class TTableViewController: UITableViewController {
             return
         }
         let humidityLevelSheet=UIAlertController(title:"Humididt Level",message:"select the humidity level",preferredStyle:.actionSheet)
-        let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
+        let cancel=UIAlertAction(title:"Cancel",style:.cancel){ (act) -> Void in
             humidity = ","
             weatherSelected["Humidity"] = nil
             self.humidityBtn.setOn(false, animated: true)
@@ -197,7 +197,7 @@ class TTableViewController: UITableViewController {
             return
         }
         let uvLevelSheet=UIAlertController(title:"UV Index Level",message:"select the UV Index level",preferredStyle:.actionSheet)
-        let cancel=UIAlertAction(title:"cancel",style:.cancel){ (act) -> Void in
+        let cancel=UIAlertAction(title:"Cancel",style:.cancel){ (act) -> Void in
             uvIndex = ","
             weatherSelected["UV index"] = nil
             self.uvBtn.setOn(false, animated: true)

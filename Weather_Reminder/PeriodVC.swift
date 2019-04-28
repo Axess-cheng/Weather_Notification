@@ -15,6 +15,9 @@ class PeriodVC: UIViewController {
     @IBOutlet weak var ifEveryday: UISwitch!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view3: UIView!
     
     var now = NSDate()
     var startDate = String()
@@ -37,6 +40,9 @@ class PeriodVC: UIViewController {
             label2.isHidden = true
             pickStart.isHidden = true
             pickEnd.isHidden = true
+            view1.isHidden = true
+            view2.isHidden = true
+            view3.isHidden = true
         }else{
             gsPeriod["startDate"] = String(Int(now.timeIntervalSince1970))
             gsPeriod["endDate"] = String(Int(now.timeIntervalSince1970))
@@ -44,6 +50,9 @@ class PeriodVC: UIViewController {
             label2.isHidden = false
             pickStart.isHidden = false
             pickEnd.isHidden = false
+            view1.isHidden = false
+            view2.isHidden = false
+            view3.isHidden = false
         }
     }
     

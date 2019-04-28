@@ -17,6 +17,7 @@
 		9F11B6622253F13900BA75D4 /* TTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11B6612253F13900BA75D4 /* TTableViewController.swift */; };
 		9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8A2250E8B1005578EC /* selectSenario.swift */; };
 		9F477C8D2250EAD3005578EC /* createEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8C2250EAD3005578EC /* createEventVC.swift */; };
+		9F552B9A2274E30600285060 /* ConnectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F552B992274E30600285060 /* ConnectServer.swift */; };
 		9FBA1436225101170091F617 /* mapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA1435225101170091F617 /* mapVC.swift */; };
 		9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143722518DE90091F617 /* PeriodVC.swift */; };
 		9FBA143A22518E990091F617 /* remindTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143922518E990091F617 /* remindTimeVC.swift */; };
@@ -45,6 +46,7 @@
 		9F11B6612253F13900BA75D4 /* TTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTableViewController.swift; sourceTree = "<group>"; };
 		9F477C8A2250E8B1005578EC /* selectSenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectSenario.swift; sourceTree = "<group>"; };
 		9F477C8C2250EAD3005578EC /* createEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createEventVC.swift; sourceTree = "<group>"; };
+		9F552B992274E30600285060 /* ConnectServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectServer.swift; sourceTree = "<group>"; };
 		9FBA1435225101170091F617 /* mapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapVC.swift; sourceTree = "<group>"; };
 		9FBA143722518DE90091F617 /* PeriodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodVC.swift; sourceTree = "<group>"; };
 		9FBA143922518E990091F617 /* remindTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remindTimeVC.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				FF605FC42270EC1500C64ECE /* LoginVC.swift */,
 				FF605FC62270EFAF00C64ECE /* SignUpVC.swift */,
 				FF06AB0B2270FDA10064AE4B /* UserInfoVC.swift */,
+				9F552B992274E30600285060 /* ConnectServer.swift */,
 			);
 			path = Weather_Reminder;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				347A1E8E224A75F7002C6905 /* Weather_Reminder.xcdatamodeld in Sources */,
 				FF605FC52270EC1500C64ECE /* LoginVC.swift in Sources */,
 				9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */,
+				9F552B9A2274E30600285060 /* ConnectServer.swift in Sources */,
 				FF605FBF2270D5C600C64ECE /* TabBarVC.swift in Sources */,
 				9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */,
 				FF06AB0C2270FDA10064AE4B /* UserInfoVC.swift in Sources */,
