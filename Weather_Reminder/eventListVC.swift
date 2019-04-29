@@ -76,7 +76,7 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         readCoreData()
         user_id = UserDefaults.standard.integer(forKey: "userID")
-        user_token = UserDefaults.standard.string(forKey: "userToken")!
+        user_token = UserDefaults.standard.string(forKey: "userToken") ?? ""
         print(user_token)
         // Do any additional setup after loading the view.
     }

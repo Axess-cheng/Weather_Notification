@@ -231,9 +231,16 @@ class createEventVC: UIViewController {
                 editEvent(event: globalEvent!, id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
             }else{
                 print("insert event")
-                id = id + 1
+                if(user_id != 0){
+                    uploadEvent()
+                    semaphore.wait()
+                }else{
+                    print("send failed, havent log in")
+                }
                 insertEvent(id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
-                addEvent()
+                
+                // upload (add) this event into server
+                
             }
             
             //save to core data
@@ -243,7 +250,7 @@ class createEventVC: UIViewController {
             initialData()
             
             // performSegue to event list view
-//            performSegue(withIdentifier: "createToList", sender: nil)
+            //performSegue(withIdentifier: "createToList", sender: nil)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

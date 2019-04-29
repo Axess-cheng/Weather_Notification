@@ -21,11 +21,12 @@ class LoginVC: UIViewController {
     
     
     @IBAction func authenticateUser(_ sender: Any) {
+        // get email and password
         id_data = email.text ?? ""
         Password = password.text ?? ""
         print("password = "+Password)
         checkUser()
-//        sleep(2)
+        // check users and wait response here.
         semaphore.wait()
         if loginIsSucc{
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
@@ -36,6 +37,7 @@ class LoginVC: UIViewController {
             self.definesPresentationContext = true
             SettingVC.modalPresentationStyle = .overCurrentContext
             self.present(SettingVC, animated: false, completion: nil)
+            // todo: download event.
         }else{
             print("logged failed")
             let alert = UIAlertController(title: "Failed!", message: "Wrong email or password", preferredStyle: .alert)

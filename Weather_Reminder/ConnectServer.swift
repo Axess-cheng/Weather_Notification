@@ -20,7 +20,7 @@ var user_id = 0
 var loginIsSucc = false
 
 let semaphore = DispatchSemaphore.init(value: 0)
-
+let requestQueue = DispatchQueue(label: "com.geselle.backgroundQueue", qos: .userInitiated)
 
 struct MyRegex {
     let regex: NSRegularExpression?
@@ -49,7 +49,7 @@ func addUser(emailAdd:String, password:String){
     
     request.httpBody = "device_token=\(device_token)&email=\(emailAdd)&password=\(password)&token=\(SUPERTOKEN)".data(using: .utf8)
     
-    DispatchQueue.main.async {
+    requestQueue.async {
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             guard let data2 = data, error == nil else{ return }
@@ -61,7 +61,8 @@ func addUser(emailAdd:String, password:String){
                 let jsonResponse = try JSONSerialization.jsonObject(with: data2, options: JSONSerialization.ReadingOptions()) as? NSDictionary
                 
                 // Todo: add success or fail.
-                
+            
+                semaphore.signal()
             }catch let err {
                 print("error here ", err)
             }
@@ -81,8 +82,8 @@ func checkUser(){
     request.httpMethod = "GET"
     request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
     
-    let backgroundQueue = DispatchQueue(label: "com.geselle.backgroundQueue", qos: .userInitiated)
-    backgroundQueue.async {
+    
+    requestQueue.async {
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             guard let data2 = data, error == nil else{ return }
@@ -120,22 +121,22 @@ func checkUser(){
 
 
 // add event
-func addEvent(){
+func uploadEvent(){
     let url = URL(string: "http://142.93.34.33/add_event.php")!
     var request = URLRequest(url: url)
     
     request.httpMethod = "POST"
     request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
     
-    let startDate = gsPeriod["startDate"] ?? "0000000000"
-    let endDate = gsPeriod["endDate"] ?? "0000000000"
+    let startDate = gsPeriod["startDate"] ?? ""
+    let endDate = gsPeriod["endDate"] ?? ""
     let lon = location2D["long"]!
     let lat = location2D["lat"]!
     
     let event = "{\"id\":\(id),\"title\":\"\(eventTitle)\",\"period\":{\"startDate\":\"\(startDate)\",\"endDate\":\"\(endDate)\" },\"alertDays\":1,\"remindTime\":\"\(gsRemindTime)\",\"sunny\":\"\(sunny)\", \"cloudy\":\"\(cloudy)\",\"windy\":\"\(windy)\",\"rainy\":\"\(rainy)\",\"snow\":\"\(snow)\",\"uvIndex\":\"\(uvIndex)\",\"humidity\":\"\(humidity)\",\"loc\":{\"lon\":\"\(lon)\",\"lat\":\"\(lat)\" },\"locName\":\"\(locName)\" }"
     request.httpBody = "event=\(event)&token=\(user_token)&user_id=\(user_id)".data(using: .utf8)
     
-    DispatchQueue.main.async {
+    requestQueue.async {
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             guard let data2 = data, error == nil else{ return }
@@ -145,9 +146,19 @@ func addEvent(){
             
             do{
                 let jsonResponse = try JSONSerialization.jsonObject(with: data2, options: JSONSerialization.ReadingOptions()) as? NSDictionary
-                //
-                
-                
+                //if
+                for jsonKey in jsonResponse!.allKeys {
+                    let theKey = jsonKey as! String
+                    if theKey == "error"{
+                        print("wrong")
+                    }else{
+                        if theKey == "id"{
+                            id = jsonResponse![theKey] as! Int
+                            print("event id:" + String(id))
+                        }
+                    }
+                }
+                semaphore.signal()
             }catch let err {
                 print("error here ", err)
             }

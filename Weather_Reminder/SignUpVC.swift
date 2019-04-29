@@ -27,12 +27,14 @@ class SignUpVC: UIViewController {
             let emailAdd = emailField.text!
             if matcher.match(input: emailAdd) {
                 // need to test with real iphone.
-                //addUser(emailAdd: emailField.text!, password: passwordField.text!)
-//                id_data = emailAdd
-//                Password = passwordField.text!
+                addUser(emailAdd: emailField.text!, password: passwordField.text!)
+                semaphore.wait()
+                id_data = emailAdd
+                Password = passwordField.text!
                 print("add user")
                 
-                // todo: jump to user info page
+                //Todo: add failed.
+                
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 let SettingVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
                 self.definesPresentationContext = true
@@ -41,11 +43,14 @@ class SignUpVC: UIViewController {
                 
                 
                 // check user and get some info.
-//                checkUser()
-//                UserDefaults.standard.set(user_id, forKey: "userID")
-//                UserDefaults.standard.set(user_token, forKey: "userToken")
+                checkUser()
+                semaphore.wait()
+                UserDefaults.standard.set(user_id, forKey: "userID")
+                UserDefaults.standard.set(user_token, forKey: "userToken")
+                print("update info, userToken = "+user_token)
             }else{
                 print("wrong email")
+                // Todo: alert
             }
             
         }else{
