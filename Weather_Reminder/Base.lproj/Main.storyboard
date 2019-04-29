@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNy-aU-pxQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1108,6 +1108,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTN-hn-P06">
                                         <rect key="frame" x="126" y="174" width="52" height="30"/>
                                         <state key="normal" title="Sign up"/>
+                                        <connections>
+                                            <action selector="signUpBtn:" destination="hcl-V0-fvc" eventType="touchUpInside" id="S0r-Wu-eJG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.9065268903" blue="0.72116491640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1153,6 +1156,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tnk-Mw-ntZ"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmField" destination="9Sq-2y-DKs" id="MUY-Wv-kGg"/>
+                        <outlet property="emailField" destination="NxJ-pA-6f5" id="S5C-l9-fKK"/>
+                        <outlet property="passwordField" destination="23u-z6-4Zt" id="QSN-AB-lUJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqk-Nc-UQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1160,8 +1168,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list" width="37.5" height="37.5"/>
-        <image name="setting" width="37.5" height="37.5"/>
+        <image name="list" width="25" height="25"/>
+        <image name="setting" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sRS-fU-cvR"/>

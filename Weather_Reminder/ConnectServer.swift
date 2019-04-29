@@ -21,6 +21,24 @@ var loginIsSucc = false
 
 let semaphore = DispatchSemaphore.init(value: 0)
 
+
+struct MyRegex {
+    let regex: NSRegularExpression?
+    
+    init(_ pattern: String) {
+        regex = try? NSRegularExpression(pattern: pattern,
+                                         options: .caseInsensitive)
+    }
+    
+    func match(input: String) -> Bool {
+        if let matches = regex?.matches(in: input,options: [],range: NSMakeRange(0, (input as NSString).length)) {
+            return matches.count > 0
+        } else {
+            return false
+        }
+    }
+}
+
 // add user.
 func addUser(emailAdd:String, password:String){
     let url = URL(string: "http://142.93.34.33/add_user.php")!
