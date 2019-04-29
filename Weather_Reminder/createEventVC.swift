@@ -238,14 +238,13 @@ class createEventVC: UIViewController {
             }else{
                 print("insert event")
                 if(user_id != 0){
+                    // upload (add) this event into server
                     uploadEvent()
                     semaphore.wait()
                 }else{
                     print("send failed, havent log in")
                 }
                 insertEvent(id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
-                
-                // upload (add) this event into server
                 
             }
             

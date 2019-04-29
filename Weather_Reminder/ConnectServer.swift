@@ -167,4 +167,51 @@ func uploadEvent(){
     }
 }
 
+struct eventInCloud:Decodable {
+    let id: Int
+    let title:String
+    let startDate: String?
+    let endDate: String?
+    let alertDays: Int
+    let remindTime: String
+    let sunny: String
+    let cloudy: String
+    let windy: String
+    let rainy: String
+    let snow: String
+    let uvIndex: String
+    let humidity: String
+    let lon: String?
+    let lat: String?
+    let locName: String
+    let user_id: Int
+}
 
+var eventList = [eventInCloud]()
+
+func getEvents(){
+    let url = URL(string: "http://142.93.34.33/get_events.php?token=\(user_token)&user_id=\(user_id)")!
+    var request = URLRequest(url: url)
+    
+    request.httpMethod = "GET"
+    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    
+    requestQueue.async {
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard let jsonData = data, error == nil else{ return }
+            var resultDict: NSArray?
+            do{
+                let decoder = JSONDecoder()
+                resultDict = try JSONSerialization.jsonObject(with:jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray
+                eventList = try decoder.decode([eventInCloud].self, from: jsonData)
+                
+                semaphore.signal()
+            }catch let err {
+                print("error here ", err)
+            }
+        }
+        task.resume()
+    }
+    return
+}
