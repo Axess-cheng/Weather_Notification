@@ -19,6 +19,12 @@ class SignUpVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
     @IBAction func signUpBtn(_ sender: Any) {
         print(passwordField.text!)
         if passwordField.text == confirmField.text {

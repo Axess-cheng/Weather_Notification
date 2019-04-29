@@ -166,6 +166,12 @@ class createEventVC: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
     //IBAction to set alert days
     //use a choice sheet
     //1.click and jump from bottom
