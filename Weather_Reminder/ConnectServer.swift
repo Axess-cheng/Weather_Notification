@@ -167,11 +167,15 @@ func uploadEvent(){
     }
 }
 
+struct Period:Decodable {
+    let startDate: String?
+    let endDate: String?
+}
+
 struct eventInCloud:Decodable {
     let id: Int
     let title:String
-    let startDate: String?
-    let endDate: String?
+    let period:Period
     let alertDays: Int
     let remindTime: String
     let sunny: String

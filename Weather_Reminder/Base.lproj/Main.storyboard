@@ -1151,7 +1151,7 @@
                         <constraints>
                             <constraint firstItem="fSt-8I-3IU" firstAttribute="centerX" secondItem="Aqd-fB-lq7" secondAttribute="centerX" id="8ba-xm-8Ig"/>
                             <constraint firstItem="54x-Ka-F50" firstAttribute="centerY" secondItem="Aqd-fB-lq7" secondAttribute="centerY" id="BEn-hA-AUd"/>
-                            <constraint firstItem="fSt-8I-3IU" firstAttribute="top" secondItem="Tnk-Mw-ntZ" secondAttribute="top" constant="80" id="nLu-uA-Ebf"/>
+                            <constraint firstItem="54x-Ka-F50" firstAttribute="top" secondItem="fSt-8I-3IU" secondAttribute="bottom" constant="11" id="kI1-Fv-gNz"/>
                             <constraint firstItem="54x-Ka-F50" firstAttribute="centerX" secondItem="Aqd-fB-lq7" secondAttribute="centerX" id="nzc-26-hhC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tnk-Mw-ntZ"/>

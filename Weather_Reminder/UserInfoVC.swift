@@ -22,6 +22,18 @@ class UserInfoVC: UIViewController {
         self.definesPresentationContext = true
         SettingVC.modalPresentationStyle = .overCurrentContext
         self.present(SettingVC, animated: false, completion: nil)
+        // clear events
+        if(events.count > 0){
+            var ii = events.count
+            for _ in Range(0..<events.count) {
+                print(events.count)
+                ii -= 1
+                let itemToRemove = events[ii]
+                context?.delete(itemToRemove)
+                events.remove(at: ii)
+                saveCoreData()
+            }
+        }
     }
     
     /*

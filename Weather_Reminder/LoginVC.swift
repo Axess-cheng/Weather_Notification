@@ -43,26 +43,17 @@ class LoginVC: UIViewController {
             self.definesPresentationContext = true
             SettingVC.modalPresentationStyle = .overCurrentContext
             self.present(SettingVC, animated: false, completion: nil)
-            // todo: download event.
-            // clear events
-            if(events.count > 0){
-                var ii = events.count
-                for _ in Range(0...events.count) {
-                    print(events.count)
-                    ii -= 1
-                    let itemToRemove = events[ii]
-                    context?.delete(itemToRemove)
-                    events.remove(at: ii)
-                    //saveCoreData()
-                }
-            }
+            //
+            
             // inset new events
             getEvents()
             semaphore.wait()
             for event in eventList{
-                insertEvent(id: event.id, title: event.title, gsSenario: "", gsRemindTime: event.remindTime, gsStartDate: event.startDate ?? "", gsEndDate: event.endDate ?? "", gsAlertDays: event.alertDays, sunny: event.sunny, cloudy: event.cloudy, windy: event.windy, rainy: event.rainy, snow: event.snow, uvIndex: event.uvIndex, humidity: event.humidity, lat: event.lat ?? "", long: event.lon ?? "", locName: event.locName)
+                insertEvent(id: event.id, title: event.title, gsSenario: "", gsRemindTime: event.remindTime, gsStartDate: event.period.startDate ?? "wrong", gsEndDate: event.period.endDate ?? "wrong", gsAlertDays: event.alertDays, sunny: event.sunny, cloudy: event.cloudy, windy: event.windy, rainy: event.rainy, snow: event.snow, uvIndex: event.uvIndex, humidity: event.humidity, lat: event.lat ?? "", long: event.lon ?? "", locName: event.locName)
+                print("the test of period.startDate")
             }
             saveCoreData()
+            readCoreData()
             // Todo: reload table
             //       why lat and lon may be nil
         }else{
