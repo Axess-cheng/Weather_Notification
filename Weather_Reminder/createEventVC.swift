@@ -211,7 +211,7 @@ class createEventVC: UIViewController {
     }
     //end set alert days
     
-    
+    // Function to create an event, including add, edit and upload event
     func createBtnFunc(){
         // the button create should be change to done- Congwei Ni
         //        print("event is not nil \(self.event != nil) when click done button")
@@ -258,6 +258,7 @@ class createEventVC: UIViewController {
             //performSegue(withIdentifier: "createToList", sender: nil)
         }
     }
+    // Perform segue to switch view to eventListVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createToList"{
             self.createBtnFunc()
@@ -290,6 +291,7 @@ class createEventVC: UIViewController {
         globalEvent = nil
     }
     
+    // Function to assign values of event information, used to display information of an event
     func assignData(){
         eventTitle = (event?.title)!
         //        gsSenario = ""
@@ -314,7 +316,7 @@ class createEventVC: UIViewController {
         location2D["lat"] = (event?.lat)!
         location2D["long"] = (event?.long)!
         locName = (event?.locName)!
-        // 存的是unix还是YYYYMMDD？
+        // Convert UNIX timestamp to "YYYY-MM-DD" date format
         let formatter = DateFormatter.init()
         formatter.dateFormat = "yyyy-MM-dd"
         let doubleStart = Double((event?.gsStartDate)!)

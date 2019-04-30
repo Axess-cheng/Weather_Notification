@@ -13,6 +13,7 @@ import CoreData
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 var context: NSManagedObjectContext?
 
+// Function to read data from Core Data
 func readCoreData(){
     context = appDelegate.persistentContainer.viewContext
     let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
@@ -28,7 +29,7 @@ func readCoreData(){
         print("Couldn't fetch result")
     }
 }
-
+// Function to insert an event to event list and Core Data
 func insertEvent(id: Int, title: String, gsSenario: String, gsRemindTime: String, gsStartDate: String, gsEndDate: String, gsAlertDays: Int, sunny: String, cloudy: String, windy: String, rainy: String, snow: String, uvIndex: String, humidity: String, lat: String, long: String, locName: String){
     let newEvent = NSEntityDescription.insertNewObject(forEntityName: "Event", into: context!) as! Event
     newEvent.setValue(id, forKey: "id")
@@ -50,7 +51,7 @@ func insertEvent(id: Int, title: String, gsSenario: String, gsRemindTime: String
     newEvent.setValue(locName, forKey: "locName")
     events.append(newEvent)
 }
-
+// Function to update the information of an event in both event list and Core Data
 func editEvent(event: Event, id: Int, title: String, gsSenario: String, gsRemindTime: String, gsStartDate: String, gsEndDate: String, gsAlertDays: Int, sunny: String, cloudy: String, windy: String, rainy: String, snow: String, uvIndex: String, humidity: String, lat: String, long: String, locName: String){
     event.setValue(id, forKey: "id")
     event.setValue(title, forKey: "title")
@@ -70,8 +71,7 @@ func editEvent(event: Event, id: Int, title: String, gsSenario: String, gsRemind
     event.setValue(long, forKey: "long")
     event.setValue(locName, forKey: "locName")
 }
-
-
+// Function to save changes of Core Data
 func saveCoreData(){
     do {
         try context?.save()

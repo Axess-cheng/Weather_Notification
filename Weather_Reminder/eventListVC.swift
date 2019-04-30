@@ -17,7 +17,7 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         return events.count
         
     }
-    
+    // Show table cell's information and UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "myCell")
         cell.backgroundColor = UIColor(red: 0.973, green: 0.907, blue: 0.721, alpha: 1.0)
@@ -82,6 +82,7 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
     
+    // Reload table view when switch back to eventListVC
     override func viewDidAppear(_ animated: Bool) {
         myTable.reloadData()
     }
