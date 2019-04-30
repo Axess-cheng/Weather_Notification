@@ -57,6 +57,7 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let itemToRemove = events[indexPath.row]
+        deleteEvent(eventId: Int(itemToRemove.id))
         context?.delete(itemToRemove)
         events.remove(at: indexPath.row)
         myTable.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)

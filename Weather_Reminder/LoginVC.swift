@@ -49,7 +49,7 @@ class LoginVC: UIViewController {
             getEvents()
             semaphore.wait()
             for event in eventList{
-                insertEvent(id: event.id, title: event.title, gsSenario: "", gsRemindTime: event.remindTime, gsStartDate: event.period.startDate ?? "wrong", gsEndDate: event.period.endDate ?? "wrong", gsAlertDays: event.alertDays, sunny: event.sunny, cloudy: event.cloudy, windy: event.windy, rainy: event.rainy, snow: event.snow, uvIndex: event.uvIndex, humidity: event.humidity, lat: event.lat ?? "", long: event.lon ?? "", locName: event.locName)
+                insertEvent(id: event.id, title: event.title, gsSenario: "", gsRemindTime: event.remindTime, gsStartDate: event.period.startDate ?? "", gsEndDate: event.period.endDate ?? "", gsAlertDays: event.alertDays, sunny: event.sunny, cloudy: event.cloudy, windy: event.windy, rainy: event.rainy, snow: event.snow, uvIndex: event.uvIndex, humidity: event.humidity, lat: event.loc.lat, long: event.loc.lon, locName: event.locName)
                 print("the test of period.startDate")
             }
             saveCoreData()

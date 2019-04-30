@@ -12,9 +12,9 @@ let id_field = "email"
 let id_type = "s"
 let SUPERTOKEN = "XvgcNiTgSPABTVqf"
 
-var id_data = "" // axess971230@gmail.com
+var id_data = "" // test@test.com
 var device_token = ""
-var Password = "" // 123abc
+var Password = "" // 123
 var user_token = ""
 var user_id = 0
 var loginIsSucc = false
@@ -133,7 +133,7 @@ func uploadEvent(){
     let lon = location2D["long"]!
     let lat = location2D["lat"]!
     
-    let event = "{\"id\":\(id),\"title\":\"\(eventTitle)\",\"period\":{\"startDate\":\"\(startDate)\",\"endDate\":\"\(endDate)\" },\"alertDays\":1,\"remindTime\":\"\(gsRemindTime)\",\"sunny\":\"\(sunny)\", \"cloudy\":\"\(cloudy)\",\"windy\":\"\(windy)\",\"rainy\":\"\(rainy)\",\"snow\":\"\(snow)\",\"uvIndex\":\"\(uvIndex)\",\"humidity\":\"\(humidity)\",\"loc\":{\"lon\":\"\(lon)\",\"lat\":\"\(lat)\" },\"locName\":\"\(locName)\" }"
+    let event = "{\"id\":\(id),\"title\":\"\(eventTitle)\",\"period\":{\"startDate\":\"\(startDate)\",\"endDate\":\"\(endDate)\" },\"alertDays\":\(gsAlertDays),\"remindTime\":\"\(gsRemindTime)\",\"sunny\":\"\(sunny)\", \"cloudy\":\"\(cloudy)\",\"windy\":\"\(windy)\",\"rainy\":\"\(rainy)\",\"snow\":\"\(snow)\",\"uvIndex\":\"\(uvIndex)\",\"humidity\":\"\(humidity)\",\"loc\":{\"lon\":\"\(lon)\",\"lat\":\"\(lat)\" },\"locName\":\"\(locName)\" }"
     request.httpBody = "event=\(event)&token=\(user_token)&user_id=\(user_id)".data(using: .utf8)
     
     requestQueue.async {
@@ -146,7 +146,6 @@ func uploadEvent(){
             
             do{
                 let jsonResponse = try JSONSerialization.jsonObject(with: data2, options: JSONSerialization.ReadingOptions()) as? NSDictionary
-                //if
                 for jsonKey in jsonResponse!.allKeys {
                     let theKey = jsonKey as! String
                     if theKey == "error"{
@@ -172,6 +171,11 @@ struct Period:Decodable {
     let endDate: String?
 }
 
+struct Location:Decodable{
+    let lon: String
+    let lat: String
+}
+
 struct eventInCloud:Decodable {
     let id: Int
     let title:String
@@ -185,8 +189,7 @@ struct eventInCloud:Decodable {
     let snow: String
     let uvIndex: String
     let humidity: String
-    let lon: String?
-    let lat: String?
+    let loc: Location
     let locName: String
     let user_id: Int
 }
@@ -218,4 +221,85 @@ func getEvents(){
         task.resume()
     }
     return
+}
+
+
+func deleteEvent(eventId event_id :Int){
+    let url = URL(string: "http://142.93.34.33/delete_event.php")!
+    var request = URLRequest(url: url)
+    
+    request.httpMethod = "POST"
+    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    
+    request.httpBody = "event_id=\(event_id)&token=\(user_token)&user_id=\(user_id)".data(using: .utf8)
+    
+    requestQueue.async {
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard let data2 = data, error == nil else{ return }
+            
+            let responseString = String(data: data2, encoding: .utf8)
+            print("responseString = \(String(describing: responseString))")
+            
+            do{
+                let jsonResponse = try JSONSerialization.jsonObject(with: data2, options: JSONSerialization.ReadingOptions()) as? NSDictionary
+                for jsonKey in jsonResponse!.allKeys {
+                    let theKey = jsonKey as! String
+                    if theKey == "error"{
+                        print("wrong")
+                    }else{
+                        print("success")
+                    }
+                }
+                semaphore.signal()
+            }catch let err {
+                print("error here ", err)
+            }
+        }
+        task.resume()
+    }
+}
+
+
+func updateEvent(){
+    let url = URL(string: "http://142.93.34.33/update_event.php")!
+    var request = URLRequest(url: url)
+    
+    request.httpMethod = "POST"
+    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    
+    let startDate = gsPeriod["startDate"] ?? ""
+    let endDate = gsPeriod["endDate"] ?? ""
+    let lon = location2D["long"]!
+    let lat = location2D["lat"]!
+    
+    let event = "{\"id\":\(id),\"title\":\"\(eventTitle)\",\"period\":{\"startDate\":\"\(startDate)\",\"endDate\":\"\(endDate)\" },\"alertDays\":\(gsAlertDays),\"remindTime\":\"\(gsRemindTime)\",\"sunny\":\"\(sunny)\", \"cloudy\":\"\(cloudy)\",\"windy\":\"\(windy)\",\"rainy\":\"\(rainy)\",\"snow\":\"\(snow)\",\"uvIndex\":\"\(uvIndex)\",\"humidity\":\"\(humidity)\",\"loc\":{\"lon\":\"\(lon)\",\"lat\":\"\(lat)\" },\"locName\":\"\(locName)\" }"
+    request.httpBody = "event=\(event)&token=\(user_token)&user_id=\(user_id)".data(using: .utf8)
+    
+    requestQueue.async {
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard let data2 = data, error == nil else{ return }
+            
+            let responseString = String(data: data2, encoding: .utf8)
+            print("responseString = \(String(describing: responseString))")
+            
+            do{
+                let jsonResponse = try JSONSerialization.jsonObject(with: data2, options: JSONSerialization.ReadingOptions()) as? NSDictionary
+                for jsonKey in jsonResponse!.allKeys {
+                    let theKey = jsonKey as! String
+                    if theKey == "error"{
+                        print("wrong")
+                    }else{
+                        if(theKey == "id"){
+                            print("update successfully")
+                        }
+                    }
+                }
+            }catch let err {
+                print("error here ", err)
+            }
+        }
+        task.resume()
+    }
 }

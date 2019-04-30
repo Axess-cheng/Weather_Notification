@@ -235,6 +235,7 @@ class createEventVC: UIViewController {
             if(globalEvent != nil){
                 print("edit event")
                 editEvent(event: globalEvent!, id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
+                updateEvent()
             }else{
                 print("insert event")
                 if(user_id != 0){
@@ -293,6 +294,7 @@ class createEventVC: UIViewController {
     
     // Function to assign values of event information, used to display information of an event
     func assignData(){
+        id = Int(exactly: (event?.id)!)!
         eventTitle = (event?.title)!
         //        gsSenario = ""
         gsRemindTime = (event?.gsRemindTime)!
