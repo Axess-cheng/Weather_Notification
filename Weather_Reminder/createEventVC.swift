@@ -233,10 +233,12 @@ class createEventVC: UIViewController {
                 endDate = validEnd
             }
             if(globalEvent != nil){
+                // edit event and update in server
                 print("edit event")
                 editEvent(event: globalEvent!, id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
                 updateEvent()
             }else{
+                // create evevnt and send to server
                 print("insert event")
                 if(user_id != 0){
                     // upload (add) this event into server
@@ -244,6 +246,9 @@ class createEventVC: UIViewController {
                     semaphore.wait()
                 }else{
                     print("send failed, havent log in")
+                    let alert = UIAlertController(title: "Failed!", message: "Send failed, haven't log in.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
                 }
                 insertEvent(id: id, title: eventTitle, gsSenario: gsSenario, gsRemindTime: gsRemindTime, gsStartDate: startDate, gsEndDate: endDate, gsAlertDays: gsAlertDays, sunny: sunny, cloudy: cloudy, windy: windy, rainy: rainy, snow: snow, uvIndex: uvIndex, humidity: humidity, lat: location2D["lat"]!, long: location2D["long"]!, locName: locName)
                 

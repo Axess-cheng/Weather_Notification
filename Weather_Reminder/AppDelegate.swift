@@ -25,8 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard granted else{return}
 
         })
-
+        
         UIApplication.shared.registerForRemoteNotifications()
+        
+        
+        user_id = UserDefaults.standard.integer(forKey: "userID")
+        user_token = UserDefaults.standard.string(forKey: "userToken") ?? ""
+        id_data = UserDefaults.standard.string(forKey: "userEmail") ?? ""
+        print(user_token)
         
         return true
     }

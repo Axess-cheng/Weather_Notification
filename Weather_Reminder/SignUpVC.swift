@@ -56,7 +56,9 @@ class SignUpVC: UIViewController {
                 print("update info, userToken = "+user_token)
             }else{
                 print("wrong email")
-                // Todo: alert
+                let alert = UIAlertController(title: "Failed!", message: "Wrong email format", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }
             
         }else{

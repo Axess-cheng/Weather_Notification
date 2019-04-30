@@ -38,6 +38,7 @@ class LoginVC: UIViewController {
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             UserDefaults.standard.set(user_id, forKey: "userID")
             UserDefaults.standard.set(user_token, forKey: "userToken")
+            UserDefaults.standard.set(id_data, forKey: "userEmail")
             print("user logged in")
             let SettingVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
             self.definesPresentationContext = true
@@ -45,17 +46,14 @@ class LoginVC: UIViewController {
             self.present(SettingVC, animated: false, completion: nil)
             //
             
-            // inset new events
+            // download all events when users login
             getEvents()
             semaphore.wait()
             for event in eventList{
                 insertEvent(id: event.id, title: event.title, gsSenario: "", gsRemindTime: event.remindTime, gsStartDate: event.period.startDate ?? "", gsEndDate: event.period.endDate ?? "", gsAlertDays: event.alertDays, sunny: event.sunny, cloudy: event.cloudy, windy: event.windy, rainy: event.rainy, snow: event.snow, uvIndex: event.uvIndex, humidity: event.humidity, lat: event.loc.lat, long: event.loc.lon, locName: event.locName)
-                print("the test of period.startDate")
             }
             saveCoreData()
             readCoreData()
-            // Todo: reload table
-            //       why lat and lon may be nil
         }else{
             print("logged failed")
             let alert = UIAlertController(title: "Failed!", message: "Wrong email or password", preferredStyle: .alert)

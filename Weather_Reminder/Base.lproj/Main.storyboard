@@ -901,29 +901,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLZ-hy-Ysl">
-                                <rect key="frame" x="81" y="101" width="83" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf2-uK-OFj">
-                                <rect key="frame" x="163" y="239" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf2-uK-OFj">
+                                <rect key="frame" x="163.5" y="284" width="48" height="30"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutUser:" destination="v2a-Wq-9Rx" eventType="touchUpInside" id="pMY-di-yHv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLZ-hy-Ysl">
+                                <rect key="frame" x="30" y="140" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="nHl-Lt-zw1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JLZ-hy-Ysl" firstAttribute="top" secondItem="UhK-Y2-GJo" secondAttribute="top" constant="120" id="B4Y-Jo-Pqx"/>
+                            <constraint firstItem="JLZ-hy-Ysl" firstAttribute="leading" secondItem="UhK-Y2-GJo" secondAttribute="leading" constant="30" id="EeW-Ui-PVM"/>
+                            <constraint firstItem="pf2-uK-OFj" firstAttribute="centerX" secondItem="EoU-dw-len" secondAttribute="centerX" id="H5B-pa-jNW"/>
+                            <constraint firstItem="pf2-uK-OFj" firstAttribute="centerY" secondItem="EoU-dw-len" secondAttribute="centerY" id="WbE-Y6-5rm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UhK-Y2-GJo"/>
                     </view>
+                    <connections>
+                        <outlet property="userName" destination="JLZ-hy-Ysl" id="vvs-8X-17g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gtx-d6-fVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-310" y="664"/>
+            <point key="canvasLocation" x="-311.19999999999999" y="662.96851574212894"/>
         </scene>
         <!--Login-->
         <scene sceneID="yFp-FK-KI7">

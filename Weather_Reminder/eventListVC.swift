@@ -55,6 +55,7 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "listToDetail", sender: event)
     }
     
+    // delete specific event
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let itemToRemove = events[indexPath.row]
         deleteEvent(eventId: Int(itemToRemove.id))
@@ -76,9 +77,6 @@ class eventListVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         readCoreData()
-        user_id = UserDefaults.standard.integer(forKey: "userID")
-        user_token = UserDefaults.standard.string(forKey: "userToken") ?? ""
-        print(user_token)
         myTable.reloadData()
         // Do any additional setup after loading the view.
     }

@@ -8,10 +8,12 @@
 
 import Foundation
 
+// basic important value.
 let id_field = "email"
 let id_type = "s"
 let SUPERTOKEN = "XvgcNiTgSPABTVqf"
 
+// user's value.
 var id_data = "" // test@test.com
 var device_token = ""
 var Password = "" // 123
@@ -19,9 +21,11 @@ var user_token = ""
 var user_id = 0
 var loginIsSucc = false
 
+// sometimes need wait server response.
 let semaphore = DispatchSemaphore.init(value: 0)
 let requestQueue = DispatchQueue(label: "com.geselle.backgroundQueue", qos: .userInitiated)
 
+// check the email address
 struct MyRegex {
     let regex: NSRegularExpression?
     
@@ -39,7 +43,7 @@ struct MyRegex {
     }
 }
 
-// add user.
+// add user. (must following check user)
 func addUser(emailAdd:String, password:String){
     let url = URL(string: "http://142.93.34.33/add_user.php")!
     var request = URLRequest(url: url)
@@ -87,9 +91,9 @@ func checkUser(){
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             guard let data2 = data, error == nil else{ return }
-            
-            let responseString = String(data: data2, encoding: .utf8)
-            print("responseString = \(String(describing: responseString))")
+            // check response
+//            let responseString = String(data: data2, encoding: .utf8)
+//            print("responseString = \(String(describing: responseString))")
             
             do{
                 let jsonResponse = try JSONSerialization.jsonObject(with: data2, options: JSONSerialization.ReadingOptions()) as? NSDictionary
@@ -140,9 +144,9 @@ func uploadEvent(){
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             guard let data2 = data, error == nil else{ return }
-            
-            let responseString = String(data: data2, encoding: .utf8)
-            print("responseString = \(String(describing: responseString))")
+            // check response
+//            let responseString = String(data: data2, encoding: .utf8)
+//            print("responseString = \(String(describing: responseString))")
             
             do{
                 let jsonResponse = try JSONSerialization.jsonObject(with: data2, options: JSONSerialization.ReadingOptions()) as? NSDictionary
@@ -166,6 +170,8 @@ func uploadEvent(){
     }
 }
 
+// the fowlloing three struct are used to
+// get json file and trans to event.
 struct Period:Decodable {
     let startDate: String?
     let endDate: String?
@@ -196,6 +202,7 @@ struct eventInCloud:Decodable {
 
 var eventList = [eventInCloud]()
 
+// download every events of this user.
 func getEvents(){
     let url = URL(string: "http://142.93.34.33/get_events.php?token=\(user_token)&user_id=\(user_id)")!
     var request = URLRequest(url: url)
@@ -223,7 +230,7 @@ func getEvents(){
     return
 }
 
-
+// delete one event
 func deleteEvent(eventId event_id :Int){
     let url = URL(string: "http://142.93.34.33/delete_event.php")!
     var request = URLRequest(url: url)
@@ -238,9 +245,6 @@ func deleteEvent(eventId event_id :Int){
             (data, response, error) in
             guard let data2 = data, error == nil else{ return }
             
-            let responseString = String(data: data2, encoding: .utf8)
-            print("responseString = \(String(describing: responseString))")
-            
             do{
                 let jsonResponse = try JSONSerialization.jsonObject(with: data2, options: JSONSerialization.ReadingOptions()) as? NSDictionary
                 for jsonKey in jsonResponse!.allKeys {
@@ -248,7 +252,7 @@ func deleteEvent(eventId event_id :Int){
                     if theKey == "error"{
                         print("wrong")
                     }else{
-                        print("success")
+                        print("delete success")
                     }
                 }
                 semaphore.signal()
@@ -260,7 +264,7 @@ func deleteEvent(eventId event_id :Int){
     }
 }
 
-
+// update one event
 func updateEvent(){
     let url = URL(string: "http://142.93.34.33/update_event.php")!
     var request = URLRequest(url: url)
@@ -274,6 +278,7 @@ func updateEvent(){
     let lat = location2D["lat"]!
     
     let event = "{\"id\":\(id),\"title\":\"\(eventTitle)\",\"period\":{\"startDate\":\"\(startDate)\",\"endDate\":\"\(endDate)\" },\"alertDays\":\(gsAlertDays),\"remindTime\":\"\(gsRemindTime)\",\"sunny\":\"\(sunny)\", \"cloudy\":\"\(cloudy)\",\"windy\":\"\(windy)\",\"rainy\":\"\(rainy)\",\"snow\":\"\(snow)\",\"uvIndex\":\"\(uvIndex)\",\"humidity\":\"\(humidity)\",\"loc\":{\"lon\":\"\(lon)\",\"lat\":\"\(lat)\" },\"locName\":\"\(locName)\" }"
+    
     request.httpBody = "event=\(event)&token=\(user_token)&user_id=\(user_id)".data(using: .utf8)
     
     requestQueue.async {
@@ -281,8 +286,8 @@ func updateEvent(){
             (data, response, error) in
             guard let data2 = data, error == nil else{ return }
             
-            let responseString = String(data: data2, encoding: .utf8)
-            print("responseString = \(String(describing: responseString))")
+//            let responseString = String(data: data2, encoding: .utf8)
+//            print("responseString = \(String(describing: responseString))")
             
             do{
                 let jsonResponse = try JSONSerialization.jsonObject(with: data2, options: JSONSerialization.ReadingOptions()) as? NSDictionary

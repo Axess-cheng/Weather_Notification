@@ -9,10 +9,14 @@
 import UIKit
 
 class UserInfoVC: UIViewController {
-
+    
+    
+    @IBOutlet weak var userName: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        userName.text = "Welcome, " + id_data
         // Do any additional setup after loading the view.
     }
     
