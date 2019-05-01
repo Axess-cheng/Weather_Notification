@@ -35,12 +35,13 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         var longitude = Double()
         LocationUtil.share.getCurrentPointLocation(isOnce: false) { (loc, errorMsg) in
             if errorMsg == nil {
-                location2D["lat"] = String(format: "%f,%f", (loc?.coordinate.latitude)!)
-                location2D["long"] = String(format: "%f,%f", (loc?.coordinate.longitude)!)
+                
                 self.lat = String(format: "%f,%f", (loc?.coordinate.latitude)!)
                 self.lng = String(format: "%f,%f", (loc?.coordinate.longitude)!)
                 latitude = (loc?.coordinate.latitude)!
                 longitude = (loc?.coordinate.longitude)!
+                location2D["lat"] = String(latitude)
+                location2D["long"] = String(longitude)
                 let location = CLLocation(latitude: latitude, longitude: longitude)
                 self.fetchCityAndCountry(from: location) { city, country, error in
                     guard let validCity = city, let validCountry = country, error == nil else { return }
@@ -48,8 +49,8 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                     
                     locName = "\(validCity)"
                     print("current locName is \(locName)")
-                    //                    print("current lat is \(location2D["lat"])")
-                    //                    print("current long is \(location2D["long"])")
+                                        print("current lat is \(location2D["lat"])")
+                                        print("current long is \(location2D["long"])")
                 }
             }
         }
@@ -114,6 +115,7 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                         
                         location2D["long"] = String(longitude)
                         location2D["lat"] = String(latitude)
+                        print(location2D["long"])
                         locName = "\(place["name"] as! String)"
                         performSegue(withIdentifier: "fromMapToCreatEvent", sender: nil)
                         
