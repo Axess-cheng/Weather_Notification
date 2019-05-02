@@ -838,7 +838,7 @@
                                 <state key="normal" title="Use current Location"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
                             <constraint firstItem="JUX-7f-pkL" firstAttribute="trailing" secondItem="5RC-Pg-e9Y" secondAttribute="trailing" id="3OM-Dn-beA"/>
                             <constraint firstItem="Fof-w4-CLa" firstAttribute="leading" secondItem="5RC-Pg-e9Y" secondAttribute="leading" constant="116" id="Bkn-VL-gMz"/>
