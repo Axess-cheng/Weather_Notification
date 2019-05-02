@@ -34,10 +34,11 @@ public class Event {
     public final String uvIndex;
     public final String humidity;
     public final Location loc;
+    public final String locName;
 
     public boolean isComplete() {
         return id > 0 && title != null && period != null && alertDays > -1 && remindTime != null && sunny != null &&
-                cloudy != null && windy != null && rainy != null && snow != null && uvIndex != null && humidity != null && loc != null;
+                cloudy != null && windy != null && rainy != null && snow != null && uvIndex != null && humidity != null && loc != null && locName != null;
     }
 
 }
