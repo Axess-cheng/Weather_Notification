@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="cloudy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gsAlertDays" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="gsEndDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gsRemindTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gsSenario" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gsStartDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="humidity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="long" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rainy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="snow" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sunny" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uvIndex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="windy" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="-54" positionY="-9" width="128" height="300"/>
+    </elements>
 </model>

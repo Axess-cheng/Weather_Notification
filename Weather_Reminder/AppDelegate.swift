@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        print("request permission")
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .sound, .alert], completionHandler: {
+            granted, error in
+            guard granted else{return}
+
+        })
+        
+        UIApplication.shared.registerForRemoteNotifications()
+        
+        
+        user_id = UserDefaults.standard.integer(forKey: "userID")
+        user_token = UserDefaults.standard.string(forKey: "userToken") ?? ""
+        id_data = UserDefaults.standard.string(forKey: "userEmail") ?? ""
+        print(user_token)
+        
         return true
     }
 
@@ -89,5 +106,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func application(_ application:UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        print("register to apn")
+        let token = deviceToken.base64EncodedString()
+        print("Get push token : \(token)")
+        let token2 = deviceToken.map {String(format: "%02.2hhx", $0)}.joined()
+        print("token2 : \(token2)")
+        device_token = token2
+        
+    }
+    
+    
+    
+    
 }
 

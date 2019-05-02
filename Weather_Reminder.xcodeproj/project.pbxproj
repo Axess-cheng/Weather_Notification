@@ -13,6 +13,24 @@
 		347A1E8E224A75F7002C6905 /* Weather_Reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 347A1E8C224A75F7002C6905 /* Weather_Reminder.xcdatamodeld */; };
 		347A1E90224A75F8002C6905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347A1E8F224A75F8002C6905 /* Assets.xcassets */; };
 		347A1E93224A75F8002C6905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347A1E91224A75F8002C6905 /* LaunchScreen.storyboard */; };
+		9F0A6F602250EDCC00B6E388 /* eventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */; };
+		9F11B6622253F13900BA75D4 /* TTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11B6612253F13900BA75D4 /* TTableViewController.swift */; };
+		9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8A2250E8B1005578EC /* selectSenario.swift */; };
+		9F477C8D2250EAD3005578EC /* createEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F477C8C2250EAD3005578EC /* createEventVC.swift */; };
+		9F552B9A2274E30600285060 /* ConnectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F552B992274E30600285060 /* ConnectServer.swift */; };
+		9FBA1436225101170091F617 /* mapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA1435225101170091F617 /* mapVC.swift */; };
+		9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143722518DE90091F617 /* PeriodVC.swift */; };
+		9FBA143A22518E990091F617 /* remindTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143922518E990091F617 /* remindTimeVC.swift */; };
+		9FBA143C225195E80091F617 /* weatherConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143B225195E80091F617 /* weatherConditionVC.swift */; };
+		FAAAEFCD2271FA02003E359B /* LocationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAEFCC2271FA02003E359B /* LocationUtil.swift */; };
+		FF06AB0C2270FDA10064AE4B /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF06AB0B2270FDA10064AE4B /* UserInfoVC.swift */; };
+		FF605FBF2270D5C600C64ECE /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FBE2270D5C600C64ECE /* TabBarVC.swift */; };
+		FF605FC32270E9A100C64ECE /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FC22270E9A100C64ECE /* SettingVC.swift */; };
+		FF605FC52270EC1500C64ECE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FC42270EC1500C64ECE /* LoginVC.swift */; };
+		FF605FC72270EFAF00C64ECE /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FC62270EFAF00C64ECE /* SignUpVC.swift */; };
+		FF9DA19F226C71C700F1234A /* ReadWriteCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DA19E226C71C700F1234A /* ReadWriteCoreData.swift */; };
+		FF9DA1A2226C784E00F1234A /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DA1A0226C784E00F1234A /* Event+CoreDataClass.swift */; };
+		FF9DA1A3226C784E00F1234A /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +42,25 @@
 		347A1E8F224A75F8002C6905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		347A1E92224A75F8002C6905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		347A1E94224A75F8002C6905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventListVC.swift; sourceTree = "<group>"; };
+		9F11B6612253F13900BA75D4 /* TTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTableViewController.swift; sourceTree = "<group>"; };
+		9F477C8A2250E8B1005578EC /* selectSenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectSenario.swift; sourceTree = "<group>"; };
+		9F477C8C2250EAD3005578EC /* createEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createEventVC.swift; sourceTree = "<group>"; };
+		9F552B992274E30600285060 /* ConnectServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectServer.swift; sourceTree = "<group>"; };
+		9FBA1435225101170091F617 /* mapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapVC.swift; sourceTree = "<group>"; };
+		9FBA143722518DE90091F617 /* PeriodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodVC.swift; sourceTree = "<group>"; };
+		9FBA143922518E990091F617 /* remindTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remindTimeVC.swift; sourceTree = "<group>"; };
+		9FBA143B225195E80091F617 /* weatherConditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherConditionVC.swift; sourceTree = "<group>"; };
+		B485AE3822568BBF008AAF08 /* Weather_Reminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weather_Reminder.entitlements; sourceTree = "<group>"; };
+		FAAAEFCC2271FA02003E359B /* LocationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtil.swift; sourceTree = "<group>"; };
+		FF06AB0B2270FDA10064AE4B /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		FF605FBE2270D5C600C64ECE /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		FF605FC22270E9A100C64ECE /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		FF605FC42270EC1500C64ECE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		FF605FC62270EFAF00C64ECE /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		FF9DA19E226C71C700F1234A /* ReadWriteCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteCoreData.swift; sourceTree = "<group>"; };
+		FF9DA1A0226C784E00F1234A /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +77,8 @@
 		347A1E79224A75F7002C6905 = {
 			isa = PBXGroup;
 			children = (
+				FF9DA1A0226C784E00F1234A /* Event+CoreDataClass.swift */,
+				FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */,
 				347A1E84224A75F7002C6905 /* Weather_Reminder */,
 				347A1E83224A75F7002C6905 /* Products */,
 			);
@@ -56,13 +95,30 @@
 		347A1E84224A75F7002C6905 /* Weather_Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				B485AE3822568BBF008AAF08 /* Weather_Reminder.entitlements */,
 				347A1E85224A75F7002C6905 /* AppDelegate.swift */,
 				347A1E87224A75F7002C6905 /* ViewController.swift */,
 				347A1E89224A75F7002C6905 /* Main.storyboard */,
+				9F11B6612253F13900BA75D4 /* TTableViewController.swift */,
+				9FBA143B225195E80091F617 /* weatherConditionVC.swift */,
+				9FBA143922518E990091F617 /* remindTimeVC.swift */,
+				9FBA143722518DE90091F617 /* PeriodVC.swift */,
+				9FBA1435225101170091F617 /* mapVC.swift */,
+				FAAAEFCC2271FA02003E359B /* LocationUtil.swift */,
+				9F0A6F5F2250EDCC00B6E388 /* eventListVC.swift */,
+				9F477C8C2250EAD3005578EC /* createEventVC.swift */,
+				9F477C8A2250E8B1005578EC /* selectSenario.swift */,
 				347A1E8F224A75F8002C6905 /* Assets.xcassets */,
 				347A1E91224A75F8002C6905 /* LaunchScreen.storyboard */,
 				347A1E94224A75F8002C6905 /* Info.plist */,
 				347A1E8C224A75F7002C6905 /* Weather_Reminder.xcdatamodeld */,
+				FF9DA19E226C71C700F1234A /* ReadWriteCoreData.swift */,
+				FF605FBE2270D5C600C64ECE /* TabBarVC.swift */,
+				FF605FC22270E9A100C64ECE /* SettingVC.swift */,
+				FF605FC42270EC1500C64ECE /* LoginVC.swift */,
+				FF605FC62270EFAF00C64ECE /* SignUpVC.swift */,
+				FF06AB0B2270FDA10064AE4B /* UserInfoVC.swift */,
+				9F552B992274E30600285060 /* ConnectServer.swift */,
 			);
 			path = Weather_Reminder;
 			sourceTree = "<group>";
@@ -101,6 +157,9 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -143,9 +202,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9DA1A3226C784E00F1234A /* Event+CoreDataProperties.swift in Sources */,
+				FF9DA19F226C71C700F1234A /* ReadWriteCoreData.swift in Sources */,
+				9F11B6622253F13900BA75D4 /* TTableViewController.swift in Sources */,
+				9FBA143C225195E80091F617 /* weatherConditionVC.swift in Sources */,
 				347A1E88224A75F7002C6905 /* ViewController.swift in Sources */,
+				9F477C8D2250EAD3005578EC /* createEventVC.swift in Sources */,
+				FF605FC72270EFAF00C64ECE /* SignUpVC.swift in Sources */,
 				347A1E86224A75F7002C6905 /* AppDelegate.swift in Sources */,
+				9F0A6F602250EDCC00B6E388 /* eventListVC.swift in Sources */,
+				FF9DA1A2226C784E00F1234A /* Event+CoreDataClass.swift in Sources */,
+				FF605FC32270E9A100C64ECE /* SettingVC.swift in Sources */,
+				9FBA1436225101170091F617 /* mapVC.swift in Sources */,
+				FAAAEFCD2271FA02003E359B /* LocationUtil.swift in Sources */,
+				9FBA143A22518E990091F617 /* remindTimeVC.swift in Sources */,
 				347A1E8E224A75F7002C6905 /* Weather_Reminder.xcdatamodeld in Sources */,
+				FF605FC52270EC1500C64ECE /* LoginVC.swift in Sources */,
+				9F477C8B2250E8B1005578EC /* selectSenario.swift in Sources */,
+				9F552B9A2274E30600285060 /* ConnectServer.swift in Sources */,
+				FF605FBF2270D5C600C64ECE /* TabBarVC.swift in Sources */,
+				9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */,
+				FF06AB0C2270FDA10064AE4B /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,16 +368,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Weather_Reminder/Weather_Reminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R4AH55NR8B;
 				INFOPLIST_FILE = Weather_Reminder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "comp208.team4.Weather-Reminder";
+				PRODUCT_BUNDLE_IDENTIFIER = comp208.team4.WeatherReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,16 +388,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Weather_Reminder/Weather_Reminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R4AH55NR8B;
 				INFOPLIST_FILE = Weather_Reminder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "comp208.team4.Weather-Reminder";
+				PRODUCT_BUNDLE_IDENTIFIER = comp208.team4.WeatherReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
