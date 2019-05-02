@@ -48,9 +48,9 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                     
                     
                     locName = "\(validCity)"
-                    print("current locName is \(locName)")
-                                        print("current lat is \(location2D["lat"])")
-                                        print("current long is \(location2D["long"])")
+                    //print("current locName is \(locName)")
+                    //                    print("current lat is \(location2D["lat"])")
+                    //                    print("current long is \(location2D["long"])")
                 }
             }
         }
@@ -115,7 +115,7 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                         
                         location2D["long"] = String(longitude)
                         location2D["lat"] = String(latitude)
-                        print(location2D["long"])
+                        //print(location2D["long"])
                         locName = "\(place["name"] as! String)"
                         performSegue(withIdentifier: "fromMapToCreatEvent", sender: nil)
                         
