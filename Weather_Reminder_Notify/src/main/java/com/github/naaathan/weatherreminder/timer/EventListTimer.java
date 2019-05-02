@@ -36,7 +36,7 @@ public class EventListTimer extends Timer {
 
                 Map<Integer, Event> userEvents = events.getOrDefault(event.user_id, new HashMap<>());
 
-                userEvents.put(event.id, new Event(event.id, event.title, event.period, event.alertDays, event.remindTime, event.sunny, event.cloudy, event.windy, event.rainy, event.snow, event.uvIndex, event.humidity, event.loc));
+                userEvents.put(event.id, new Event(event.id, event.title, event.period, event.alertDays, event.remindTime, event.sunny, event.cloudy, event.windy, event.rainy, event.snow, event.uvIndex, event.humidity, event.loc, event.locName));
                 events.put(event.user_id, userEvents);
             }
         } catch (IOException e) {
