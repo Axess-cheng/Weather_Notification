@@ -30,12 +30,12 @@ if (!validate_token($mysql, "tokens", $user_id, $token)) {
     return;
 }
 
-$event_id = $_POST["event_id"];
+$event_id = (int) $_POST["event_id"];
 
 if ($user_id != 0) {
     $users_event_ids = get_event_ids($mysql, "users_events", $user_id);
 
-    if (!in_array($event_id, $users_event_ids)) {
+    if (!in_array($event_id, $users_event_ids[$user_id])) {
         echo json_encode(
             array(
                 "error" => "User event not found"

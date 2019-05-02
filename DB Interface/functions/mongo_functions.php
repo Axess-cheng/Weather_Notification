@@ -1,6 +1,6 @@
 <?php
 
-function add_event(MongoDB\Collection $event_collection, MongoDB\Collection $counters_collection, array $event)
+function add_event(MongoDB\Collection $event_collection, MongoDB\Collection $counters_collection, $event)
 {
     if ($counters_collection->count(array("_id" => "eventid")) === 0) {
         try {
@@ -18,6 +18,10 @@ function add_event(MongoDB\Collection $event_collection, MongoDB\Collection $cou
 
     $id = $document["value"];
     $event["_id"] = $id;
+
+    if (isset($event["id"])) {
+        unset($event["id"]);
+    }
 
     try {
         $event_collection->insertOne($event);
@@ -69,26 +73,15 @@ function get_event(MongoDB\Collection $collection, $event_id)
 function get_events(MongoDB\Collection $collection, mysqli $mysql, $user_events_table, $user_id)
 {
     $events = array();
+    $event_user_ids = get_event_ids($mysql, $user_events_table, $user_id);
 
-    if ($user_id == 0) {
-        $documents = $collection->find(array());
-
-        try {
-            foreach ($documents as $event) {
-                $event["id"] = $event["_id"];
-
-                unset($event["_id"]);
-                array_push($events, $event);
-            }
-        } catch (Exception $e) {
-        }
-    } else {
-        $event_ids = get_event_ids($mysql, $user_events_table, $user_id);
-
+    foreach ($event_user_ids as $user_id => $event_ids) {
         foreach ($event_ids as $event_id) {
             $event = get_event($collection, $event_id);
 
             if ($event != null) {
+                $event["user_id"] = $user_id;
+
                 array_push($events, $event);
             }
         }
@@ -100,18 +93,31 @@ function get_events(MongoDB\Collection $collection, mysqli $mysql, $user_events_
 function get_event_ids(mysqli $mysql, $user_events_table, $user_id)
 {
     $event_ids = array();
-    $query = "SELECT `event_id` FROM `" . $user_events_table . "` WHERE `user_id`=?;";
+
+    if ($user_id != 0) {
+        $query = "SELECT * FROM `" . $user_events_table . "` WHERE `user_id`=?;";
+    } else {
+        $query = "SELECT * FROM `" . $user_events_table . "`;";
+    }
+
     $stmt = $mysql->stmt_init();
 
     if ($stmt->prepare($query)) {
-        $stmt->bind_param("i", $user_id);
+        if ($user_id != 0) {
+            $stmt->bind_param("i", $user_id);
+        }
+
         $stmt->execute();
 
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                array_push($event_ids, $row["event_id"]);
+                if (!isset($event_ids[$row["user_id"]])) {
+                    $event_ids[$row["user_id"]] = array();
+                }
+
+                array_push($event_ids[$row["user_id"]], $row["event_id"]);
             }
         }
     }
@@ -122,7 +128,7 @@ function get_event_ids(mysqli $mysql, $user_events_table, $user_id)
 function update_event(MongoDB\Collection $collection, $event_id, $event)
 {
     try {
-        return $collection->updateOne(array("_id" => $event_id), $event);
+        return $collection->replaceOne(array("_id" => $event_id), $event)->isAcknowledged();
     } catch (Exception $e) {
     }
 

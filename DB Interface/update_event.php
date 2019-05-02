@@ -30,7 +30,7 @@ if (!validate_token($mysql, "tokens", $user_id, $token)) {
     return;
 }
 
-$event = json_decode($_POST["event"]);
+$event = json_decode($_POST["event"], true);
 $event_id = $event["id"];
 
 if (update_event(get_collection($mongo, $_CONFIG["mongo"]["database"], "events"), $event_id, $event)) {

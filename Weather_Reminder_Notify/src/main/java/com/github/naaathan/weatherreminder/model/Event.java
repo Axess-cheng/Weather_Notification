@@ -3,26 +3,25 @@ package com.github.naaathan.weatherreminder.model;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public final class Event {
+public class Event {
 
     @RequiredArgsConstructor
     public static class Period {
 
-        public final long startDate;
-        public final long endDate;
+        public final String startDate;
+        public final String endDate;
 
     }
 
     @RequiredArgsConstructor
     public static class Location {
 
-        public final double longitude;
-        public final double lat;
+        public final String lon;
+        public final String lat;
 
     }
 
     public final int id;
-    public final int user_id;
     public final String title;
     public final Period period;
     public final int alertDays;
@@ -32,8 +31,13 @@ public final class Event {
     public final String windy;
     public final String rainy;
     public final String snow;
-    public final double uvIndex;
-    public final double humidity;
+    public final String uvIndex;
+    public final String humidity;
     public final Location loc;
+
+    public boolean isComplete() {
+        return id > 0 && title != null && period != null && alertDays > -1 && remindTime != null && sunny != null &&
+                cloudy != null && windy != null && rainy != null && snow != null && uvIndex != null && humidity != null && loc != null;
+    }
 
 }

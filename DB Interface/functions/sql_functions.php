@@ -50,7 +50,7 @@ function get_user_result(mysqli $connection, $user_table, $id_field, $id_data, $
 
 function update_user_tokens(mysqli $connection, $token_table, $user_table, $user_id, $device_token, $token)
 {
-    $query = "UPDATE `" . $user_table . "` SET `device_token`=? WHERE `user_id`=?;";
+    $query = "UPDATE `" . $user_table . "` SET `device_token`=? WHERE `id`=?;";
     $stmt = $connection->stmt_init();
 
     if ($stmt->prepare($query)) {
@@ -65,13 +65,13 @@ function update_user_tokens(mysqli $connection, $token_table, $user_table, $user
             $stmt->execute();
 
             $result = $stmt->get_result();
-            $stmt = $connection->stmt_init();
 
             if ($result->num_rows > 0) {
                 if ($result->fetch_assoc()["token"] === $token) {
                     return;
                 }
 
+                $stmt = $connection->stmt_init();
                 $query = "UPDATE `" . $token_table . "` SET `token`=? WHERE `user_id`=?;";
 
                 if ($stmt->prepare($query)) {
@@ -79,6 +79,7 @@ function update_user_tokens(mysqli $connection, $token_table, $user_table, $user
                     $stmt->execute();
                 }
             } else {
+                $stmt = $connection->stmt_init();
                 $query = "INSERT INTO `" . $token_table . "` VALUES (?, ?);";
 
                 if ($stmt->prepare($query)) {

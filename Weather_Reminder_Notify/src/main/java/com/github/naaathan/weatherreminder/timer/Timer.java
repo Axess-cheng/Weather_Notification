@@ -1,5 +1,6 @@
 package com.github.naaathan.weatherreminder.timer;
 
+import com.github.naaathan.weatherreminder.WeatherReminder;
 import lombok.Getter;
 
 public abstract class Timer {
@@ -44,7 +45,12 @@ public abstract class Timer {
                 ticks--;
             }
 
-            tick();
+            try {
+                tick();
+            } catch (Exception e) {
+                WeatherReminder.getLogger().severe("TICK EXCEPTION:");
+                e.printStackTrace();
+            }
 
             try {
                 Thread.sleep(interval);

@@ -8,6 +8,7 @@ import lombok.Getter;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.TimeZone;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Logger;
 
@@ -18,6 +19,7 @@ public final class WeatherReminderApp {
 
     public static void main(String[] args) {
         setLogger(Logger.getLogger("WeatherReminderApp"));
+        TimeZone.setDefault(TimeZone.getTimeZone(WeatherReminder.TIME_ZONE));
         WeatherReminder.getInstance();
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -28,7 +30,6 @@ public final class WeatherReminderApp {
         Scanner scanner = new Scanner(System.in);
 
         logger.info("Enter 'q' or 'quit' to exit...");
-        System.out.print("> ");
 
         while ((next = scanner.nextLine()) != null) {
             boolean executed = false;
@@ -55,8 +56,6 @@ public final class WeatherReminderApp {
             if (!executed) {
                 logger.warning("Invalid command!");
             }
-
-            System.out.print("> ");
         }
 
         logger.info("Shutting down...");
@@ -113,7 +112,7 @@ public final class WeatherReminderApp {
         }
 
         try {
-            WeatherReminder.getInstance().sendWebRequest(method, url, parameters);
+            WeatherReminder.getInstance().sendWebRequest(method, url, parameters, true);
         } catch (IOException e) {
             logger.warning("Web request failed: " + e.getMessage());
         }
