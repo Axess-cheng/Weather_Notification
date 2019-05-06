@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    static let share = mapVC()
     @IBOutlet weak var text: UITextField!
     @IBOutlet weak var useCurrentLocation: UIButton!
     @IBOutlet weak var tblPlaces: UITableView!
@@ -164,6 +165,11 @@ class mapVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             }
             task.resume()
         }
+    }
+    let test = 10
+    func function(Inttest: Int) ->(Int) {
+        let resualt = Inttest
+        return resualt+5
     }
     
     
