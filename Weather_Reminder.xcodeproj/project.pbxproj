@@ -22,6 +22,8 @@
 		9FBA143822518DE90091F617 /* PeriodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143722518DE90091F617 /* PeriodVC.swift */; };
 		9FBA143A22518E990091F617 /* remindTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143922518E990091F617 /* remindTimeVC.swift */; };
 		9FBA143C225195E80091F617 /* weatherConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA143B225195E80091F617 /* weatherConditionVC.swift */; };
+		FA104240228099EB00C9F594 /* Weather_ReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10423F228099EB00C9F594 /* Weather_ReminderTests.swift */; };
+		FA10424E228099FA00C9F594 /* Weather_ReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10424D228099FA00C9F594 /* Weather_ReminderUITests.swift */; };
 		FAAAEFCD2271FA02003E359B /* LocationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAEFCC2271FA02003E359B /* LocationUtil.swift */; };
 		FF06AB0C2270FDA10064AE4B /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF06AB0B2270FDA10064AE4B /* UserInfoVC.swift */; };
 		FF605FBF2270D5C600C64ECE /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF605FBE2270D5C600C64ECE /* TabBarVC.swift */; };
@@ -32,6 +34,23 @@
 		FF9DA1A2226C784E00F1234A /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DA1A0226C784E00F1234A /* Event+CoreDataClass.swift */; };
 		FF9DA1A3226C784E00F1234A /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA104242228099EB00C9F594 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 347A1E7A224A75F7002C6905 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 347A1E81224A75F7002C6905;
+			remoteInfo = Weather_Reminder;
+		};
+		FA104250228099FA00C9F594 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 347A1E7A224A75F7002C6905 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 347A1E81224A75F7002C6905;
+			remoteInfo = Weather_Reminder;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		347A1E82224A75F7002C6905 /* Weather_Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather_Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +71,12 @@
 		9FBA143922518E990091F617 /* remindTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remindTimeVC.swift; sourceTree = "<group>"; };
 		9FBA143B225195E80091F617 /* weatherConditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherConditionVC.swift; sourceTree = "<group>"; };
 		B485AE3822568BBF008AAF08 /* Weather_Reminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weather_Reminder.entitlements; sourceTree = "<group>"; };
+		FA10423D228099EB00C9F594 /* Weather_ReminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Weather_ReminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA10423F228099EB00C9F594 /* Weather_ReminderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_ReminderTests.swift; sourceTree = "<group>"; };
+		FA104241228099EB00C9F594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA10424B228099FA00C9F594 /* Weather_ReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Weather_ReminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA10424D228099FA00C9F594 /* Weather_ReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_ReminderUITests.swift; sourceTree = "<group>"; };
+		FA10424F228099FA00C9F594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAAEFCC2271FA02003E359B /* LocationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtil.swift; sourceTree = "<group>"; };
 		FF06AB0B2270FDA10064AE4B /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		FF605FBE2270D5C600C64ECE /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
@@ -71,6 +96,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA10423A228099EB00C9F594 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA104248228099FA00C9F594 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -80,6 +119,8 @@
 				FF9DA1A0226C784E00F1234A /* Event+CoreDataClass.swift */,
 				FF9DA1A1226C784E00F1234A /* Event+CoreDataProperties.swift */,
 				347A1E84224A75F7002C6905 /* Weather_Reminder */,
+				FA10423E228099EB00C9F594 /* Weather_ReminderTests */,
+				FA10424C228099FA00C9F594 /* Weather_ReminderUITests */,
 				347A1E83224A75F7002C6905 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				347A1E82224A75F7002C6905 /* Weather_Reminder.app */,
+				FA10423D228099EB00C9F594 /* Weather_ReminderTests.xctest */,
+				FA10424B228099FA00C9F594 /* Weather_ReminderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +166,24 @@
 			path = Weather_Reminder;
 			sourceTree = "<group>";
 		};
+		FA10423E228099EB00C9F594 /* Weather_ReminderTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA10423F228099EB00C9F594 /* Weather_ReminderTests.swift */,
+				FA104241228099EB00C9F594 /* Info.plist */,
+			);
+			path = Weather_ReminderTests;
+			sourceTree = "<group>";
+		};
+		FA10424C228099FA00C9F594 /* Weather_ReminderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA10424D228099FA00C9F594 /* Weather_ReminderUITests.swift */,
+				FA10424F228099FA00C9F594 /* Info.plist */,
+			);
+			path = Weather_ReminderUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,13 +204,49 @@
 			productReference = 347A1E82224A75F7002C6905 /* Weather_Reminder.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FA10423C228099EB00C9F594 /* Weather_ReminderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA104246228099EB00C9F594 /* Build configuration list for PBXNativeTarget "Weather_ReminderTests" */;
+			buildPhases = (
+				FA104239228099EB00C9F594 /* Sources */,
+				FA10423A228099EB00C9F594 /* Frameworks */,
+				FA10423B228099EB00C9F594 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA104243228099EB00C9F594 /* PBXTargetDependency */,
+			);
+			name = Weather_ReminderTests;
+			productName = Weather_ReminderTests;
+			productReference = FA10423D228099EB00C9F594 /* Weather_ReminderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA10424A228099FA00C9F594 /* Weather_ReminderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA104252228099FA00C9F594 /* Build configuration list for PBXNativeTarget "Weather_ReminderUITests" */;
+			buildPhases = (
+				FA104247228099FA00C9F594 /* Sources */,
+				FA104248228099FA00C9F594 /* Frameworks */,
+				FA104249228099FA00C9F594 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA104251228099FA00C9F594 /* PBXTargetDependency */,
+			);
+			name = Weather_ReminderUITests;
+			productName = Weather_ReminderUITests;
+			productReference = FA10424B228099FA00C9F594 /* Weather_ReminderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		347A1E7A224A75F7002C6905 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = comp208.team4;
 				TargetAttributes = {
@@ -163,6 +260,14 @@
 								enabled = 1;
 							};
 						};
+					};
+					FA10423C228099EB00C9F594 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 347A1E81224A75F7002C6905;
+					};
+					FA10424A228099FA00C9F594 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 347A1E81224A75F7002C6905;
 					};
 				};
 			};
@@ -180,6 +285,8 @@
 			projectRoot = "";
 			targets = (
 				347A1E81224A75F7002C6905 /* Weather_Reminder */,
+				FA10423C228099EB00C9F594 /* Weather_ReminderTests */,
+				FA10424A228099FA00C9F594 /* Weather_ReminderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -192,6 +299,20 @@
 				347A1E93224A75F8002C6905 /* LaunchScreen.storyboard in Resources */,
 				347A1E90224A75F8002C6905 /* Assets.xcassets in Resources */,
 				347A1E8B224A75F7002C6905 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA10423B228099EB00C9F594 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA104249228099FA00C9F594 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +347,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA104239228099EB00C9F594 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA104240228099EB00C9F594 /* Weather_ReminderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA104247228099FA00C9F594 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA10424E228099FA00C9F594 /* Weather_ReminderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA104243228099EB00C9F594 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 347A1E81224A75F7002C6905 /* Weather_Reminder */;
+			targetProxy = FA104242228099EB00C9F594 /* PBXContainerItemProxy */;
+		};
+		FA104251228099FA00C9F594 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 347A1E81224A75F7002C6905 /* Weather_Reminder */;
+			targetProxy = FA104250228099FA00C9F594 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		347A1E89224A75F7002C6905 /* Main.storyboard */ = {
@@ -404,6 +554,88 @@
 			};
 			name = Release;
 		};
+		FA104244228099EB00C9F594 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R4AH55NR8B;
+				INFOPLIST_FILE = Weather_ReminderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "sgjyu12.Weather-ReminderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weather_Reminder.app/Weather_Reminder";
+			};
+			name = Debug;
+		};
+		FA104245228099EB00C9F594 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R4AH55NR8B;
+				INFOPLIST_FILE = Weather_ReminderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "sgjyu12.Weather-ReminderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weather_Reminder.app/Weather_Reminder";
+			};
+			name = Release;
+		};
+		FA104253228099FA00C9F594 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R4AH55NR8B;
+				INFOPLIST_FILE = Weather_ReminderUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "sgjyu12.Weather-ReminderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Weather_Reminder;
+			};
+			name = Debug;
+		};
+		FA104254228099FA00C9F594 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R4AH55NR8B;
+				INFOPLIST_FILE = Weather_ReminderUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "sgjyu12.Weather-ReminderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Weather_Reminder;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -421,6 +653,24 @@
 			buildConfigurations = (
 				347A1E98224A75F8002C6905 /* Debug */,
 				347A1E99224A75F8002C6905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA104246228099EB00C9F594 /* Build configuration list for PBXNativeTarget "Weather_ReminderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA104244228099EB00C9F594 /* Debug */,
+				FA104245228099EB00C9F594 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA104252228099FA00C9F594 /* Build configuration list for PBXNativeTarget "Weather_ReminderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA104253228099FA00C9F594 /* Debug */,
+				FA104254228099FA00C9F594 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
