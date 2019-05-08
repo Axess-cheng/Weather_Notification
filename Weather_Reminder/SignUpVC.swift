@@ -9,6 +9,9 @@
 import UIKit
 
 class SignUpVC: UIViewController {
+    
+    static let shared = SignUpVC()
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var confirmField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -28,12 +31,11 @@ class SignUpVC: UIViewController {
     @IBAction func signUpBtn(_ sender: Any) {
         print(passwordField.text!)
         if passwordField.text == confirmField.text {
-            let mailPattern = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
-            let matcher = MyRegex(mailPattern)
             let emailAdd = emailField.text!
-            if matcher.match(input: emailAdd) {
+            let passwordString = passwordField.text! as! String
+            if checkInput(email: emailAdd, passwd2: passwordString) {
                 // need to test with real iphone.
-                addUser(emailAdd: emailField.text!, password: passwordField.text!)
+                addUser(emailAdd: emailAdd, password:passwordString )
                 semaphore.wait()
                 id_data = emailAdd
                 Password = passwordField.text!
@@ -74,6 +76,31 @@ class SignUpVC: UIViewController {
         SettingVC.modalPresentationStyle = .overCurrentContext
         self.present(SettingVC, animated: false, completion: nil)
     }
+    
+    
+    
+    func checkInput(email: String, passwd2:String)->Bool{
+        
+        var isEmail = false
+        var isPass = false
+        
+        // check email format
+        let mailPattern = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+        let matcher = MyRegex(mailPattern)
+        if matcher.match(input: email) {
+            isEmail = true
+        }
+        if ((passwd2.count >= 6) && (passwd2.count <= 12)){
+            isPass = true
+        }
+        let passPattern = "\\W"
+        let matcher2 = MyRegex(passPattern)
+        if matcher2.match(input: passwd2) {
+            return false
+        }
+        return (isEmail && isPass)
+    }
+    
     
 
     /*

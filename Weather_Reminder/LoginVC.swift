@@ -10,6 +10,7 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    static let shared = LoginVC()
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -30,11 +31,9 @@ class LoginVC: UIViewController {
         // get email and password
         id_data = email.text ?? ""
         Password = password.text ?? ""
-        print("password = "+Password)
-        checkUser()
-        // check users and wait response here.
-        semaphore.wait()
-        if loginIsSucc{
+        eventList = []
+        let result = checkInput(email: email.text!, passwd2: Password)
+        if result {
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             UserDefaults.standard.set(user_id, forKey: "userID")
             UserDefaults.standard.set(user_token, forKey: "userToken")
@@ -69,6 +68,34 @@ class LoginVC: UIViewController {
         SignupVC.modalPresentationStyle = .overCurrentContext
         self.present(SignupVC, animated: false, completion: nil)
     }
+    
+    
+    func checkInput(email: String, passwd2:String)->Bool{
+        id_data = email
+        Password = passwd2
+        let mailPattern = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+        let matcher = MyRegex(mailPattern)
+        if !matcher.match(input: email) {
+            return false
+        }
+        
+        print("password = "+Password)
+        let passPattern = "\\W"
+        let matcher2 = MyRegex(passPattern)
+        if matcher2.match(input: passwd2) {
+            return false
+        }
+        checkUser()
+        // check users and wait response here.
+        semaphore.wait()
+        return loginIsSucc
+    }
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

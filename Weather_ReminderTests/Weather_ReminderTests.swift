@@ -80,10 +80,43 @@ class Weather_ReminderTests: XCTestCase {
     }
     
     func testMap(){
-        let test = 10
-        var resualt = 10
-        resualt = mapVC.shared.function(Inttest: test)
-        XCTAssert(resualt == 15, "this is right")
+        
+//        let email = "testst.com"
+//        let password = "123456"
+//
+//        var resualt = false
+//        resualt = LoginVC.shared.checkInput(email: email, passwd: password)
+//
+//        XCTAssert(resualt, "wrong in login")
+        
+        // both empty -> failed             "" --- ""
+        // right account -> success         "test@test.com" --- "123"
+        // wrong password -> failed         "test@test.com" --- "123q"
+        // unmatch email -> failed            "axess971230@gmail.com" --- "123"
+        // wrong email format -> failed
+        // special char in password -> wrong!!!   "test@test.com" --- "!@£$%^&*~"
+        // only 0-9, a-z, _
+        // longgggg passwd -> failed
+        //
+        
+        
+//        let email = "test123@test.com"
+//        let password = "!@£$%^&*()~/"
+//        let resualt = SignUpVC.shared.checkInput(email: email, passwd: password)
+//
+//        XCTAssert(resualt, "wrong in login")
+        
+        // wrong email format -> failed         "test1st.com" --- "123456"
+        // wrong pass format -> failed          "test123@test.com" --- "1"
+        //                                                              "123456789012345123"
+        //                                                              "123!@£$"
+        // has signed acc -> failed             "test@test.com" --- "123" // set before add rules
+        // special char -> failed               "test123@test.com" --- "!@£$%^&*()~/"
+        // empty -> failed                      "" --- ""
+        //
+        
+        
+        
         
     }
     
